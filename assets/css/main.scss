@@ -291,6 +291,10 @@
 	font-size: 1.2em;	
 }
 
+.built_by {
+	float: right;
+}
+
 @media screen and (max-width: 50em) {
 	.psgl_column_left {
 		width: 100% !important;
@@ -308,4 +312,10 @@
 	.calendar_button {
 		font-size: 0.7em;
 	}
+
+	.built_by {
+		display: block;
+		float: none;
+	}
+	
 }
