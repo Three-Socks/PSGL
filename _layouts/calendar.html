@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<header class="category_header">
+	{{ page.title | escape }}
+</header>
+<article class="post_wrapper blogposts">
+	<nav>
+	<ul class="calendar_list">
+	{% for round in site.data.calendar.round %}
+		<li class="calendar_button">
+			<img src="/assets/tracks/{{ round.track }}" alt="" />
+			<div class="calendar_date">{{ round.date_s }}</div>
+			<div class="calendar_title">{{ round.title }}</div>
+		</li>
+	{% endfor %}
+	</ul>
+	</nav>
+	<div class="psgl_content">
+		{{ content }}
+	</div>
+</article>

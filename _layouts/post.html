@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<header class="category_header">
+	{{ page.title | escape }}
+</header>
+<article class="post_wrapper blogposts">
+	<div class="psgl_content_inline">
+		{%- if page.author != null and page.author != "" -%} 
+		
+			{% assign is_twitter = page.author | slice: 0 %}
+
+			{% if is_twitter contains "@" %}
+				<a href="https://twitter.com/{{ page.author }}" rel="noopener" target="_blank">{{ page.author }}</a> |&nbsp;
+			{%- else -%}
+				{{ page.author }} |&nbsp;
+			{%- endif -%}		
+		{%- endif -%}
+		
+		{{ page.date | date_to_long_string: "ordinal" }}
+	</div>
+	{%- if page.image != null and page.image != "" -%}
+	<div class="psgl_content_image">
+		<img src="{{ page.image }}" alt="" />
+	</div>
+	{%- endif -%}
+	{%- if page.youtube -%}
+	<div class="embed-container">
+		<iframe src="https://www.youtube-nocookie.com/embed/{{ page.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	{%- endif -%}
+	<div class="psgl_content">
+	{{ content }}
+	</div>
+
+	{%- if page.discord -%}
+		<script src="/assets/js/discordInvite.js"></script>
+		<script>
+			$(document).ready(function(){
+				discordInvite.init({
+				inviteCode: 's9TzzCb',
+				title: 'The PSGL Discord',
+				hideIntro: true,
+				});
+				discordInvite.render();
+			});
+		</script>
+		<div id="discordInviteBox"></div>
+	{%- endif -%}
+</article>

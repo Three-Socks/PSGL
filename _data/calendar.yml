@@ -1,0 +1,31 @@
+round:
+  - title: "Round 1: Bahrain"
+    date_s: 3rd - 9th March
+    track: sakhir.jpg
+  - title: "Round 2: Australia"
+    date_s: 10th - 16th March
+    track: melbourne.jpg
+  - title: "Round 3: France"
+    date_s: 17th - 23rd March
+    track: paul_ricard.jpg
+  - title: "Round 4: Canada"
+    date_s: 24th - 30th March
+    track: montreal.jpg
+  - title: "Round 5: Austria"
+    date_s: 31st March - 6th April
+    track: austria.jpg
+  - title: "Round 6: Britain"
+    date_s: 7th - 13th April
+    track: silverstone.jpg
+  - title: "Round 7: Germany"
+    date_s: 14th - 20th April
+    track: hockenheim.jpg
+  - title: "Round 8: Belgium"
+    date_s: 21st - 27th April
+    track: spa_francorchamps.jpg
+  - title: "Round 9: Italy"
+    date_s: 28th - May 4th April
+    track: monza.jpg
+  - title: "Round 10: Brazil"
+    date_s: 5th - 11th May
+    track: interlagos.jpg

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<article class="post_wrapper blogposts" style="margin-bottom: 20px;">
+	<div class="psgl_content" style="padding: 50px;">
+		<img src="{{ site.data.settings.home }}" alt="" />
+	</div>
+</article>
+
+<section id="psgl_home_grid">
+	<div class="psgl_home">
+		<a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}?sub_confirmation=1" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-YouTube.png" alt="" /></a>
+		<div class="embed-container">
+			<iframe src="https://www.youtube-nocookie.com/embed/{{ site.data.settings.featured_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div>
+	<div class="psgl_home">
+		<a href="https://discord.gg/{{ site.data.settings.discord_id }}" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord.png" alt="" /></a>
+		<a href="https://discord.gg/{{ site.data.settings.discord_id }}" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord-Block.png" alt="" /></a>
+	</div>
+</section>
+
+{%- if site.posts.size > 0 -%}
+<header class="category_header">
+	Latest News
+</header>
+{%- for post in site.posts limit:8 -%}
+{%- unless post.hide -%}
+<article class="post_wrapper blogposts">
+	<div class="psgl_content_left">
+		<header class="psgl_content_header">
+			<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+		</header>
+		<div class="psgl_content_inline">
+			{%- assign is_twitter = post.author | slice: 0 -%}
+
+			{% if is_twitter contains "@" %}
+				<a href="https://twitter.com/{{ post.author }}" rel="noopener" target="_blank">{{ post.author }}</a> |&nbsp;
+			{%- else -%}
+				{{ post.author }} |&nbsp;
+			{%- endif -%}
+			
+			{{ post.date | date_to_long_string: "ordinal" }}
+		</div>
+		<div class="psgl_content">
+		{{ post.excerpt }}
+		
+		{% if post.content contains site.excerpt_separator %}
+		  <p><a href="{{ post.url | relative_url }}">Read More</a></p>
+		{% endif %}
+		</div>
+	</div>
+	<div class="psgl_content_right">
+		{%- if post.image != null and post.image != "" -%}
+		<a href="{{ post.url | relative_url }}"><img src="{{ post.image }}" alt="" /></a>
+		{%- endif -%}
+	</div>
+</article>
+{%- endunless -%}
+{%- endfor -%}
+{%- endif -%}

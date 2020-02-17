@@ -1,0 +1,234 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: '{{author-name}} | Create {{collection}} “{{slug}}”'
+    update: '{{author-name}} | Update {{collection}} “{{slug}}”'
+    delete: '{{author-name}} | Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] {{author-name}} | Upload “{{path}}”'
+    deleteMedia: '[skip ci] {{author-name}} | Delete “{{path}}”'
+    openAuthoring: '{{author-name}} | {{message}}'
+
+media_folder: 'assets/site-img'
+logo_url: '/assets/site-img/header-admin.jpg'
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    label_singular: 'Post'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Permalink', name: 'permalink', widget: 'string', default: '/:categories/:title' }
+      - { label: 'Author (@handle)', name: 'author', widget: 'string', required: false }
+      - {
+          label: 'Competition',
+          name: 'category',
+          widget: 'relation',
+          collection: 'competitions',
+          displayFields: ['title', 'menu_title'],
+          searchFields: ['title', 'menu_title'],
+          valueField: 'title',
+        }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'YouTube Video ID', name: 'youtube', widget: 'string', required: false }
+      - { label: 'Featured Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Add Discord Invite', name: 'discord', widget: 'boolean', required: false }
+      - { label: 'Hide', name: 'hide', widget: 'boolean', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'competitions'
+    label: 'Competitions'
+    label_singular: 'Competition'
+    folder: '_competitions/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Unique ID (no spaces)', name: 'title', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
+      - { label: 'Created Date (menu order)', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Sign up Post',
+          name: 'signup_url',
+          widget: 'relation',
+          collection: 'posts',
+          displayFields: ['title'],
+          searchFields: ['title'],
+          valueField: 'permalink',
+          required: false,
+        }
+      - { label: 'Menu Title', name: 'menu_title', widget: 'string', required: false }
+      - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
+      - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
+
+  - name: 's24-leagues'
+    label: 'F1 Season 24 Leagues'
+    label_singular: 'League'
+    folder: '_leagues/'
+    path: '/f12019/{{category}}/{{slug}}'
+    media_folder: '/f12019/{{category}}/{{slug}}'
+    public_folder: '/f12019/{{category}}/{{slug}}'
+    filter: { field: 'category', value: 's24' }
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12019/:categories/:title'}
+      - {
+          label: 'Season',
+          name: 'category',
+          widget: 'relation',
+          collection: 'seasons',
+          displayFields: ['title', 'display_name'],
+          searchFields: ['title', 'display_name'],
+          valueField: 'title',
+        }
+      - { label: 'Day', name: 'day', widget: 'string', required: false }
+      - { label: 'Time', name: 'time', widget: 'string', required: false }
+      - { label: 'Drivers', name: 'drivers', widget: 'image', required: false }
+      - { label: 'Drivers Extra', name: 'drivers_2', widget: 'image', required: false }
+      - { label: 'Constructors', name: 'constructors', widget: 'image', required: false }
+
+      - label: 'Site Graphics'
+        name: 'graphics'
+        widget: "object"
+        fields:
+          - { label: 'Standings', name: 'standings', widget: 'image', required: false }
+          - { label: 'TV', name: 'tv', widget: 'image', required: false }
+
+  - name: 'leagues'
+    label: 'All Leagues'
+    label_singular: 'League'
+    folder: '_leagues/'
+    summary: "{{category}} | {{title}}"
+    media_folder: ''
+    public_folder: ''
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12019/:categories/:title'}
+      - {
+          label: 'Season',
+          name: 'category',
+          widget: 'relation',
+          collection: 'seasons',
+          displayFields: ['title', 'display_name'],
+          searchFields: ['title', 'display_name'],
+          valueField: 'title',
+        }
+      - { label: 'Day', name: 'day', widget: 'string', required: false }
+      - { label: 'Time', name: 'time', widget: 'string', required: false }
+      - { label: 'Drivers', name: 'drivers', widget: 'image', required: false }
+      - { label: 'Drivers Extra', name: 'drivers_2', widget: 'image', required: false }
+      - { label: 'Constructors', name: 'constructors', widget: 'image', required: false }
+
+      - label: 'Site Graphics'
+        name: 'graphics'
+        widget: "object"
+        fields:
+          - { label: 'Standings', name: 'standings', widget: 'image', required: false }
+          - { label: 'TV', name: 'tv', widget: 'image', required: false }
+
+  - name: 'calendars'
+    label: 'Calendars'
+    label_singular: 'Calendar'
+    path: '/assets/tracks/'
+    media_folder: '/assets/tracks/'
+    public_folder: '/assets/tracks/'
+    editor:
+      preview: false
+    files:
+      - name: 's25'
+        label: 'F1 Season 25'
+        file: '_data/calendar.yml'
+        fields:
+          - name: 'round'
+            label: 'Round'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Date', name: 'date_s', widget: 'string', required: false }
+              - { label: 'Track', name: 'track', widget: 'image' }
+
+  - name: 'seasons'
+    label: 'Seasons'
+    label_singular: 'Season'
+    folder: '_seasons/'
+    summary: "{{display_name}}"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'seasons' }
+      - { label: 'Unique ID (no spaces)', name: 'title', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
+      - { label: 'Title', name: 'display_name', widget: 'string' }
+      - { label: 'Permalink', name: 'permalink', widget: 'string', default: '/:categories/:title' }
+      - {
+          label: 'Competition',
+          name: 'category',
+          widget: 'relation',
+          collection: 'competitions',
+          displayFields: ['title', 'menu_title'],
+          searchFields: ['title', 'menu_title'],
+          valueField: 'title',
+        }
+      - { label: 'Menu Title', name: 'menu_title', widget: 'string', required: false }
+      - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
+      - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
+
+  - name: 'pages'
+    label: 'Pages'
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: 'about'
+        label: 'About Page'
+        file: 'about.md'
+        fields:
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+          - { label: 'Title', name: 'title', widget: 'hidden' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'settings'
+    label: 'Settings'
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: 'general'
+        label: 'Site Settings'
+        file: '_data/settings.json'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Home Image', name: 'home', widget: 'image' }
+          - { label: 'Discord Invite ID', name: 'discord_id', widget: 'string' }
+          - { label: 'Twitter', name: 'twitter', widget: 'string' }
+          - { label: 'YouTube User ID', name: 'youtube', widget: 'string' }
+          - { label: 'Featured YouTube Video ID', name: 'featured_video', widget: 'string' }
+
+      - name: 'menu'
+        label: 'Menu'
+        file: '_data/navigation.yml'
+        fields:
+          - name: 'menu'
+            label: 'Menu'
+            widget: 'list'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Link', name: 'url', widget: 'string', required: false }
+              - { label: 'Icon', name: 'icon', widget: 'string' }
+              - { label: 'Standings', name: 'standings', widget: 'boolean', required: false }
+              - { label: 'Twitter', name: 'twitter', widget: 'boolean', required: false }
+              - { label: 'YouTube', name: 'youtube', widget: 'boolean', required: false }

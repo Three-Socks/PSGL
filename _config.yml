@@ -1,0 +1,38 @@
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.playstationgl.com" # the base hostname & protocol for your site, e.g. http://example.com
+excerpt_separator: <!--more-->
+timezone: Europe/London
+
+# Build settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-target-blank
+
+exclude:
+   - .sass-cache/
+   - .jekyll-cache/
+   - gemfiles/
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+   - README.md
+
+sass:
+    style: compressed
+
+permalink: /:categories/:title
+
+collections:
+  calendars:
+    output: true
+  seasons:
+    output: true
+  leagues:
+    output: true
+  competitions:
+  tracks:
+  settings:

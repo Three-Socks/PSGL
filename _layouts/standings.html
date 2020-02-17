@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<header class="category_header">
+	{{ page.title | escape }} Standings
+</header>
+<article class="post_wrapper blogposts">
+	<div class="psgl_content">
+	{{ content }}
+	{% if page.drivers != '' and page.drivers != null %}
+		<a href="{{ page.drivers }}"><img src="{{ page.drivers }}" alt="" style="width:100%" /></a>
+		<hr>
+	{% endif %}
+	{% if page.drivers_2 != '' and page.drivers_2 != null %}
+		<a href="{{ page.drivers_2 }}"><img src="{{ page.drivers_2 }}" alt="" style="width:100%" /></a>
+		<hr>
+	{% endif %}
+	{% if page.constructors != '' and page.constructors != null %}
+		<a href="{{ page.constructors }}"><img src="{{ page.constructors }}" alt="" style="width:100%" /></a>
+	{% endif %}
+	</div>
+</article>

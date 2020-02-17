@@ -1,0 +1,123 @@
+---
+layout: default
+---
+{% assign current_league = site.leagues | where: "category", "s24" %}
+
+<header class="category_header">
+	{{ page.title | escape }}
+</header>
+<article class="post_wrapper blogposts">
+	<div id="league_video"></div>
+	<nav id="videos_list" style="display:none;">
+		<ul>
+		</ul>
+	</nav>
+	<nav id="all_leagues">
+		<ul class="league_list">
+		{% for league in current_league %}
+			<li id="{{ league.title }}" class="league_button">
+				<a href="#">
+					<img src="{{ league.graphics.tv }}" alt="" />
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</nav>
+	{%- capture F1 -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "F1" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+	
+	{%- capture F2 -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "F2" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+
+	{%- capture F3 -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "F3" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+
+	{%- capture F4 -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "F4" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+
+	{%- capture F5 -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "F5" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+
+	{%- capture F6 -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "F6" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+
+	{%- capture FP -%}
+		{%- for vid in site.data.youtube.items -%}
+			{%- if vid.snippet.title contains "FP" -%}
+				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL | Season 24 | ", "" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
+			{%- endif -%}
+		{%- endfor -%}
+	{%- endcapture -%}
+
+</article>
+
+<script>
+	var league = [];
+	league["F1"] = [{{- F1 -}}];
+	league["F2"] = [{{- F2 -}}];
+	league["F3"] = [{{- F3 -}}];
+	league["F4"] = [{{- F4 -}}];
+	league["F5"] = [{{- F5 -}}];
+	league["F6"] = [{{- F6 -}}];
+	league["FP"] = [{{- FP -}}];
+
+	$(document).ready(function(){
+		$(".league_button").click(function(event){
+			event.preventDefault();
+			$("#all_leagues").hide();
+
+			var league_id = $(event.target).closest( "li" ).attr('id');
+
+			if (league[league_id] != undefined)
+			{
+				$("#videos_list").show();
+
+				$.each(league[league_id], function(index, value){
+					if (value.id != 0)
+					{
+						if (index == 0)
+							$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + value.id + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+
+						$("#videos_list ul").append('<li data-youtube="' + value.id + '" class="league_vbutton"><img src="' + value.thumbnail + '" alt="" /><a class="league_vlink" href="#">' + value.title + '</a></li>');
+						$(".league_vbutton").click(function(event){
+							if ($(this).data("youtube") != '')
+								$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + $(this).data("youtube") + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+						});
+					}
+				});
+
+				$("#videos_list ul").append('<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><a class="league_vlink" href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+24+%7C+' + league_id + '%22" rel="noopener" target="_blank">View More on YouTube</a></li>');
+			}
+		});
+	});
+</script>

@@ -1,0 +1,311 @@
+---
+---
+
+@import "index";
+@import "custom_dark";
+@import "discordInvite";
+
+.post_wrapper {
+	display: block;
+	clear: both;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	width: 100%;
+}
+
+#psgl_logo {
+	display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+#psgl_logo img {
+    max-width: 100%;
+}
+
+#psgl_home_grid {
+	display: grid;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
+    margin-bottom: 20px;
+}
+
+.psgl_home img {
+    width: 100%;
+}
+
+.psgl_join {
+    margin-bottom: 4px;
+}
+
+.psgl_join img {
+    width: 100%;
+}
+
+.psgl_content_left {
+	float: left;
+	width: 65%;
+	font-size: .929em;
+	clear: both;
+}
+
+.psgl_content_right {
+	float: right;
+	width: 35%;
+	font-size: .929em;
+	margin-bottom: 40px;
+}
+
+.psgl_content_right img {
+	width: 100%;
+	position: relative;
+	right: 20px;
+	top: 20px;
+}
+
+.psgl_content_image {
+	text-align: center;
+    padding: 20px 0;
+}
+
+.psgl_content_image img {
+	max-width: 75%;
+}
+
+.psgl_content_header {
+	padding: 0 20px;
+	font-size: 1.143em;
+	color: #e2e2e2;
+	font-weight: bold;
+}
+
+.psgl_content {
+	padding: 10px 20px;
+	font-size: 1em;
+}
+.psgl_content img {
+	width: 100%;
+}
+
+.psgl_content p, .psgl_content blockquote, .psgl_content pre, .psgl_content ul, .psgl_content ol, .psgl_content dl,
+.psgl_content figure, .psgl_content .highlight {
+	margin-bottom: 15px;
+}
+
+.psgl_content ul, ol {
+	list-style-type: disc;
+	padding-inline-start: 40px;
+}
+
+.psgl_content blockquote {
+	overflow: auto;
+	margin: 0 0 1em 0;
+	padding: 6px 10px;
+	font-size: .857em;
+	border: 1px solid;
+	border-top: 0;
+    border-color: #1c1f29;
+    background: #0c0d10;
+    background-image: linear-gradient(to bottom,#181a1f,#0c0d10);
+	box-shadow: 2px 2px 2px #0e1015;
+}
+
+.psgl_content_inline {
+    padding: 0 20px;
+    font-size: .857em;
+	font-weight: normal;
+    border-bottom: 1px solid #1c1f29;
+	padding-bottom: 8px;
+}
+
+.twitter-timeline
+{
+	background: #0c0d10 !important;
+	background-image: linear-gradient(to bottom,#111317,#0c0d10) !important;	
+	border: 1px solid #1c1f29 !important;
+	border-radius: 4px 4px 0 0 !important;
+}
+
+.psgl_column_left {
+	width: 70%;
+}
+.psgl_column_right {
+	width: 28%;
+}
+
+.psgl_grid {
+	display: grid;
+    grid-template-columns: 74% 25%;
+	grid-column-gap: 1%;
+    padding: 1em 0 0 0;
+    min-height: 180px;
+}
+
+.psgl_row_left {
+}
+
+.psgl_row_right {
+
+}
+
+.blogposts {
+	width: unset;
+	overflow: auto;
+    margin-top: 2px;
+    border: 1px solid;
+	border-color: #1c1f29;
+    background: #0c0d10;
+    background-image: linear-gradient(to bottom,#111317,#0c0d10);
+}
+
+.league_list {
+	list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.league_button {
+    position: relative;
+    margin: 0.1em 0.1em;
+    flex: 0 1 31%;
+    text-align: center;
+    font-size: 4vmax;
+	font-weight: bold;
+	background: rgb(9,19,78);
+	background-image: linear-gradient(135deg, rgba(9,19,78,1) 0%, rgba(17,38,155,1) 93%, rgba(17,39,158,1) 100%);
+}
+
+.league_button img {
+	display: block;
+    width: 100%;
+}
+
+.league_link, .league_link:link, .league_link:visited {
+	display: block;
+	padding: 1em 0px;
+	color: #f3f3f3;
+	white-space: nowrap;
+}
+
+.league_link:hover {
+	text-decoration: none;
+}
+
+.league_date {
+	position: relative;
+	bottom: 1em;
+	font-size: 1vmax;
+	text-align: right;
+}
+
+#videos_list ul {
+	list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+	align-items: center;
+    margin-top: 20px;
+}
+
+.league_vbutton {
+    position: relative;
+    margin: 0.2em 0.2em;
+    flex: 0 1 31%;
+    text-align: center;
+	font-size: 1vmax;
+    font-weight: bold;
+    background: #09134e;
+	background-image: linear-gradient(135deg, #09134e 0%, #11269b 93%, #11279e 100%);
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+.league_vbutton img {
+    display: block;
+    width: 100%;
+}
+
+.league_vbutton_break {
+	flex-basis: 100%;
+    width: 0;
+}
+
+.league_vlink, .league_vlink:link, .league_vlink:visited {
+	display: block;
+	padding: 1em 1em;
+	color: #f3f3f3;
+	white-space: nowrap;
+}
+
+.league_vlink:hover {
+	text-decoration: none;
+}
+
+.calendar_list {
+	list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar_button {
+    position: relative;
+    margin: 0.2em 0.2em;
+    flex: 0 1 31%;
+    text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: rgb(9,19,78);
+	background-image: linear-gradient(135deg, rgba(9,19,78,1) 0%, rgba(17,38,155,1) 93%, rgba(17,39,158,1) 100%);
+	white-space: nowrap;
+}
+
+.calendar_date {
+	margin: 0.6em 0;
+	font-weight: normal;
+}
+
+.calendar_title {
+	margin: 0.6em 0;
+}
+
+.calendar_button img {
+	display: block;
+    width: 100%;
+}
+
+.standings_header {
+	font-weight: bold;
+	font-size: 2em;
+	margin: 20px 0;
+}
+
+.standings_link {
+	font-size: 1.2em;	
+}
+
+@media screen and (max-width: 50em) {
+	.psgl_column_left {
+		width: 100% !important;
+	}
+
+	.psgl_grid {
+		display: block;
+	}
+}
+@media screen and (max-width: 33.750em) {
+	.psgl_column_left {
+		width: 100% !important;
+	}
+
+	.calendar_button {
+		font-size: 0.7em;
+	}
+}

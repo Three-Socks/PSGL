@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{% assign current_comp = site.competitions | where: "title", page.category %}
+{% assign current_league = site.leagues | where: "category", page.title %}
+{% assign current_season = site.seasons | where: "category", page.category %}
+
+<header class="category_header">
+	{{ current_comp.first.display_name }} {{ page.display_name | escape }} Standings
+</header>
+<article class="post_wrapper blogposts">
+	<nav>
+	<ul class="league_list">
+	{% for league in current_league %}
+	{%- if league.graphics.standings != null and league.graphics.standings != "" -%}
+		<li class="league_button">
+			<a href="{{ league.url }}">
+				<img src="{{ league.graphics.standings }}" alt="" />
+			</a>
+		</li>
+	{% else %}
+		<li class="league_button">
+			<a class="league_link" href="{{ league.url }}">
+				<span>{{ league.title }}</span>
+				<span class="league_date">{{ league.day }} {{ league.time }}</span>
+			</a>
+		</li>
+	{% endif %}
+
+	{% endfor %}
+	</ul>
+	</nav>
+	<div class="psgl_content">
+		{%- if current_season.size > 1 -%}
+			<hr>
+			<div class="standings_header">Archives</div>
+			{% for season in current_season %}
+				{% if season.title != page.title %}
+					<div class="standings_link"><a href="{{ season.url }}">{{ season.display_name }}</a></div>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</div>
+</article>

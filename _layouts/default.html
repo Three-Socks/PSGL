@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+	{%- include header.html -%}
+	
+	<div id="wrapper" class="wrapper">
+	
+	{%- include menu.html -%}
+
+		<div class="psgl_grid">
+			<div class="psgl_row_left">
+				<main>
+				{{ content }}
+				</main>
+			</div>
+			<div class="psgl_row_right">
+				{%- if page.url != "/" -%}
+				<div class="psgl_join">
+					<a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}?sub_confirmation=1" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-YouTube.png" alt="" /></a>
+					<a href="https://discord.gg/{{ site.data.settings.discord_id }}" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord.png" alt="" /></a>
+				</div>
+				{%- endif -%}
+				<a class="twitter-timeline" data-chrome="transparent" data-height="1400" data-dnt="true" data-theme="dark" href="https://twitter.com/{{ site.data.settings.twitter | remove:'@' }}?ref_src=twsrc%5Etfw">Tweets by {{ site.data.settings.twitter | remove:'@' }}</a>
+				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+	</div>
+
+	{%- include footer.html -%}
+	{% comment %}<script>
+		if (window.netlifyIdentity) {
+		  window.netlifyIdentity.on("init", user => {
+			if (!user) {
+			  window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+			  });
+			}
+		  });
+		}
+	  </script>{% endcomment %}
+  </body>
+
+</html>

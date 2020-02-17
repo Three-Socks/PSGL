@@ -1,0 +1,37 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" sizes="192x192" href="/assets/site-img/PSGL-Logo-192.png" />
+	<title>{{ page.display_name | default: page.title | default: site.data.settings.title }} | {{ site.data.settings.description }}</title>
+	{% if page.discord_redirect == true -%}
+    <meta http-equiv="refresh" content="1;url=https://discord.gg/{{ site.data.settings.discord_id }}"/>
+    <link rel="canonical" href="https://discord.gg/{{ site.data.settings.discord_id }}"/>
+    <script type="text/javascript">
+            window.location.href = "https://discord.gg/{{ site.data.settings.discord_id }}"
+	</script>
+	{% endif -%}
+
+	{%- seo title=false -%}
+
+	{% if page.image != null and page.image != "" -%}
+	<meta name="twitter:card" content="{{ page.twitter.card | default: site.twitter.card | default: "summary_large_image" }}" />
+	<meta property="twitter:image" content="{{ page.image | absolute_url }}" />
+	{% else %}
+	<meta name="twitter:card" content="summary" />
+	<meta property="twitter:image" content="{{ '/assets/site-img/PSGL-Logo-192.png' | absolute_url }}" />
+	{% endif -%}
+	<meta property="twitter:title" content="{{ page.display_name | default: page.title | default: site.data.settings.title }}" />
+	{% if site.data.settings.twitter -%}
+		<meta name="twitter:site" content="@{{ site.data.settings.twitter | remove:'@' }}" />
+		{% if page.author != null and page.author != "" -%} 
+			<meta name="twitter:creator" content="@{{ page.author | remove:'@' }}" />
+		{% endif -%}
+	{% endif %}
+	<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+	{%- if jekyll.environment == 'production' and site.google_analytics -%}
+		{%- include google-analytics.html -%}
+	{%- endif -%}
+	{% comment %}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>{% endcomment %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>

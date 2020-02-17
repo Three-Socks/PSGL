@@ -1,0 +1,3450 @@
+/* INTRODUCTION
+ * This is the standard Elkarte default theme.
+ * This file contains essential layout code only.
+ * Colors, gradients, images, etc. are in _variantname.css.
+ *
+ * All theme variants depend on this layout code for stability.
+ * It is better to copy code to a variant CSS file for testing.
+ * -------------------------------------------------------
+ * $CONTENTS - still a bit WIP. @todo
+ *
+ *		$GENERAL.............Global resets, clearfixes, etc.
+ *		$COMMON..............Common classes to drive you bonkers.
+ *		$BBC.................Quotes, code blocks, BBC styles.
+ *		$AJAX................The "loading" bar (quick edit, etc).
+ *
+ *		$MAIN................Forum header, wrapper, and footer.
+ *		$MENUS...............Main and secondary menus.
+ *		$LINKTREE............The breadcrumbs.
+ *		$BUTTONS.............Most button strips.
+ *		$PAGELINKS...........Page navigation links.
+ *
+ *		$TABLES..............Generic tables (error log, etc.).
+ *		$SETTINGS............Generic lists for settings pages.
+ *		$BOARDS..............Board index, sub-boards, and message index.
+ *		$DRAG-N-DROP.........Post attachment area, including Drag and Drop
+ *
+ *		$TOPICS..............The display template (topic view), including send.
+ *		$EDITOR..............Main editor (posts, events, polls) and topic summary.
+ *		$MODERATE............Move topic, split topic, merge topic.
+ *
+ *		$PROFILE.............The profile areas.
+ *		$PERSONAL............The personal messages (PM) areas.
+ *		$CALENDAR............Wombats (and the calendar).
+ *		$STATISTICS..........The statistics centre.
+ *		$LIKE STATS..........The like stats area
+ *
+ *		$HELP................Help pages, help icons and pop-ups, tooltips.
+ *		$SEARCH..............Search pages, including memberlist search.
+ *		$MEMBERLIST..........The memberlist table.
+ *		$LOGIN...............Login and registration, maintenance mode.
+ *
+ *		$BOXES...............Message boxes (error, warning, info, etc).
+ *		$PROGRESS............Nifty progress bars.
+ *		$MEDIA...............Experimental media queries.
+ * -------------------------------------------------------
+ */
+
+/* -------------------------------------------------------
+ *	$GENERAL
+ * -------------------------------------------------------
+ * Put this here to make it easy to find.
+ * Width control for top bar, header, main content and footer content.
+ */
+.wrapper {
+	margin: 0 auto;
+	/* Next controls forum width, when it is not set in admin. */
+	width: 75%;
+	/* Next limits maximum width on wide screens. */
+	/* Sized in em, since some people require larger text. */
+	/* For ease of reading, content really should not be too wide. */
+	/*max-width: 150em;*/
+}
+
+/* -------------------------------------------------------
+ *	$GENERAL
+ * -------------------------------------------------------
+ */
+
+/* Normal, standard links. */
+a, a:link, a:visited,
+/* Links that open in a new window. */
+a.new_win:link, a.new_win:visited {
+	text-decoration: none;
+}
+
+/* Cursor declared here.Should not be required anywhere else. */
+a:hover, a.new_win:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body, input, button, select, textarea, .editor {
+	/* Set a font-size that will look the mostly the same in all browsers.
+	 * Start with calling OSx system’s UI font with -apple-system, BlinkMacSystemFont this will pull in
+	 * (San Francisco, Neue Helvetica and Lucida Grande depends on OS version)
+	 * Then Windows (Segoe UI), Android (Roboto), Unix (KDE, Ubuntu, Gnome), Old Android (Droid Sans),
+	 * OSx pre apple-system support (Helvetica Neue), fallbacks (Arial, sans-serif)
+	 * this results in a base 14pt and pt to em translation approx as so
+	 * 9 - .643, 10 - .714, 11 - .786, 12 - .857, 13 - .929, 14 - 1, 15 - 1.071, 16 - 1.143
+	 * 17 - 1.214, 18 - 1.286, 19 - 1.357, 20 - 1.429, 21 - 1.5, 22 - 1.571, 23 - 1.643
+	 * 24 - 1.714, 25 - 1.786, 26 - 1.857, 27 - 1.929, 28 - 2, 29 - 2.071
+	 */
+	font: 87.5%/150% "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
+}
+
+legend {
+	margin-left: 15px;
+	padding: 0 0 2px 20px;
+	font-size: 1.071em;
+	cursor: pointer;
+}
+
+/* Tables should show empty cells. */
+table {
+	empty-cells: show;
+}
+
+/* Global box sizing, for stabilising fluid layouts.
+ * IMPORTANT: Do not declare div here (borks jQuery menus).
+ * Default most elements to zero padding and margin.
+ * Declare these separately to divs to avoid padding and margin problems.
+ */
+ul, ol, li,
+dl, dd, dt,
+p, fieldset,
+form, input, button, select, textarea,
+.input_text, .editor {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Fieldsets are used to group elements.
+ * @todo - Can we do this by class? What about default styling? Needed?
+ * Declaring as overflow: auto; is probably a good idea.
+ */
+fieldset {
+	margin: 5px 0;
+	padding: 6px;
+	border-radius: 5px;
+	overflow: auto;
+	border: 1px solid transparent;
+}
+
+/* Specific box-sizing declarations */
+/* @todo - Simplify - test. */
+.wrapper, div.content, .category_header, .generic_list_wrapper, #description_board,
+.description, .information, .successbox, .warningbox, .well,
+.submitbutton, .generalinfo, .topic_stats, .jump_to_header,
+#popularposts, #popularactivity,
+.grid8, .grid17, .grid20, .grid25, .grid30, .grid33, .grid50 {
+	box-sizing: border-box;
+}
+
+/* Collection of pseudo element clearfixes. */
+.category_header:after,
+.wrapper:after,
+.main_content_section:after,
+#main_container:after,
+.attachment_name:after,
+.editor_wrapper:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.quickbuttons:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+/* simple spacer for between sections */
+.separator {
+	clear: both;
+	margin: 4px 0;
+}
+
+/* Set list-style to none by default. Best in most places.*/
+ul, ol {
+	list-style: none;
+}
+
+/* No image should have a border when linked. */
+a img {
+	border: 0;
+}
+
+/* Style the different types of inputs to be uniform for all browsers.
+ *
+ * NOTE: This does require some browser-specific code to get good results.
+ * Padding on all types of inputs are set here.
+ * If specific styling is wanted for some inputs, be aware of browser
+ * differences when adding custom padding, or it will drive you mental.
+ *
+ * ALSO: This is still not quite pixel perfect everywhere for all browsers,
+ * in particular not for Internet Explorer. They can live with it.
+ *
+ *	.button_submit - covers input[type=submit], input[type=button],
+ *	                 button[type=submit] and button[type=button]
+ *	.linkbutton    - covers links, to make them look like a submit button.
+ *	.button_reset  - covers input[type=reset] and button[type=reset]
+ *	.input_check   - covers input[type=checkbox]
+ *	.input_radio   - covers input[type=radio]
+ *	.input_text    - covers input[type=text]
+ *	.input_file    - covers input[type=file]
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+/* The following is necessary. */
+textarea, .editor {
+	border-radius: 4px;
+}
+
+.sceditor-container {
+	margin: 0 0 6px 0;
+}
+
+/* Declarations for inputs, selects and buttons */
+input, .input_text, button, select {
+	padding: 0 6px;
+	min-height: 2em;
+	max-height: 2em;
+	height: 2em;
+	vertical-align: middle;
+}
+
+input, button, select, textarea, .editor {
+	border: 1px solid;
+	border-radius: 2px;
+}
+
+select {
+	padding: 0 0 0 2px;
+	max-width: 95%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+input, .input_text, select, button {
+	font-size: .857em;
+}
+
+select option {
+	padding: 0 4px;
+}
+
+/* Special form elements need to be addressed */
+select[size],
+input[type="file"] {
+	max-height: none;
+	height: auto;
+	overflow-y: auto;
+}
+
+.select_multiple {
+	min-height: 10em;
+	height: auto;
+}
+
+/* The OpenID login form */
+.openid_login {
+	padding-left: 20px;
+}
+
+input[type="number"] {
+	padding: 0 0 0 6px;
+}
+
+/* No borders around checkboxes or radio buttons, and middle aligned. */
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+	font-weight: normal;
+	font-size: 1em;
+	margin: -2px 2px 0;
+	padding: 0;
+	border: none;
+	background: none;
+	vertical-align: middle;
+}
+
+/* Common submit button styling. */
+input[type="submit"], button[type="submit"], input[type="button"],
+/* Anchors styled to look like buttons. */
+/* These have standard body text size. Can be chained with smalltext class. */
+.linkbutton:link, .linkbutton_right:link, .linkbutton_left:link,
+.linkbutton:visited, .linkbutton_right:visited, .linkbutton_left:visited {
+	display: inline-block;
+	padding: 0 .35em;
+}
+
+input[type="submit"], .drop_area_fileselect_text, .drop_area .mobile, button[type="submit"], input[type="button"],
+/* Anchors styled to look like buttons. */
+/* These have standard body text size. Can be chained with smalltext class. */
+.linkbutton:link, .linkbutton_right:link, .linkbutton_left:link,
+.linkbutton:visited, .linkbutton_right:visited, .linkbutton_left:visited {
+	border: 1px solid;
+	border-radius: 0.125em;
+}
+
+.left_submit, .linkbutton_left {
+	float: left;
+}
+
+.right_submit, .linkbutton_right {
+	float: right;
+}
+
+/* Hover effects. */
+input[type="submit"]:hover, button[type="submit"]:hover, input[type="button"]:hover,
+.linkbutton:hover, .linkbutton_right:hover, .linkbutton_left:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Don't show disabled buttons as active on hover */
+input[type=submit][disabled]:hover, button[disabled], button[disabled]:hover {
+	border: 1px solid;
+}
+
+.linkbutton:link, .linkbutton_right:link, .linkbutton_left:link,
+.linkbutton:visited, .linkbutton_right:visited, .linkbutton_left:visited {
+	font-size: 0.857em;
+	line-height: 1.85em;
+}
+
+/* Use new class that is defined to suit, and with a sensible name. */
+.submitbutton {
+	overflow: auto;
+	padding: 6px 0;
+	text-align: right;
+	clear: both;
+}
+
+.submitbutton input[type="submit"],
+.submitbutton input[type="button"] {
+	margin-top: -0.05em;
+	margin-right: 0.1em;
+	margin-left: 0.1em;
+	padding: 0 6px;
+}
+
+/* IE has its own padding needs */
+#ie select, #ie9 select {
+	padding: 0 0 0 6px;
+}
+
+/* the new "button"
+ * @todo - Might add extra fallbacks. Possibly monospace.
+ * @todo - Also, look at deprecating spans here.
+ */
+.new_posts, .require_approval {
+	border-radius: 2px;
+	padding: 1px 4px 2px 4px;
+	font-weight: bold;
+	font-size: .643em;
+	font-family: verdana, sans-serif;
+}
+
+.new_posts:hover {
+	text-decoration: underline;
+}
+
+/* bbc links wrapped in [s] */
+del .bbc_link:link, del .bbc_link:visited {
+	text-decoration: line-through;
+}
+
+/* bbc links wrapped in sub / sup */
+sup a.bbc_link {
+	vertical-align: sub;
+}
+
+sub a.bbc_link {
+	vertical-align: middle;
+}
+
+.childboards .new_posts {
+	padding: 1px 3px 2px;
+	font-size: 0.857em;
+}
+
+/* Standard horizontal rule.. ([hr], etc.) */
+hr {
+	margin: 12px 0;
+	height: 1px;
+	border-top: 1px solid;
+	border-left: 0;
+}
+
+/*...and em as italics */
+em, .em {
+	font-style: italic;
+}
+
+/* We use this alot */
+.hide {
+	display: none;
+}
+
+/* Some grid helpers for tables and divs */
+.grid8 {
+	width: 8%;
+}
+
+.grid17 {
+	width: 17%;
+}
+
+.grid20 {
+	width: 20%;
+}
+
+.grid25 {
+	width: 25%;
+}
+
+.grid30 {
+	width: 30%;
+}
+
+.grid33 {
+	width: 33%;
+}
+
+.grid50 {
+	width: 49.5% !important;
+}
+
+/* -------------------------------------------------------
+ *	$COMMON
+ * -------------------------------------------------------
+ */
+
+/* HTML5 additions for deprecated tags. */
+.tt {
+	font-family: monospace;
+}
+
+/* Alternative for u tag. */
+.underline {
+	text-decoration: underline;
+}
+
+/* Floats, overflows, clears. @todo */
+.floatright {
+	float: right;
+}
+
+.floatleft {
+	float: left;
+}
+
+.floatcenter {
+	margin: 0 auto;
+	display: block;
+}
+
+.flow_auto {
+	overflow: auto;
+}
+
+.flow_hidden {
+	overflow: hidden;
+}
+
+.clear {
+	clear: both;
+}
+
+.clear_left {
+	clear: left;
+}
+
+.clear_right {
+	clear: right;
+}
+
+/* Default font sizes (defined in em, so IE can resize): small (12px default),
+ * normal (14px default), and large (16px default).
+ * Since these are purely presentational classes, they should be used sparingly.
+ */
+.smalltext {
+	font-size: 0.857em;
+}
+
+.largetext {
+	font-size: 1.286em;
+}
+
+.centertext {
+	text-align: center;
+}
+
+.righttext {
+	text-align: right;
+}
+
+.lefttext {
+	text-align: left;
+}
+
+.double_height {
+	line-height: 2em;
+}
+
+.centericon {
+	vertical-align: middle;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.wordbreak {
+	word-break: break-all;
+}
+
+/* Styles for main headers. */
+.category_header, .forum_category .category_header {
+	padding: 4px 10px 2px 10px;
+	font-size: 1.214em;
+	line-height: 1.8em;
+	border: 1px solid;
+	border-radius: 4px 4px 0 0;
+}
+
+/* Styles for subsection headers. @todo */
+.secondary_header {
+	margin: 12px 0 0 0;
+	padding: 1px 10px 1px;
+	font-size: 1.143em;
+	line-height: 1.8em;
+	border: 1px solid;
+}
+
+/* Category Header icons as sprites, lots available to custom themes to use */
+.hdicon:before {
+	display: inline-block;
+	width: 30px;
+	height: 24px;
+	background-image: url(../images/icons/header.png);
+	background-repeat: no-repeat;
+	content: "";
+	vertical-align: text-bottom;
+}
+
+.cat_img_attachments:before {background-position: 0 0;}
+.cat_img_buddies:before     {background-position: 0 -24px;}
+.cat_img_config:before      {background-position: 0 -48px;}
+.cat_img_contacts:before    {background-position: 0 -72px;}
+.cat_img_helptopics:before  {background-position: 0 -96px;}
+.cat_img_inbox:before       {background-position: 0 -120px;}
+.cat_img_login:before       {background-position: 0 -144px;}
+.cat_img_mail:before        {background-position: 0 -168px;}
+.cat_img_moderation:before  {background-position: 0 -192px;}
+.cat_img_plus:before        {background-position: 0 -216px;}
+.cat_img_posts:before       {background-position: 0 -240px;}
+.cat_img_profile:before     {background-position: 0 -264px;}
+.cat_img_search:before      {background-position: 0 -288px;}
+.cat_img_stats_info:before  {background-position: 0 -312px;}
+.cat_img_topics:before      {background-position: 0 -336px;}
+.cat_img_write:before       {background-position: 0 -360px;}
+.cat_img_database:before    {background-position: 0 -384px;}
+.cat_img_address:before     {background-position: 0 -408px;}
+.cat_img_calendar:before    {background-position: 0 -432px;}
+.cat_img_minus:before       {background-position: 0 -456px;}
+.cat_img_star:before        {background-position: 0 -480px;}
+.cat_img_clock:before       {background-position: 0 -504px;}
+.cat_img_eye:before         {background-position: 0 -528px;}
+.cat_img_piechart:before    {background-position: 0 -552px;}
+.cat_img_talk:before        {background-position: 0 -576px;}
+
+/* Expand/Collapse image in the various headers */
+.collapse, .expand {
+	float: right;
+}
+
+/* Upshrink image in the page top for the header collapse */
+#collapse_button .linklevel1 {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	padding: 0;
+	height: 2em;
+}
+
+#upshrink {
+	border: 0;
+}
+
+/* General code for generic divs. Should make them behave. */
+.content {
+	overflow: auto;
+	padding: 0.5em 1em;
+	border: 1px solid;
+}
+
+.content p {
+	margin: 0 0 6px 0;
+}
+
+/* Other highlighted text, such as search results. */
+.highlight {
+	font-weight: bold;
+	font-size: 1.071em;
+}
+
+/* above/below create list items */
+.additional_row {
+	padding: 6px 0;
+}
+
+.generic_list_wrapper .additional_row > a.linkbutton {
+	margin: 5px 0 0;
+}
+
+.generic_menu {
+	display: block;
+	padding: 5px 0 0;
+}
+
+/* The generic wrapper thingy. Used by generic list template */
+.generic_list_wrapper {
+	overflow: auto;
+	margin: 4px 0 0 0;
+	padding: 8px 8px 16px 8px;
+	border: 1px solid;
+	border-radius: 7px;
+}
+
+.generic_list_wrapper .additional_row {
+	margin: 0;
+	padding: 10px 0 1px;
+	border-radius: 0;
+}
+
+.generic_list_wrapper .title_bar {
+	border-bottom: 1px solid;
+	border-radius: 0;
+}
+
+/* The .information box is used by the after_title additional row */
+.generic_list_wrapper .information .additional_row {
+	padding: 6px 0;
+	border: none;
+}
+
+.generic_list_wrapper .information {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-bottom: 1px solid;
+}
+
+/* Styles used by the auto suggest control. */
+.auto_suggest_div {
+	position: absolute;
+	z-index: 100;
+	visibility: hidden;
+	border: 1px solid;
+	border-radius: 3px;
+}
+
+.auto_suggest_div:focus {
+	outline: none !important;
+}
+
+.auto_suggest_item {
+	padding: 1px 4px;
+}
+
+.auto_suggest_item_hover {
+	padding: 1px 4px;
+	cursor: pointer;
+}
+
+/* To ensure the question and the input are on two different lines */
+.verificationquestion label {
+	display: block;
+	width: 100%;
+}
+
+/* -------------------------------------------------------
+ *	$BBC
+ * -------------------------------------------------------
+ */
+
+/* The "Quote:" and "Code:" header parts... */
+.codeheader, .quoteheader {
+	margin: 6px 0 0 0;
+	padding: 4px 6px 2px 6px;
+	font-weight: bold;
+	font-size: 0.857em;
+	border: 1px solid;
+	border-bottom: none;
+}
+
+.codeheader {
+	border-top: 3px solid;
+}
+
+/* Use demi bold font weight for some key areas */
+.codeheader, .quoteheader,
+.expand_pages,
+.table_head > th,
+.topic_sorting_row > h3, .topic_name h4 a,
+.poster .name,
+.keyinfo h5 a, .keyinfo h5 a strong,
+.ui-dialog .ui-dialog-titlebar,
+#creator dt strong, .settings label,
+.popup_heading {
+	font-weight: 600;
+	font-family: "Segoe UI Semibold", "Segoe UI", "Helvetica Neue Medium", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* [Select] link to copy code. */
+.codeoperation {
+	font-weight: normal;
+}
+
+/* A quote, perhaps from another post. */
+.bbc_quote,
+/* A code block - maybe PHP ;) - shared styles. */
+.bbc_code {
+	overflow: auto;
+	margin: 0 0 1em 0;
+	padding: 6px 10px;
+	font-size: 0.857em;
+	border: 1px solid;
+	border-top: none;
+}
+
+/* Extra code block styling. */
+.bbc_code {
+	height: auto;
+	max-height: 20em;
+	white-space: nowrap;
+	font-family: "DejaVu Sans Mono", Monaco, Consolas, monospace;
+	resize: vertical;
+	border-top: 3px solid;
+	border-bottom: 3px solid;
+}
+
+.bbc_code .tab {
+	display: inline-block;
+	width: 4ex;
+	white-space: pre;
+}
+
+/* Stop em compounding when elements are nested. */
+.bbc_quote .bbc_quote, .bbc_quote .bbc_code,
+.bbc_quote .codeheader, .bbc_quote .quoteheader,
+/* And for quote inside small text areas, like the topic summary. */
+#topic_summary .bbc_quote, #topic_summary .bbc_code,
+#topic_summary .codeheader, #topic_summary .quoteheader {
+	font-size: 1em;
+}
+
+/* Styling for BBC tags */
+.bbc_size {
+	line-height: 1.4em;
+}
+
+/* @todo - Are all these "inherit" declarations really necessary? */
+.bbc_color a {
+	color: inherit;
+}
+
+strong, .bbc_strong {
+	color: inherit;
+	font-weight: bold;
+}
+
+.bbc_img {
+	max-width: 100%;
+	border: 0;
+}
+
+.bbc_img.floatleft {
+	padding: .1em .75em .1em 0;
+}
+
+.bbc_img.floatright {
+	padding: .1em 0 .1em .75em;
+}
+
+.bbc_img.floatcenter {
+	padding: .5em .25em;
+}
+
+.bbc_table {
+	color: inherit;
+	font: inherit;
+}
+
+.bbc_table td {
+	color: inherit;
+	vertical-align: top;
+	font: inherit;
+	padding: 0 0.5em;
+}
+
+.bbc_table th {
+	color: inherit;
+	font: inherit;
+	font-weight: bold;
+	padding: 0 0.5em;
+}
+
+/* Styling for bbc tables inside posts */
+.inner > .bbc_table_container > .bbc_table,
+.messageContent > .bbc_table_container > .bbc_table {
+	border-collapse: collapse;
+}
+
+.inner > .bbc_table_container > .bbc_table th,
+.messageContent > .bbc_table_container > .bbc_table th {
+	text-align: center;
+}
+
+.bbc_u {
+	text-decoration: underline;
+}
+
+.bbc_list {
+	padding: 0 0 0 35px;
+	list-style-type: square;
+	text-align: left;
+}
+
+/* Everything is same except HTML5 valid */
+.bbc_tt {
+	font-family: "DejaVu Sans Mono", Monaco, "Lucida Console", "Courier New", monospace;
+}
+
+.bbc_pre {
+	overflow: auto;
+	font-family: "DejaVu Sans Mono", Monaco, Consolas, monospace;
+}
+
+.bbc_footnotes {
+	overflow: auto;
+	margin-top: 10px;
+	padding: 4px 8px 4px 0;
+	font-size: small;
+}
+
+div.bbc_footnotes {
+	border-top: 1px solid;
+}
+
+sup.bbc_footnotes, sup.bbc_footnotes a {
+	font-weight: 700;
+}
+
+div.bbc_footnotes .meaction {
+	display: inline-block;
+}
+
+.footnote_return {
+	font-size: 1.357em;
+}
+
+/* Shorten url's inside posts. */
+a.bbc_link {
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;
+	vertical-align: bottom;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+.bbc_link:hover {
+	text-decoration: none;
+}
+
+.meaction:before {
+	content: "\270c";
+	font-size: 1.714em;
+	line-height: 1em;
+}
+
+.spoiler {
+	padding: 0.3em;
+	border: 1px solid;
+}
+
+.spoilerheader {
+	font-weight: bold;
+	font-size: 0.857em;
+	cursor: pointer;
+}
+
+/* -------------------------------------------------------
+ *	$AJAX
+ * -------------------------------------------------------
+ */
+
+/* The "Loading" bar for quick edit, etc. */
+#ajax_in_progress, .ajax_infobar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding: 15px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.571em;
+	border-bottom: 4px solid;
+}
+
+#ajax_in_progress a {
+	text-decoration: underline;
+}
+
+#quick_edit_body_container {
+	width: 90%;
+}
+#quick_edit_body_container .editor {
+	width: 100%;
+	margin-bottom: 10px;
+}
+#quick_edit_body_container .input_text {
+	width: 85%;
+}
+
+/* -------------------------------------------------------
+ *	$MAIN.
+ * -------------------------------------------------------
+ */
+
+/* The top bar. */
+#top_section {
+	margin: 0;
+	padding: 0;
+	border-top: 4px solid;
+	border-bottom: 4px solid;
+}
+
+#top_section_notice {
+	float: left;
+	margin: 0;
+	padding: .75em .5em .25em .25em;
+	min-width: 38%;
+	line-height: 1.286em;
+	font-weight: 700;
+}
+
+#top_section_notice .toggle_login {
+	display: inline;
+	cursor: pointer;
+}
+
+#top_section_notice form {
+	width: 100%;
+	white-space: nowrap;
+}
+
+#password_login {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#search_form {
+	float: right;
+	padding: .75em .25em .25em .5em;
+}
+
+/* TODO: This is really bad. Parameters are evaluated from right to left when evaluating css, which means
+         this is checked against every element on the page. */
+#search_form button, #search_form input, #search_form label {
+	float: left;
+	margin: 0;
+	border-radius: 0;
+}
+
+#search_form button {
+	border: 1px solid transparent;
+	margin-left: -5px;
+}
+
+#search_form .input_text {
+	border-right: none;
+	border-radius: 2px 0 0 2px;
+}
+
+#search_form input[type="submit"] {
+	border-radius: 0 2px 2px 0;
+}
+
+#search_form select {
+	border: 1px solid;
+	border-right: none;
+	margin-bottom: 1px;
+}
+
+#search_form select:focus {
+	border: 1px solid;
+	border-right: none;
+}
+
+/* The logo and slogan. */
+#header {
+	padding: 2px 2px 0 2px;
+}
+
+/* The main title. */
+#forumtitle, .rightheader #forumtitle {
+	padding: 10px 10px 6px 13px;
+	font-size: 2.357em;
+	line-height: 1.455em;
+}
+
+.centerheader .forumlink {
+	display: none;
+}
+
+.rightheader #forumtitle .forumlink {
+	float: right;
+}
+
+/* Float these items to the right. @todo - Simplify. */
+#logobox, .rightheader #logobox {
+	float: right;
+	padding: 0 12px 0 12px;
+	max-width: 40%;
+}
+
+.centerheader #logobox {
+	width: 100%;
+}
+
+.rightheader #logobox, .rightheader #logo {
+	float: left;
+	padding-bottom: 7px;
+}
+
+.centerheader #logobox, .centerheader #logo, .centerheader #siteslogan {
+	display: block;
+	float: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#siteslogan {
+	clear: both;
+	font-size: 0.65em;
+	display: block;
+}
+
+/* Tweak the logo */
+#logo {
+	float: right;
+	margin: 0 8px 0 0;
+	padding: 0;
+}
+
+.rightheader #logo {
+	margin: 0 0 0 8px;
+}
+
+/* Main forum area. */
+#wrapper {
+	padding: 1.2em 1em;
+	margin-top: 1em;
+	border: 3px solid;
+	border-radius: 5px;
+}
+
+/* The user info, news, etc.*/
+#news {
+	margin-left: -1px;
+	padding: 0 0 1em 0;
+	vertical-align: top;
+	font-size: 0.929em;
+}
+
+#news .bbc_link {
+	display: inline;
+}
+
+#news > h2 {
+	float: left;
+	margin: -2px 1em 0 0;
+	height: 1em;
+	font-weight: 700;
+	font-variant: small-caps;
+	font-size: 1.286em;
+	line-height: 1.286em;
+}
+
+#news > h2:after {
+	content: "\2026";
+}
+
+#news_line, #news {
+	overflow: auto;
+	padding: 6px 12px;
+	min-height: 60px;
+	height: 60px;
+	border: 1px solid;
+	resize: vertical;
+}
+
+/* The content section */
+.main_content_section {
+	padding: 1em 0 0 0;
+	min-height: 180px;
+}
+
+/* The footer with copyright links etc. */
+#footer_section {
+	margin: 35px 0 0 0;
+	border-top: 6px solid;
+}
+
+#footer_section .wrapper {
+	padding: 20px 5px;
+}
+
+#footer_section p, #footer_section a {
+	font-size: 0.857em;
+}
+
+#footer_section li {
+	display: inline;
+	padding-right: 5px;
+}
+
+#footer_section .copyright {
+	display: inline;
+	visibility: visible;
+	font-size: 0.857em;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+#footer_section .rssfeeds {
+	float: right;
+	margin: auto;
+	text-align: center;
+	border-radius: 0.3em;
+}
+
+#debug_logging {
+	margin: 0 auto;
+	max-width: 90em;
+	width: 90%;
+}
+
+/* -------------------------------------------------------
+ *	$MENUS
+ * -------------------------------------------------------
+ */
+
+/* This section contains code for the main forum menu (#main_menu),
+ * and for the secondary menus in admin/profile/pm (.admin_menu),
+ * and for the tertiary menu strip in admin/etc (#adm_submenus).
+ *
+ * Top level <ul> elements have the class or id mentioned above.
+ * <li> elements are for positioning only (classes are listlevel1, etc).
+ * Top level links (like main menu buttons) have the class linklevel1.
+ * Drop menu wrappers are either menulevel2 or menulevel3.
+ * Drop menu links are either linklevel2 or linklevel3.
+ */
+
+/* Main menu bar: wrapper/background. */
+#menu_nav {
+	padding: 6px;
+}
+
+#main_menu {
+	position: relative;
+}
+
+/* Wrapper for primary admin/profile/etc menus. */
+.admin_menu {
+	padding: 0 3px;
+}
+
+/* Wrapper for secondary admin/profile/etc menus. */
+#adm_submenus {
+	overflow: auto;
+	padding: 0 3px;
+}
+
+/* Level 1 button positioning.
+ * 1px padding gives slight gap between buttons, and drop menus.
+ */
+.listlevel1 {
+	position: relative;
+	float: left;
+	margin: 0 .1em;
+	padding: .1em 0;
+	line-height: 2em;
+}
+
+.poster .listlevel1 {
+	padding: 0;
+	line-height: 1.667em;
+}
+
+.listlevel1:hover {
+	z-index: 6;
+}
+
+.listlevel1#collapse_button, .listlevel1#button_profile {
+	float: right;
+}
+
+.listlevel1#button_profile img {
+	position: relative;
+	top: 4px;
+	margin: 0 0.6em 0 0;
+	max-width: 2.0em;
+	max-height: 1.5em;
+}
+
+/* Level 1 Menu bar: link or button. */
+.linklevel1 {
+	display: block;
+	padding: 0 .4em;
+	white-space: nowrap;
+	border: 1px solid;
+	border-radius: .2em;
+}
+
+/* Level 1 button hover and focus effects. */
+.linklevel1:hover, .listlevel1:hover .linklevel1,
+.linklevel2:hover, .listlevel2:hover .linklevel2,
+.linklevel3:hover, .listlevel3:hover .linklevel3,
+#menu_sidebar .linklevel1:hover, #menu_sidebar .listlevel1:hover .linklevel1,
+#menu_current_area > strong > .linklevel1 {
+	border: 1px solid;
+	text-decoration: none;
+}
+
+.poster li.listlevel1:hover {
+	border: none;
+}
+
+.poster li.poster_online:hover .linklevel1 {
+	border: 1px solid;
+}
+
+.poster li.poster_online .nolink {
+	position: relative;
+	display: block;
+	margin: 3px 1.5em;
+	border: 1px solid;
+	line-height: 2em;
+}
+
+.poster li.poster_online .nolink img {
+	vertical-align: middle;
+}
+
+.poster li.subsections.listlevel1:hover .linklevel1 {
+	border: none;
+}
+
+/*.listlevel1#button_profile .linklevel1 {
+	min-width: 5em;
+} */
+
+/* Level 1 active buttons. */
+.linklevel1.active, .listlevel1:hover .active,
+#collapse_button .linklevel1, .pm_indicator, .likes_indicator {
+	border: 1px solid;
+	font-weight: bold;
+}
+
+/* Hover effects for those buttons. */
+.linklevel1.active:hover, .listlevel1:hover .linklevel1.active,
+#collapse_button .linklevel1:hover, .linklevel1:hover .pm_indicator {
+	border: 1px solid;
+}
+
+.linklevel1:hover .pm_indicator {
+
+}
+
+.linklevel1.active:hover .pm_indicator {
+	border-bottom: 1px solid;
+}
+
+/* Top level subsection indicators.
+ * Comment these out if you don't want them.
+ */
+.subsections:hover .linklevel1:after {
+	position: absolute;
+	right: 0.4em;
+	content: " \25bc";
+}
+
+#main_menu .subsections:hover .linklevel1:after {
+	top: 88%;
+	font-size: 1.429em;
+}
+
+.admin_menu .subsections:hover .linklevel1:after {
+	top: 72%;
+	font-size: 1.214em;
+}
+
+/* Corrections for other menus. */
+.quickbuttons .subsections:hover .linklevel1:after {
+	top: 1.9em;
+	font-size: 1em;
+}
+
+.subsections:hover .name.linklevel1:after {
+	top: 1.6em;
+	font-size: 1em;
+}
+
+.poster2 .subsections:hover .name.linklevel1:after {
+	top: 1em;
+}
+
+/* Do one override here for .poster. Still saves code all round. */
+.poster_avatar .linklevel1, .poster_avatar:hover .linklevel1,
+.poster_avatar .linklevel1:focus,
+.name.linklevel1, .name.linklevel1:hover, .name.linklevel1:focus {
+	border: none;
+}
+
+.name.linklevel1:hover {
+	text-decoration: underline;
+}
+
+/* Levels 2 and 3: drop menu wrapper. */
+.menulevel2, .menulevel3 {
+	border: 1px solid;
+	border-radius: 2px;
+	position: absolute;
+	top: 100%;
+	left: -9999px;
+	z-index: 90;
+	margin: 0;
+	padding: 0.6em;
+	width: 18.4em;
+}
+
+/* Level 3: drop menu positioning. */
+.menulevel3 {
+	margin: -2em 0 0 15.3em;
+}
+
+/* Reposition Level 2 drop menu as visible on hover. */
+.listlevel1:hover .menulevel2, .listlevel1.sfhover .menulevel2 {
+	left: 0;
+}
+
+.listlevel1#button_profile:hover .menulevel2, .listlevel1#button_profile.sfhover .menulevel2 {
+	right: 0;
+	left: auto;
+}
+
+/* Hiding Level 3 drop menu off hover. */
+.listlevel1:hover .menulevel3, .listlevel1.sfhover .menulevel3 {
+	left: -9999px;
+}
+
+/* Reposition Level 3 drop menu as visible on hover. */
+.listlevel2:hover .menulevel3, .listlevel2.sfhover .menulevel3 {
+	left: -14px;
+}
+
+/* Level 2 and 3 button positioning.
+ * 1px vertical padding gives slight gap between buttons.
+ */
+.listlevel2, .listlevel3 {
+	position: relative;
+	float: none;
+	padding: 0;
+	width: 17em;
+}
+
+/* Levels 2 and 3 drop menus: link or button. */
+.linklevel2, .linklevel3 {
+	position: relative;
+	display: block;
+	padding: 1px 7px;
+}
+
+.linklevel2:link, .linklevel2:visited, .linklevel3:link, .linklevel3:visited {
+	border: 1px solid;
+}
+
+/* Admin menu icons. */
+.linklevel2 > img {
+	margin: 0 0 0 -4px;
+	vertical-align: middle;
+}
+
+/* Level 2: subsection indicators. */
+.listlevel2.subsections .linklevel2:after,
+#menu_sidebar .subsections .linklevel1:after,
+#menu_sidebar .subsections:hover .linklevel1:after {
+	position: absolute;
+	top: 0;
+	right: 6px;
+	content: "\2192";
+	font-size: 1.286em;
+}
+
+/* Level 2: dividers between admin/moderation, and pm/profile links. */
+#button_admin .listlevel2.subsections, #button_pm .listlevel2.subsections {
+	margin-top: 7px;
+	padding-top: 4px;
+	border-top: 1px solid;
+}
+
+/* Levels 2 and 3: highlighting of current section */
+/* @todo - Should probably be applied to main menu as well, for consistency. */
+.linklevel2.chosen, .linklevel3.chosen,
+#menu_current_area .linklevel1 {
+	font-weight: 700;
+}
+
+.linklevel2.help {
+	display: inline-block;
+}
+
+/* Styles for sidebar menus.
+ * Cancel default backgrounds for sidebar.
+ */
+#menu_sidebar .linklevel1 {
+	border: 1px solid;
+}
+
+/* Tricky PM indicator. Define it carefully,
+ * just in case someone tries to use this class elsewhere.
+ */
+.pm_indicator, .likes_indicator {
+	position: absolute;
+	top: -1.45em;
+	right: -0.4em;
+	z-index: 2;
+	float: left;
+	padding: 0 0.7em;
+	border-radius: 8px 8px 8px 0;
+	font-weight: 700;
+	font-size: 0.929em;
+	line-height: 1.7em;
+}
+
+.poster .pm_indicator {
+	font-size: 1em;
+}
+
+#dropdown_menu_1 .pm_indicator {
+	margin-top: 5px;
+	margin-right: 2px;
+}
+
+.likes_indicator {
+	top: -1.2em;
+	border-radius: 6px 6px 6px 0;
+	font-size: .857em;
+	line-height: 1.5em;
+}
+
+/* @todo - Note: The next declarations are for keyboard access with js disabled.
+ * Hmm. These are tricky with the new Superfish/Superclick combo.
+ * May need a noScript class added somewhere. Pondering required.
+ */
+/*
+.linklevel2:focus, .linklevel3:focus {
+	margin-left: 9990px;
+	width: 17em;
+}
+.linklevel3:focus {
+	margin-left: 19950px;
+}
+*/
+/* @todo - Cancel those for hover and/or js access. */
+/*
+.listlevel2:hover .linklevel2:focus, .listlevel2.sfhover .linklevel2:focus,
+.listlevel3:hover .linklevel3:focus, .listlevel3.sfhover .linklevel3:focus {
+	z-index: 999;
+	margin-left: 0;
+	width: auto;
+}
+*/
+
+/* Styles for sidebar menus. */
+#main_admsection {
+	overflow: auto;
+}
+
+#menu_sidebar {
+	float: left;
+	padding: 0 10px 1em 0;
+	width: 200px;
+}
+
+.sidebar_menu {
+	padding: 4px 0 9px 0;
+}
+
+/* Same styling for Level 1 and Level 2. */
+#menu_sidebar .listlevel1 {
+	float: none;
+	padding: 1px 0;
+}
+
+#menu_sidebar .listlevel1:hover .menulevel2,
+#menu_sidebar .listlevel1.sfhover .menulevel2 {
+	top: 0.35em;
+	left: 170px;
+}
+
+#menu_sidebar .pm_indicator {
+	font-weight: normal;
+	font-size: 0.6em;
+}
+
+/* @todo - Note: The next declarations are for keyboard access with js disabled.
+ * Hmm. These are tricky with the new Superfish/Superclick combo.
+ * May need a noScript class added somewhere. Pondering required.
+ */
+/*
+#menu_sidebar .linklevel2:focus {
+	margin-left: 10150px;
+	width: 17em;
+}
+*/
+/* Cancel those for hover and/or js access. */
+/*
+#menu_sidebar .listlevel2:hover .linklevel2:focus, #menu_sidebar .listlevel2.sfhover .linklevel2:focus {
+	margin-left: 0;
+	width: auto;
+}
+*/
+
+/* -------------------------------------------------------
+ *	$LINKTREE
+ * -------------------------------------------------------
+ */
+
+/* The navigation list (i.e. linktree, breadcrumbs) */
+.navigate_section {
+	overflow: hidden;
+	margin: 3px 0 0 0;
+	padding-right: 1em;
+	border: 1px solid;
+	border-radius: .125em;
+}
+
+.main_content_section .navigate_section {
+	margin: 1em 0 .5em 0;
+}
+
+.linktree {
+	position: relative;
+	float: left;
+	padding: 0 1em 0 2em;
+	border: none;
+	white-space: nowrap;
+	font-size: 0.929em;
+	line-height: 2em;
+	border-bottom: 1px solid;
+	min-height: 2.1em;
+}
+
+.linktree:last-child {
+	max-width: 25em;
+}
+
+.linktree a {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.linktree:last-child > span > a {
+	display: inline;
+}
+
+.linktree:last-child > span {
+	display: block;
+	overflow: hidden;
+	max-width: 25em;
+	text-overflow: ellipsis;
+}
+
+.linktree:hover a, .linktree > a:hover,
+.linktree:last-child, .linktree:last-child > span > a,
+.linktree:last-child > span > a:hover, .linktree:last-child strong {
+	text-decoration: none;
+}
+
+/* Nifty indicators. */
+.linktree:after {
+	position: absolute;
+	top: 0;
+	right: -1em;
+	z-index: 1;
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	/* Scale the squares diagonal to = the line-height */
+	content: "";
+	-webkit-transform: scale(0.7071) rotate(45deg);
+	-ms-transform: scale(0.7071) rotate(45deg);
+	transform: scale(0.7071) rotate(45deg);
+}
+
+.linktree:first-child {
+	padding: 0 .75em;
+}
+
+/* -------------------------------------------------------
+ *	$BUTTONS
+ * This section contains code for the quickbuttons (quote, quick edit, etc)
+ * and for the buttonlist class (reply, add poll, notify, etc).
+ * These classes share some styling.
+ * Declarations are amalgamated where styling is shared.
+ * -------------------------------------------------------
+ */
+
+/* Styles for the standard button lists. */
+.buttonlist {
+	padding: 5px 5px 0 5px;
+}
+
+.buttonlist li {
+	float: left;
+	margin: 0 0 0 4px;
+	line-height: 2.231em;
+}
+
+/* @todo - Save code by amalgamating common button background declarations. */
+.buttonlist li a {
+	display: block;
+	padding: 0 6px;
+	font-size: 0.786em;
+	line-height: 2em;
+}
+
+.buttonlist li a.linklevel1 {
+	text-transform: uppercase;
+}
+
+.icon.hamburger_30 {
+	display: none;
+}
+
+/* The quick buttons. */
+.quickbuttons {
+	margin: 8px 0 6px 0;
+	padding-top: .5em;
+	text-align: right;
+}
+nav > .quickbuttons {
+	clear: both;
+}
+
+.quickbuttons li {
+	white-space: nowrap;
+}
+
+/* Follow ups and topic summary need it a bit different. */
+.follow_ups, #topic_summary .quickbuttons {
+	float: right;
+	margin: -7px 0 0 7px;
+}
+
+/* Most of them. */
+.quickbuttons .listlevel1 {
+	position: relative;
+	float: right;
+	margin: 2px 0;
+	padding: 2px 0;
+	font-size: 0.857em;
+}
+
+/* Odd cases. */
+.moderation_link, .moderation_link:visited {
+	font-weight: bold;
+}
+
+.follow_ups .listlevel1, #topic_summary .quickbuttons .listlevel1 {
+	font-size: 1em;
+}
+
+.quickbuttons .modified {
+	float: left;
+	padding: 0 0 0 6px;
+}
+
+.quickbuttons .inline_mod_check {
+	margin: 4px 4px 4px 0;
+	padding: 0 4px;
+}
+
+/* @todo - Save code by amalgamating common button background declarations. */
+.quickbuttons .linklevel1 {
+	float: left;
+	padding: 1px 6px 0 22px;
+	line-height: 2em;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+/* @todo - Check with js disabled after sorting most of the other crud.
+ * Note: The next declarations are for keyboard access with js disabled.
+ */
+/*.quickbuttons .linklevel1:focus {
+	margin: 0 -9910px 0 9910px;
+}*/
+/* Cancel for hover and/or js access. */
+/*.quickbuttons .listlevel1:hover .linklevel1:focus, .quickbuttons .listlevel1.sfhover .linklevel1:focus {
+	margin: 0;
+}*/
+
+.quickbuttons .linklevel1:before, .quickbuttons .linklevel2:before {
+	position: absolute;
+	top: 50%;
+	left: 3px;
+	z-index: 5;
+	display: block;
+	margin-top: -12px;
+	width: 18px;
+	height: 24px;
+	content: "";
+}
+
+.quickmod_check {
+	left: 3px;
+}
+
+/* The rest of them.
+ * @todo: font awesome yadda yadda
+ */
+.quickbuttons .linklevel1:before, .quickbuttons .linklevel2:before {
+	background-image: url(../images/theme/quickbuttons.png);
+	/* A rare example of where longhand background declarations work well. */
+	background-repeat: no-repeat;
+}
+
+/* The long list of sprite coordinates is much less verbose this way. */
+.quote_button:before      {background-position: 0 0;}
+.remove_button:before     {background-position: 0 -24px;}
+.modify_button:before     {background-position: 0 -48px;}
+.approve_button:before    {background-position: 0 -72px;}
+.restore_button:before    {background-position: 0 -96px;}
+.split_button:before      {background-position: 0 -120px;}
+.reply_button:before      {background-position: 0 -144px;}
+.reply_all_button:before  {background-position: 0 -144px;}
+.notify_button:before     {background-position: 0 -168px;}
+.unapprove_button:before  {background-position: 0 -192px;}
+.close_button:before      {background-position: 0 -216px;}
+.im_reply_button:before   {background-position: 0 -240px;}
+.details_button:before    {background-position: 0 -264px;}
+.ignore_button:before     {background-position: 0 -288px;}
+.report_button:before     {background-position: 0 -312px;}
+.warn_button:before       {background-position: 0 -336px;}
+.quotetonew_button:before {background-position: 0 -360px;}
+.like_button:before       {background-position: 0 -384px;}
+.unlike_button:before     {background-position: 0 -408px;}
+.star_button:before       {background-position: 0 -432px;}
+.quick_edit:before        {background-position: 0 -456px;}
+.likes_button:before      {background-position: 0 -480px;}
+
+/* Radius left end of the first (Quote) button. */
+.linklevel1.quote_button {
+	border-radius: 2px 0 0 2px;
+}
+
+/* Radius right end of the last button. */
+.linklevel1.post_options, .linklevel1.remove_button {
+	border-radius: 0 2px 2px 0;
+}
+
+/* Single buttons get all corners rounded. */
+.follow_ups .linklevel1, #topic_summary .linklevel1 {
+	border-radius: 2px;
+}
+
+/* No icon here. */
+.linklevel1.post_options:before,
+.follow_ups .linklevel1:before {
+	display: none;
+}
+
+/* "More..." gets custom padding (no icon). */
+.linklevel1.post_options,
+
+/* Follow ups gets custom padding (no icon). */
+.follow_ups .linklevel1 {
+	padding: 1px 6px 0 6px;
+}
+
+/* Quickbutton and follow ups drop menus. */
+.quickbuttons .menulevel2, .follow_ups .menulevel2 {
+	padding: 0.5em;
+	width: auto;
+	text-align: left;
+}
+
+.quickbuttons .listlevel1:hover .menulevel2,
+.quickbuttons .listlevel1.sfhover .menulevel2 {
+	right: -1px;
+	left: auto;
+}
+
+/* Show appropriate like/unlike action */
+.like_button:before, .likes_button:before, .unlike_button:before {
+	background-position: 0 -480px;
+}
+
+.unlike_button:before {
+	background-position: 0 -408px;
+}
+
+.like_button:hover:before {
+	background-position: 0 -384px;
+}
+
+.quickbuttons .listlevel2 {
+	width: 12em;
+}
+
+.follow_ups .listlevel2 {
+	width: 20em;
+}
+
+.follow_ups .linklevel2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.quickbuttons .linklevel2 {
+	padding: 0 6px 0 26px;
+	line-height: 2.1em;
+}
+
+/* -------------------------------------------------------
+ *	$PAGELINKS
+ * -------------------------------------------------------
+ */
+
+/* The page navigation area. */
+.pagesection {
+	clear: both;
+	overflow: hidden;
+	padding: 4px;
+}
+
+.pagesection .floatright input, .pagesection .floatright select {
+	margin-top: 3px;
+}
+
+.category_header .pagesection .floatright input, .pagesection .floatright select {
+	margin-top: 0;
+}
+
+/* Necessary for some browsers to keep the pages all on the same line */
+.linavPages {
+	float: left;
+	margin: 0 4px 0 0;
+}
+
+.selectbox, .pagelinks {
+	margin: 5px 5px 0;
+	font-size: 0.857em;
+}
+
+/* @todo - Styling will need a bit more thought here.
+ * Do not use display: inline-block;
+ * Why not? Because it has a well-known quirk. It's white-space-dependent.
+ * http://robertnyman.com/2010/02/24/css-display-inline-block-why-it-rocks-and-why-it-sucks/
+ * Specifically, the section titled "The enormous drawback".
+ */
+.pagelinks .navPages, .pagelinks .current_page, .expand_pages, .small_pagelinks .navPages {
+	display: block;
+	float: left;
+}
+
+.pagelinks .navPages {
+	padding: 1px 6px;
+	border: 1px solid;
+}
+
+.pagelinks .navPages:hover, .pagelinks .current_page {
+	border: 1px solid;
+	/* @todo - Simplify. */
+	text-decoration: none;
+}
+
+.pagelinks :first-child {
+	border-radius: 2px 0 0 2px;
+}
+
+.pagelinks :last-child {
+	border-radius: 0 2px 2px 0;
+}
+
+.pagelinks .current_page {
+	padding: 1px 8px;
+	font-weight: bold;
+}
+
+.expand_pages {
+	padding: 2px 0;
+	min-width: 1.5em;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.next_page, .previous_page {
+	padding: 0 2px;
+	text-transform: capitalize;
+}
+
+/* @todo - Fix for all templates. */
+.small_pagelinks {
+	float: right;
+	margin-top: -2px;
+}
+
+/* our buddies &laquo; &raquo; */
+.small_pagelinks:before {
+	float: left;
+	content: '\00AB';
+	font-size: 1.286em;
+}
+
+.small_pagelinks:after {
+	float: left;
+	content: '\00BB';
+	font-size: 1.286em;
+}
+
+.small_pagelinks li {
+	float: left;
+	display: block;
+}
+
+.small_pagelinks li:last-child {
+	margin-right: 0;
+}
+
+.small_pagelinks .navPages {
+	padding: 2px 3px 0 3px;
+	font-size: 0.857em;
+}
+
+#expanded_pages_container {
+	position: absolute;
+}
+
+#expanded_pages_container, #expanded_pages {
+	overflow: hidden;
+}
+
+#pages_scroll_left, #pages_scroll_right {
+	position: absolute;
+	top: 0;
+	margin: 0;
+}
+
+#pages_scroll_left {
+	left: 0;
+}
+
+#pages_scroll_right {
+	right: 0;
+}
+
+/* Globally accessible top/bottom links. */
+#gotop, #gobottom {
+	position: fixed;
+	bottom: 50%;
+	left: 0;
+	z-index: 9;
+	padding: 1.286em 0.1em 0 0.1em;
+	height: 1.5em;
+	font-weight: bold;
+	font-size: 2em;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	border: 1px solid;
+	border-bottom: none;
+	border-radius: 0 20px 0 0;
+}
+
+#gobottom {
+	top: 50%;
+	padding: 0.8em 0.1em 0.5em 0.1em;
+	border-top: none;
+	border-radius: 0 0 20px 0;
+}
+
+#gotop:hover, #gobottom:hover {
+	text-decoration: none;
+}
+
+/* Skip navigation link. */
+#top {
+	position: absolute;
+	top: -10em;
+	left: 3em;
+	padding: 1em 2em;
+	background: none repeat scroll 0 0 #ffffff;
+	font-weight: bold;
+	transition: top .5s ease-out 0s, background 1s linear 0s;
+	border: 4px solid;
+	border-radius: 0 0 6px 6px;
+	z-index: 200;
+}
+
+#top:focus {
+	top: -4px;
+}
+
+/* -------------------------------------------------------
+ *	$TABLES
+ * -------------------------------------------------------
+ */
+
+/* A general table class. */
+.table_grid {
+	margin: 0;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 1px solid;
+	border-top: none;
+}
+
+.table_head > th {
+	padding: 5px 8px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 1em;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+}
+
+.table_head > th.centertext, .table_head > td.centertext {
+	text-align: center;
+}
+
+/* Basic cells. */
+.table_grid td, .letterspacing {
+	padding: 5px 8px;
+	border-bottom: 1px solid;
+}
+
+.table_grid textarea {
+	width: 100%;
+}
+
+.table_grid .statsbar div {
+	display: none;
+}
+
+.sort_by_item .sort, .sort {
+	margin: 0 0 -4px 4px;
+}
+
+/* For Errors.template.php. */
+#errorfile_table .current {
+	font-weight: bold;
+	border: 1px solid;
+}
+
+/* -------------------------------------------------------
+ * $SETTINGS
+ * -------------------------------------------------------
+ */
+
+/* Lists - settings use these a lot. */
+.settings {
+	clear: right;
+	overflow: auto;
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+
+.settings dt {
+	float: left;
+	clear: both;
+	margin: 0 0 10px 4px;
+	padding: 0;
+	width: 40%;
+}
+
+.settings dd {
+	float: right;
+	overflow: auto;
+	margin: 0 0 3px 0;
+	padding: 0 0 0 2px;
+	min-height: 2em;
+	width: 55%;
+}
+
+/* I'm a tad leary of these setting new margins, but this line is here to compress
+ * listings in fieldset, like a permissions radio listing, from taking up excess space
+ */
+.settings dd > fieldset dd, .settings dd > fieldset dt {
+	margin: 0;
+}
+
+.settings img {
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+
+/* help icons */
+.settings dt a img {
+	position: relative;
+	vertical-align: top;
+}
+
+.settings textarea {
+	padding: 0 0.5em;
+	width: 85%;
+}
+
+.settings label {
+	vertical-align: top;
+}
+
+.settings .smalltext {
+	display: inline-block;
+	padding-left: 1em;
+}
+
+/* -------------------------------------------------------
+ *	$ICONS
+ * -------------------------------------------------------
+ *
+ * Icons. Since embedded icons need to have color data
+ * included, the icons themselves go into the color files.
+ * This just holds sizing code.
+ *
+ * -------------------------------------------------------
+ */
+ .iconline, .icoffline {
+	display: inline-block;
+	padding-bottom: 0;
+	width: 1em;
+	height: 1em;
+	border: 1px solid;
+	border-radius: 50%;
+	vertical-align: middle;
+	line-height: 1em;
+}
+
+.icon, .helpicon, .warnicon, .infoicon, .chevricon {
+	display: inline-block;
+	margin: 0 .25em;
+	width: 1.25em;
+	height: auto;
+	vertical-align: middle;
+	line-height: 1.25em;
+}
+
+.helpicon, .warnicon, .infoicon {
+	height: 1.25em;
+	vertical-align: text-bottom;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.helpicon, a.helpicon {
+	cursor: help;
+}
+
+.board_icon {
+	display: block;
+	float: left;
+	width: 3em;
+	height: 3em;
+	line-height: 3em;
+}
+
+.chevricon {
+	float: right;
+}
+
+/* Screenreader-only shortcut.
+ * This is the most foolproof way to ensure a screen reader reads something.
+ */
+.icon > s, .board_icon > s, .chevricon > s, .helpicon > s, .warnicon > s, .infoicon > s {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+a > i {
+	padding-bottom: 1px;
+}
+
+.icon-small {
+	height: 1em;
+	width: 1em;
+	line-height: 1em;
+}
+
+.icon-big {
+	height: 1.5em;
+	width: 1.5em;
+	line-height: 1.5em;
+}
+
+.icon-lg {
+	height: 2em;
+	width: 2em;
+	line-height: 2em;
+}
+
+.icon-xl {
+	height: 4em;
+	width: 4em;
+	line-height: 4em;
+}
+
+.icon-spin {
+	animation: icon-spin 2s infinite linear;
+}
+
+@keyframes icon-spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+
+/* For swapping out the icon with a mini of the user's avatar if they have one.
+ *
+ * @TODO: There is probably a cleaner way to make an icon special like this.
+ *
+ * E.g. in principle we could do the same with buddy icons, for example.
+ */
+.i-account:before {
+	display: block;
+	width: 1.75em;
+	height: 1.75em;
+	background: no-repeat center;
+	background-size: contain;
+	margin: -3px 0 0 -4px;
+}
+
+/* This is for fixing vertical positioning with a few odd icons. Sometimes because of icons, sometimes because of
+ * css elsewhere that hasn't been fixed yet.
+ *
+ * Either way, it means there's a problem somewhere, and that this should eventually get removed.
+ */
+.icon-top {
+	vertical-align: top;
+}
+
+.icon-margin {
+	margin: .25em;
+}
+
+/* Helper class */
+.icon-menu {
+	height: 1.5em;
+	width: 1.5em;
+	padding: 0 0 3px 0;
+}
+
+/* -------------------------------------------------------
+ *	$MEDIA
+ * -------------------------------------------------------
+ * Experimental media queries.
+ * NOTE:
+ * When setting break points for media queries, don't set them in pixels.
+ * Use em instead.
+ * Why? Because the point of re-stacking/dropping content is to fit it all
+ * in the available space. This is dependent not just on width in pixels,
+ * but also on the user-selected text size that is set in the browser.
+ *
+ * If, for whatever reason (eyesight, pixel pitch, workstation arrangement, etc.)
+ * a user requires text 50% larger than theme default, then their screen is
+ * effectively a lot smaller than its nominal resolution would indicate.
+ * If the break points are set in em, suddenly the media queries become equally
+ * responsive for all users, without any extra code being required.
+ *
+ * Testing em break points is just as easy as testing pixels,
+ * and it will make more people happier. This is cool. :)
+ *
+ * Of course, having comments to map em to px for each query is a good idea too.
+ */
+
+/* Styles for print media. */
+@media print {
+	#headerarea {
+		display: none;
+	}
+}
+
+/* Not sure how fussy we should get here,
+ * Am currently inclined to think that just having break points that correlate
+ * to 1024, 800, 540 and 480 at standard font size is probably adequate.
+ * using 100% = 1 em ~= 16px ~= 14pt for our em sizing .. 64em*16px = 1024 etc.
+ */
+@media screen and (max-width: 90em) {
+	/*.icon-menu {
+		display: none;
+	}
+
+	.icon-menu.i-account {
+		display: inline-block;
+		width: 1.25em;
+		height: 1.25em;
+		padding-bottom: 5px;
+	}*/
+}
+
+/* This one does 1024 screens at default font size. */
+@media screen and (max-width: 64em) {
+	.topic_latest {
+		min-width: 20em;
+	}
+
+	.topic_latest.relative {
+		min-width: 15em;
+	}
+
+	.board_latest {
+		min-width: 22em;
+		width: 40%;
+	}
+
+	.lastpost_link {
+		display: block;
+	}
+
+	.board_stats, .topic_stats {
+		display: none;
+	}
+
+	.bbc_img, .elk_video {
+		max-width: 100%;
+	}
+
+	.elk_previewvideo {
+		max-width: 100%;
+	}
+
+	/*#menu_nav {
+		padding: 6px 0;
+	}*/
+
+	.new_posts, .require_approval {
+		padding: 1px 6px 2px 4px;
+		font-size: .857em;
+	}
+}
+
+/* This one does 800 screens at default font size. */
+@media screen and (max-width: 50em) {
+	/*.icon-menu {
+		display: inline-block;
+		margin: .05em;
+		padding: .35em;
+		border: .25em solid;
+		border-radius: .25em;
+		vertical-align: middle;
+		width: 2em;
+		height: 2em;
+	}
+
+	.icon-menu.i-account {
+		width: 2em;
+		height: 2em;
+	}
+
+	.i-account:before {
+		width: 2.5em;
+		height: 2.5em;
+	}
+
+	#collapse_button .linklevel1 {
+		height: 2.5em;
+		padding-top: 5px !important;
+	}
+
+	.button_title {
+		display: none;
+	}*/
+
+	/*#main_menu .linklevel1 {
+		margin-right: .1em;
+		border: 1px solid transparent;
+		box-shadow: none;
+		background: transparent;
+	}
+
+	#main_menu .linklevel1, #main_menu .linklevel1 a {
+		margin: 0;
+		padding: 0;
+	}
+
+	#main_menu .linklevel1 > .pm_indicator {
+		display: none;
+	}
+
+	#main_menu .linklevel1.active, #main_menu .linklevel1.active:hover {
+		border: 1px solid;
+	}*/
+
+	#main_menu {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	
+	.listlevel1
+	{
+		flex: 1 1 25%;
+		line-height: 3em;
+		font-size: 2.5vw;
+		max-width: 33%;
+	}
+
+	#collapse_button {
+		padding-top: 0.2em;
+	}
+
+	dd input, dd select, dd textarea {
+		max-width: 85% !important;
+		width: 85% !important;
+	}
+
+	#post_header dd select {
+		max-width: 30% !important;
+	}
+
+	dd input[type="checkbox"], dd input[type="radio"] {
+		display: inline !important;
+		width: 1.5em !important;
+	}
+
+	#logobox img {
+		max-width: 95%;
+	}
+
+	.topic_latest {
+		display: block;
+		min-width: 15em;
+	}
+
+	.board_avatar {
+		display: none;
+	}
+
+	.topic_moderation_alt {
+		display: none;
+	}
+
+	.topic_moderation {
+		float: right;
+		width: auto;
+		margin-top: -0.5em;
+	}
+
+	.board_icon {
+		height: 2em;
+		width: 2em;
+	}
+
+	.wrapper {
+		min-width: 98%;
+	}
+
+	.linktree {
+		max-width: 95%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.topic_lastpost {
+		min-width: 18em;
+	}
+
+	.topic_latest.relative .topic_lastpost {
+		min-width: 16em;
+	}
+
+	.board_row {
+		min-width: 20em;
+	}
+
+	.board_name {
+		margin-top: 7px;
+		padding: 0;
+	}
+
+	.board_lastposter {
+		display: block;
+	}
+
+	.board_lastpost, .board_latest {
+		min-width: 14em;
+	}
+
+	.board_name:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+
+	.board_info .board_description, .board_info .moderators, .childboards {
+		margin: 0 0 0 8px;
+	}
+
+	/* Playing silly buggers with a sidebar menu option for narrow screens. */
+	#main_container {
+		position: relative;
+		padding: 0 0 0 12px;
+	}
+
+	#menu_sidebar {
+		position: absolute;
+		left: -0.8em;
+		z-index: 90;
+		min-height: 500px;
+		width: 6px;
+		border: 1px solid;
+		border-radius: 4px;
+	}
+
+	#menu_sidebar ul, #menu_sidebar .category_header {
+		display: none;
+	}
+
+	#menu_sidebar:hover {
+		padding: 0.8em 1em 1em 0.6em;
+		width: 200px;
+	}
+
+	#menu_sidebar:hover ul, #menu_sidebar:hover .category_header {
+		display: block;
+	}
+
+	/* End playing silly buggers. */
+	#top_section_notice {
+		min-width: 250px;
+	}
+	#password_login select {
+		display: none;
+	}
+
+	.poster {
+		width: 7em;
+	}
+
+	.poster .poster_online {
+		display: none;
+	}
+
+	.postarea {
+		margin: 0 0 0 6em;
+	}
+
+	.poster .name {
+		padding: 0;
+	}
+
+	.avatar, .avatar.avatarresize {
+		max-width: 80px;
+	}
+
+	.poster_avatar a {
+		padding: 0;
+	}
+
+	.poster .membergroup {
+		word-wrap: break-word;
+		word-break: normal;
+	}
+
+	.quickbuttons .modified {
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+
+	#forumposts .views_text {
+		display: none;
+	}
+
+	#forumposts .nextlinks {
+		width: 100%;
+		text-align: right;
+		white-space: normal;
+	}
+
+	#search_options {
+		width: 100%;
+	}
+
+	.ignoreboards {
+		width: 100%;
+	}
+
+	.ignoreboards.floatright {
+		float: none;
+	}
+
+	/* our stats page */
+	.statistics .category_header {
+		box-sizing: border-box;
+		margin: 0;
+		width: 100%;
+	}
+
+	.stats {
+		float: none;
+		box-sizing: border-box;
+		margin: 0;
+		width: 100%;
+	}
+
+	.stats dt {
+		font-weight: bold;
+	}
+
+	#list_mentions .listaction {
+		display: none;
+	}
+
+	.mlist li div:nth-child(n+6), .mlist li .email {
+		display: none;
+	}
+
+	.mlist li div.posts {
+		display: table-cell;
+		border-right: 1px solid;
+	}
+
+	.sticky_row .topic_info:before, .locked_row .topic_info:before, .locked_row.sticky_row .topic_info:before {
+		margin-right: -18px;
+	}
+
+	.topic_starter {
+		margin-right: 18px;
+	}
+
+	#ic_recentposts, #ps_recentposts, #ps_recenttopics {
+		font-size: 1em;
+	}
+
+	#ps_recentposts .recentposter {
+		display: table-cell;
+	}
+
+	.popup_container .popup_window {
+		width: 95%;
+	}
+	.statusbar .insertoverlay .range {
+		max-width: 90%;
+	}
+	.statusbar .insertoverlay .button {
+		float: none;
+	}
+	.statusbar .insertoverlay .range,
+	.statusbar .insertoverlay .text,
+	.statusbar .insertoverlay .button {
+		margin: 1em auto;
+		display: block;
+	}
+
+	/*.listlevel1#button_profile .linklevel1 {
+		min-width: 0.5em;
+	} */
+}
+
+/* This one does 540 and smaller screens at default font size. */
+@media screen and (max-width: 33.750em) {
+	select, .input_text, .input_password {
+		max-width: 12em;
+	}
+
+	dt, dd, dd label, .login dt, #advanced_search dt {
+		display: block;
+		width: 90% !important;
+		text-align: left;
+	}
+
+	dd {
+		padding-left: 8% !important;
+	}
+
+	dd input, dd select, dd textarea {
+		max-width: 89% !important;
+		width: 89% !important;
+	}
+
+	#postAttachment2 dt {
+		width: 100% !important;
+	}
+
+	#search_options {
+		width: 100%;
+	}
+
+	#posting_icons, .table_list .stats, .table_list .lastpost, .table_grid .lastpost {
+		display: none;
+	}
+
+	#wrapper, .frame {
+		min-width: 300px;
+		width: 100%;
+		padding: 0em 1em;
+	}
+
+	.main_content_section {
+		padding: 1px 1px 16px 0;
+	}
+
+	#search_form .input_text {
+		width: 7em;
+	}
+	#collapse_button {
+		display: none;
+	}
+
+	.board_icon {
+		height: 1.5em;
+		width: 1.5em;
+	}
+
+	.post {
+		margin: 0 0 0 .25em;
+	}
+
+	.frame {
+		min-width: 100%;
+		border-radius: 0;
+	}
+
+	.topic_info {
+		display: block;
+		padding: .5em;
+		width: 95%;
+	}
+
+	.locked_row, .sticky_row, .basic_row, .topic_listing, .topic_listing > li {
+		display: block;
+	}
+
+	.sticky_row .topic_info:before, .locked_row .topic_info:before, .locked_row.sticky_row .topic_info:before {
+		margin-right: 0;
+	}
+
+	.topic_icons, .topic_moderation {
+		display: none;
+	}
+
+	.topic_latest {
+		display: block;
+		padding: 5px;
+		width: 97%;
+	}
+
+	ul.buttonlist:before {
+		display: block;
+		clear: both;
+		content: "";
+	}
+
+	.pagelinks {
+		min-width: 100%;
+		float: none;
+		/* Necessary for some browsers to keep the pages all on the same line */
+		height: 30px;
+	}
+
+	.quickbuttons {
+		white-space: nowrap;
+	}
+
+	.pagesection .buttonlist {
+		float: none;
+		width: 100%;
+	}
+
+	#whoisviewing {
+		display: none;
+	}
+
+	.pagesection .buttonlist li {
+		margin-bottom: 4px;
+		white-space: nowrap;
+	}
+
+	.topic_name, .topic_starter {
+		margin: 0;
+	}
+
+	.topic_starter {
+		margin-top: 5px;
+	}
+
+	.topic_name h4 {
+		display: block;
+		font-size: 1.357em;
+	}
+
+	.topic_name h4 a {
+		word-wrap: break-word;
+	}
+
+	#wrapper {
+		padding-right: 2px;
+		padding-left: 2px;
+	}
+
+	#gobottom, #gotop {
+		display: none;
+		padding-right: 0.25em;
+		border: 1px solid;
+	}
+
+	#gobottom {
+		border-radius: 0;
+	}
+
+	#gotop {
+		border-radius: 0 0.5em 0 0;
+	}
+
+	#gotop:hover, #gobottom:hover {
+		text-decoration: none;
+	}
+
+	#message_index_jump_to {
+		display: block;
+		float: none;
+	}
+
+	#news, #logobox, .rightheader #logobox, #top_section_notice {
+		display: none;
+	}
+
+	.avatar, .avatar.avatarresize {
+		max-width: 40px;
+		max-height: 40px;
+	}
+
+	.postarea {
+		display: block;
+		margin: 0;
+	}
+
+	.drop_area .mobile .drop_area_fileselect_text {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		width: 95%;
+		display: inline-block;
+	}
+
+	.drop_area .mobile {
+		display: inline-block;
+		width: 80%;
+		border: none;
+	}
+
+	.drop_area_fileselect {
+		height: 3.5em !important;
+	}
+
+	.drop_area .desktop {
+		display: none;
+	}
+
+	#forumposts .content {
+		padding: 5px;
+	}
+
+	#forumposts h2 img {
+		display: none;
+	}
+
+	.keyinfo h5 {
+		padding: 3px;
+	}
+	.keyinfo h5:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	h2 .views_text, h2 .nextlinks {
+		display: block;
+		float: none;
+		line-height: 1.4em;
+	}
+
+	.modified {
+		display: none;
+	}
+
+	.board_row {
+		padding: 15px 0 7px 0;
+	}
+
+	.board_info .board_description, .board_info .moderators {
+		display: none;
+	}
+
+	.childboard_row {
+		padding: 0 0 0 35px;
+	}
+
+	.childboards {
+		margin: 0 5px;
+	}
+
+	.childboards li {
+		display: block;
+		font-size: 1.2em;
+		padding: 0 4px;
+	}
+
+	.childboards li:nth-child(n+2):before {
+		content: " - ";
+	}
+
+	.board_info, .board_latest {
+		display: block;
+		box-sizing: border-box;
+		margin-bottom: 2px;
+		width: 100%;
+	}
+
+	.board_latest {
+		margin: 0 0 0 35px;
+		padding: 0 8px;
+		min-width: 90%;
+		max-width: 90%;
+		width: 90%;
+		border-left: 0;
+	}
+
+	.board_lastpost, .topic_lastpost {
+		min-width: 18em;
+	}
+
+	.board_lastpost {
+		margin: 3px;
+		padding-top: 6px;
+		border-top: 1px solid;
+	}
+
+	.board_info h3 a {
+		word-wrap: break-word;
+		font-size: 1.357em;
+	}
+
+	.board_name {
+		margin: 0;
+		padding: 0 0 1px 35px;
+	}
+
+	.board_info:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+
+	.topic_listing > li {
+		margin-bottom: 5px;
+		border: 1px solid;
+	}
+
+	.icon_anchor {
+		min-width: 0;
+	}
+
+	.lastpost_link, .board_lastposter {
+		display: inline;
+		font-size: 1.071em;
+	}
+
+	.recentboard, .recentposter {
+		display: none;
+	}
+
+	.lastpost_link, .board_lastposter, .board_lasttime {
+		white-space: normal;
+	}
+
+	#basicinfo, #detailedinfo {
+		float: none;
+		width: 100%;
+	}
+
+	.views_text, .nextlinks {
+		display: none !important;
+	}
+
+	#gotop, #gobottom {
+		top: auto;
+		bottom: 0;
+		padding: 0.2em 0.1em;
+		width: 1.2em;
+		height: 1em;
+		text-align: center;
+	}
+
+	#gotop {
+		margin-left: 1.45em;
+	}
+
+	.admin_menu li {
+		display: block;
+		float: left;
+		width: 48%;
+	}
+
+	/*#main_menu {
+		clear: left;
+	}
+
+	.listlevel2:hover .menulevel3, .listlevel2.sfhover .menulevel3 {
+		left: -4px;
+	}
+
+	.listlevel2, .listlevel3 {
+		max-width: 10em !important;
+	}*/
+
+	.menulevel2 {
+		display: none;
+	}
+
+	.menulevel3 {
+		display: none !important;
+	}
+
+	#main_menu li ul li, .admin_menu li ul li {
+		display: block;
+		float: left;
+		width: 100%;
+	}
+
+	.generalinfo {
+		overflow: auto;
+	}
+
+	ul.poster {
+		display: block;
+		clear: both;
+		text-align: center;
+	}
+
+	.poster {
+		float: none;
+		width: auto;
+	}
+
+	.poster .name {
+		text-overflow: clip;
+		white-space: nowrap;
+	}
+
+	.poster .listlevel1 {
+		float: left;
+	}
+
+	.poster li.membergroup {
+		display: none;
+	}
+
+	.poster li.avatar {
+		float: left;
+	}
+
+	.poster .subsections {
+		float: right;
+		max-width: 200px;
+		max-height: 1.5em;
+		text-align: right;
+	}
+
+	.poster .membergroup {
+		float: right;
+	}
+
+	.poster .title, .poster .poster_online, .icons img {
+		display: none;
+	}
+
+	.poster:after, .posterarea:before {
+		display: block;
+		clear: both;
+		padding-bottom: 3px;
+		content: "";
+	}
+
+	.postarea, .forumtitle {
+		padding: 2px;
+	}
+
+	.linktree .board_moderators {
+		display: none;
+	}
+
+	.signature {
+		display: none;
+	}
+
+	.forumposts .content {
+		margin-bottom: 6px;
+	}
+
+	#display_jump_to {
+		float: none;
+	}
+
+	#button_profile .avatar {
+		display: none;
+	}
+
+	.quickbuttons {
+		margin: 8px 8px 6px 3px;
+	}
+
+	#search_form {
+		float: none;
+		text-align: center;
+	}
+
+	#search_jump_to, .search_controls {
+		display: none;
+	}
+
+	.small_pagelinks, .sort_by_container {
+		display: none;
+	}
+
+	.profileblock_left, .profileblock_right {
+		float: none;
+		overflow: auto;
+		width: 100%;
+	}
+
+	.pagesection div.floatright {
+		display: block;
+		float: none;
+	}
+
+	.pm_icon, .pm_quickmod, .label_pms {
+		display: none;
+	}
+
+	.poster .menulevel2 {
+		float: right;
+	}
+
+	.poster .listlevel1:hover .menulevel2, .poster .listlevel1.sfhover .menulevel2 {
+		right: 0;
+		left: auto;
+	}
+
+	.poster .listlevel2 {
+		max-width: 8em;
+		width: 8em;
+	}
+
+	.bbc_table_container {
+		overflow: auto;
+		max-width: 100%;
+	}
+
+	.pm_from {
+		max-width: 6em;
+		text-align: left;
+		word-wrap: break-word;
+	}
+
+	#month_grid {
+		display: none;
+	}
+
+	/* mentions */
+	.mentionavatar .avatar {
+		max-width: 40px;
+		max-height: 40px;
+	}
+
+	#list_mentions thead, .mention_log_time {
+		display: none;
+	}
+
+	ul.navigate_section li:not(:first-child):not(:last-child) a {
+		display: block;
+		overflow: hidden;
+		width: 3em;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.mlist li .website, .mlist li .date_registered {
+		display: none;
+	}
+
+	.whos_online dt {
+		display: none;
+	}
+
+	.whos_online dd, .whos_online dd div {
+		display: block;
+	}
+
+	.online_member {
+		font-size: 1.6em;
+	}
+
+	.track_ip {
+		float: right;
+		font-size: 0.7em;
+	}
+
+	.track_ip:before {
+		content: "";
+	}
+
+	.track_ip:after {
+		content: "";
+	}
+
+	.forumposts {
+		margin-top: 8px;
+		border-radius: 3px;
+	}
+
+	.forum_category, .forumposts, .content_category {
+		border: none;
+	}
+
+	.stats.floatleft {
+		border: none;
+	}
+
+	/*.listlevel2.subsections .linklevel2::after {
+		content: '';
+	}
+
+	.subsections:hover .linklevel1:after {
+		content: "";
+	}*/
+
+	.whos_online dd div {
+		border-top: none !important;
+		border-bottom: none !important;
+	}
+
+	.whos_online dd:nth-child(even), .whos_online dd:nth-child(odd) {
+		margin-top: 1px;
+		border-top: 1px solid;
+	}
+}
+
+/* This one does 480px screens at default font size. */
+@media screen and (max-width: 30em) {
+	/*.icon-menu {
+		width: 1.75em;
+		height: 1.75em;
+	}
+
+	.icon-menu.i-account {
+		width: 1.75em;
+		height: 1.75em;
+	}
+
+	.i-account:before {
+		width: 2.25em;
+		height: 2.25em;
+	}*/
+
+	.content {
+		padding: 0.1em 0.1em;
+	}
+
+	.listlevel2, .listlevel3 {
+		max-width: 12em !important;
+	}
+
+	.menulevel2 {
+		max-width: 12em;
+	}
+
+	.quickbuttons .modified {
+		white-space: normal;
+	}
+
+	.mlist li .group {
+		border-right: 1px solid;
+	}
+
+	.mlist li div.posts {
+		display: none;
+	}
+
+	.shortcuts {
+		display: none;
+	}
+
+	dt, dd, dd label, .login dt, #advanced_search dt {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+	dd {
+		padding-left: 4% !important;
+	}
+	/* Override the previous for charts in the stats page */
+	.statsbar {
+		padding-left: 0 !important;
+	}
+
+	dd input, dd select, dd textarea {
+		max-width: 95% !important;
+	}
+
+	ul.post_options li {
+		width: 50%;
+	}
+
+	#postAttachment2 dd {
+		margin: 2px 1px;
+	}
+
+	#postMoreOptions, #postAttachment2 {
+		padding: 4px;
+	}
+
+	.statusbar .container {
+		position: absolute;
+		display: inline-block;
+	}
+
+	.statusbar .insertoverlay {
+		margin-left: -10em;
+	}
+
+	.statusbar .insertoverlay .container {
+		position: relative;
+	}
+	.statusbar .insertoverlay label {
+		padding-top: 0.5em;
+	}
+	.statusbar .insertoverlay .container input {
+		display: block;
+		float: none;
+	}
+
+	#confirm_buttons input[type="submit"] {
+		max-height: none;
+		height: inherit;
+		white-space: normal;
+	}
+
+	.icon.hamburger_30 {
+		padding-top: 0.1em;
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+	}
+	.icon.hamburger_30:before {
+		margin: 0.2em;
+	}
+	#display_jump_to {
+		display: inline-block;
+	}
+	.hide_30.hamburger_30_target {
+		left: -9999px;
+		position: absolute;
+	}
+	.icon.hamburger_30.visible {
+		display: none;
+	}
+	.hide_30.hamburger_30_target.visible {
+		left: auto;
+		position: relative;
+	}
+	#topic_summary .keyinfo {
+/* 		display: table-row; */
+	}
+	#topic_summary .keyinfo h5 {
+		display: table-cell;
+		width: 100%;
+		float: none;
+		font-size: 1em;
+		vertical-align: middle;
+	}
+	#topic_summary .keyinfo .quickbuttons {
+		float: none;
+		display: table-cell;
+	}
+
+	.linklevel1 {
+		white-space: normal;
+	}
+
+	#forumtitle {
+		font-size: 1.357em;
+	}
+}
+
+/* This one does 320px screens at default font size. */
+@media screen and (max-width: 20em) {
+	/*.icon-menu {
+		width: 1.55em;
+		height: 1.55em;
+	}
+
+	.icon-menu.i-account {
+		width: 1.55em;
+		height: 1.55em;
+	}
+
+	.i-account:before {
+		width: 2em;
+		height: 2em;
+	}*/
+}

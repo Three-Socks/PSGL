@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<header class="category_header">
+	{{ page.title | escape }}
+</header>
+<article class="post_wrapper blogposts">
+	{%- if page.image != null and page.image != "" -%}
+	<div class="psgl_content_image">
+		<img src="{{ page.image }}" alt="" />
+	</div>
+	{%- endif -%}
+	<div class="psgl_content">
+	{{ content }}
+	</div>
+</article>
