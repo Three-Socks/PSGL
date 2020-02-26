@@ -31,15 +31,23 @@ layout: default
 	{% endfor %}
 	</ul>
 	</nav>
-	<div class="psgl_content">
-		{%- if current_season.size > 1 -%}
-			<hr>
-			<div class="standings_header">Archives</div>
-			{% for season in current_season %}
-				{% if season.title != page.title %}
-					<div class="standings_link"><a href="{{ season.url }}">{{ season.display_name }}</a></div>
-				{% endif %}
-			{% endfor %}
-		{% endif %}
+	<div class="psgl_content_left">
+		<div class="psgl_content">
+			<hr/>
+			<img src="/assets/site-img/HallofFame-min.png" alt="" />
+		</div>
+	</div>
+	<div class="psgl_content_right">
+		<div class="psgl_content">
+			{%- if current_season.size > 1 -%}
+				<hr/>
+				<div class="standings_header">Archives</div>
+				{% for season in current_season %}
+					{% if season.title != page.title %}
+						<div class="standings_link"><a href="{{ season.url }}">{{ season.display_name }}</a></div>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</div>
 	</div>
 </article>
