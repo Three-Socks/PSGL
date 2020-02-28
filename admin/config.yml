@@ -217,6 +217,7 @@ collections:
           - { label: 'Twitter', name: 'twitter', widget: 'string' }
           - { label: 'YouTube User ID', name: 'youtube', widget: 'string' }
           - { label: 'Featured YouTube Video ID', name: 'featured_video', widget: 'string' }
+          - { label: 'F1 Hall of Fame', name: 'f1_halloffame', widget: 'image' }
 
       - name: 'menu'
         label: 'Menu'
