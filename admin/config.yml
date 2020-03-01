@@ -163,7 +163,7 @@ collections:
     label: 'Seasons'
     label_singular: 'Season'
     folder: '_seasons/'
-    summary: "{{display_name}}"
+    summary: "{{category}} | {{display_name}}"
     create: true
     editor:
       preview: false
