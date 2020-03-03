@@ -170,6 +170,9 @@ layout: default
 		});
 
 		$(".league_vbutton").click(function(event){
+			$("#all_leagues").hide();
+			history.pushState(null, "");
+
 			addVideo($(this));
 		});
 
