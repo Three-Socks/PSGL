@@ -23,6 +23,24 @@ layout: default
 		{% endfor %}
 		</ul>
 	</nav>
+
+	<nav id="latest_videos_list">
+		<div class="psgl_content">
+			<hr/>
+			<div class="standings_header">Latest</div>
+		</div>
+		<ul class="league_list">
+		{% for vid in site.data.youtube.items limit:10 %}
+			<li data-youtube="{{- vid.snippet.resourceId.videoId -}}" class="league_vbutton">
+				<img src="{{ vid.snippet.thumbnails.medium.url }}" alt="" />
+				<div class="league_vlink">
+					<a href="#">{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}</a>
+				</div>
+			</li>
+		{% endfor %}
+		</ul>
+	</nav>
+
 	{%- capture F1 -%}
 		{%- for vid in site.data.youtube.items -%}
 			{%- if vid.snippet.title contains "F1" -%}
@@ -92,11 +110,16 @@ layout: default
 	league["FP"] = [{{- FP -}}];
 
 	$(document).ready(function(){
-		$(".league_button").click(function(event){
-			event.preventDefault();
-			$("#all_leagues").hide();
+		let params = (new URL(document.location)).searchParams;
+		let l_id = params.get('league');
 
-			var league_id = $(event.target).closest( "li" ).attr('id');
+		if (l_id != null && l_id != "")
+			loadLeague(l_id);
+
+		function loadLeague(league_id)
+		{
+			$("#all_leagues").hide();
+			$("#latest_videos_list").hide();
 
 			if (league[league_id] != undefined)
 			{
@@ -108,16 +131,55 @@ layout: default
 						if (index == 0)
 							$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + value.id + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
 
-						$("#videos_list ul").append('<li data-youtube="' + value.id + '" class="league_vbutton"><img src="' + value.thumbnail + '" alt="" /><a class="league_vlink" href="#">' + value.title + '</a></li>');
-						$(".league_vbutton").click(function(event){
-							if ($(this).data("youtube") != '')
-								$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + $(this).data("youtube") + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
-						});
+						$("#videos_list ul").append('<li data-youtube="' + value.id + '" class="league_vbutton"><img src="' + value.thumbnail + '" alt="" /><div class="league_vlink"><a href="#">' + value.title + '</a></div></li>');
 					}
 				});
 
-				$("#videos_list ul").append('<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><a class="league_vlink" href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+24+%7C+' + league_id + '%22" rel="noopener" target="_blank">View More on YouTube</a></li>');
+				$(".league_vbutton").click(function(event){
+					addVideo($(this));
+				});
+
+				$("#videos_list ul").append('<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><div class="league_vlink"><a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+24+%7C+' + league_id + '%22" rel="noopener" target="_blank">View More on YouTube</a></div></li>');
 			}
+		}
+
+		function addVideo(el)
+		{
+			event.preventDefault();
+
+			if (el.data("youtube") != '')
+			{
+				$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + el.data("youtube") + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+				$("#league_video").get(0).scrollIntoView();
+			}
+		}
+
+		$(window).on('popstate', function(event) {
+			if (event.state != null && event.state.league != null)
+			{
+				loadLeague(event.state.league);
+			}
+			else
+			{
+				$("#videos_list").hide();
+				$("#all_leagues").show();
+				$("#latest_videos_list").show();
+				$("#league_video").empty();
+				$("#videos_list ul").empty();
+			}
+		});
+
+		$(".league_vbutton").click(function(event){
+			addVideo($(this));
+		});
+
+		$(".league_button").click(function(event){
+			event.preventDefault();
+
+			let l_id = $(event.target).closest( "li" ).attr('id');
+
+			history.pushState({league: l_id}, "", "?league=" + l_id);
+			loadLeague(l_id);
 		});
 	});
 </script>
