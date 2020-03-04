@@ -1,6 +1,7 @@
 ---
 layout: standings
-slug: GTS
+slug: gts
+title: Ferrari Challenge Cup
 permalink: '/gtsport/:categories/:title'
 category: gt-s1
 day: 'Friday'

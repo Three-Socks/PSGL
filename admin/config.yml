@@ -80,6 +80,7 @@ collections:
       preview: false
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
+      - { label: 'ID', name: 'slug', widget: 'string', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12019/:categories/:title'}
       - {
@@ -116,7 +117,8 @@ collections:
       preview: false
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
-      - { label: 'Title', name: 'slug', widget: 'string' }
+      - { label: 'ID', name: 'slug', widget: 'string', required: false }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12019/:categories/:title'}
       - {
           label: 'Season',

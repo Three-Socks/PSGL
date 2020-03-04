@@ -1,6 +1,7 @@
 ---
 layout: standings
-slug: FP
+slug: fp
+title: FP
 permalink: '/f12019/:categories/:title'
 category: s25
 day: Tuesday
