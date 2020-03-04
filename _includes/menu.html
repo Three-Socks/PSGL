@@ -2,7 +2,7 @@
 
 {% capture menu_list %}
 	{% for menu in site.data.navigation.menu %}
-		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.twitter}}|{{menu.youtube}}
+		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}
 		{% if forloop.index == 1 %}
 			{% for comp in competitions %}
 				{% if comp.menu_hide != true and comp.signup_url != '' and comp.signup_url != null %}
@@ -33,10 +33,14 @@
 		{%- assign menu_vals = item | split: '|' -%}
 
 		{%- assign title = menu_vals[0] | strip -%}
-		{%- assign twitter = menu_vals[4] | strip -%}
-		{%- assign youtube = menu_vals[5] | strip -%}
+		{%- assign discord = menu_vals[4] | strip -%}
+		{%- assign twitter = menu_vals[5] | strip -%}
+		{%- assign youtube = menu_vals[6] | strip -%}
 
-		{%- if twitter == 'true' -%}
+		{%- if discord == 'true' -%}
+			{%- assign url = 'https://discord.gg/' | append: site.data.settings.discord_id | strip -%}
+			{%- assign target = 'rel="noopener noreferrer" target="_blank"' -%}
+		{%- elsif twitter == 'true' -%}
 			{%- assign url = 'https://twitter.com/' | append: site.data.settings.twitter | remove:'@' | strip -%}
 			{%- assign target = 'rel="noopener noreferrer" target="_blank"' -%}
 		{% elsif youtube == 'true' %}

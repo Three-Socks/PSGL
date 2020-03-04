@@ -30,9 +30,9 @@ collections:
           name: 'category',
           widget: 'relation',
           collection: 'competitions',
-          displayFields: ['title', 'menu_title'],
-          searchFields: ['title', 'menu_title'],
-          valueField: 'title',
+          displayFields: ['slug', 'title'],
+          searchFields: ['slug', 'title'],
+          valueField: 'slug',
         }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'YouTube Video ID', name: 'youtube', widget: 'string', required: false }
@@ -49,7 +49,8 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Unique ID (no spaces)', name: 'title', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
+      - { label: 'Unique ID (no spaces)', name: 'slug', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Created Date (menu order)', name: 'date', widget: 'datetime' }
       - {
           label: 'Sign up Post',
@@ -86,9 +87,9 @@ collections:
           name: 'category',
           widget: 'relation',
           collection: 'seasons',
-          displayFields: ['title', 'display_name'],
-          searchFields: ['title', 'display_name'],
-          valueField: 'title',
+          displayFields: ['slug', 'title'],
+          searchFields: ['slug', 'title'],
+          valueField: 'slug',
         }
       - { label: 'Day', name: 'day', widget: 'string', required: false }
       - { label: 'Time', name: 'time', widget: 'string', required: false }
@@ -115,16 +116,16 @@ collections:
       preview: false
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'slug', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12019/:categories/:title'}
       - {
           label: 'Season',
           name: 'category',
           widget: 'relation',
           collection: 'seasons',
-          displayFields: ['title', 'display_name'],
-          searchFields: ['title', 'display_name'],
-          valueField: 'title',
+          displayFields: ['slug', 'title'],
+          searchFields: ['slug', 'title'],
+          valueField: 'slug',
         }
       - { label: 'Day', name: 'day', widget: 'string', required: false }
       - { label: 'Time', name: 'time', widget: 'string', required: false }
@@ -164,23 +165,23 @@ collections:
     label: 'Seasons'
     label_singular: 'Season'
     folder: '_seasons/'
-    summary: "{{category}} | {{display_name}}"
+    summary: "{{category}} | {{title}}"
     create: true
     editor:
       preview: false
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'seasons' }
-      - { label: 'Unique ID (no spaces)', name: 'title', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
-      - { label: 'Title', name: 'display_name', widget: 'string' }
+      - { label: 'Unique ID (no spaces)', name: 'slug', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'string', default: '/:categories/:title' }
       - {
           label: 'Competition',
           name: 'category',
           widget: 'relation',
           collection: 'competitions',
-          displayFields: ['title', 'menu_title'],
-          searchFields: ['title', 'menu_title'],
-          valueField: 'title',
+          displayFields: ['slug', 'title'],
+          searchFields: ['slug', 'title'],
+          valueField: 'slug',
         }
       - { label: 'Menu Title', name: 'menu_title', widget: 'string', required: false }
       - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
@@ -231,5 +232,6 @@ collections:
               - { label: 'Link', name: 'url', widget: 'string', required: false }
               - { label: 'Icon', name: 'icon', widget: 'string' }
               - { label: 'Standings', name: 'standings', widget: 'boolean', required: false }
+              - { label: 'Discord', name: 'discord', widget: 'boolean', required: false }
               - { label: 'Twitter', name: 'twitter', widget: 'boolean', required: false }
               - { label: 'YouTube', name: 'youtube', widget: 'boolean', required: false }

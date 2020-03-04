@@ -6,6 +6,11 @@ menu:
   - icon: /assets/site-img/f1-2019-w.png
     title: PSGL TV
     url: /psgltv
+  - icon: /assets/site-img/Discord-Logo-White.png
+    standings: false
+    title: Discord
+    discord: true
+    url: ''
   - icon: /assets/site-img/Twitter_Logo_Blue.png
     standings: false
     title: Twitter
