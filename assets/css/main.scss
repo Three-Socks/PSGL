@@ -168,13 +168,14 @@
 
 .league_button {
     position: relative;
-    margin: 0.1em 0.1em;
+	margin: 0.1em 0.1em;
     flex: 0 1 31%;
     text-align: center;
     font-size: 4vmax;
 	font-weight: bold;
 	background: rgb(9,19,78);
 	background-image: linear-gradient(135deg, rgba(9,19,78,1) 0%, rgba(17,38,155,1) 93%, rgba(17,39,158,1) 100%);
+	cursor: pointer;
 }
 
 .league_button img {
@@ -182,15 +183,27 @@
     width: 100%;
 }
 
-.league_link, .league_link:link, .league_link:visited {
-	display: block;
-	padding: 1em 0px;
+.league_link {
+    display: flex;
+	align-items: center;
+	padding: 25% 0;
 	color: #f3f3f3;
-	white-space: nowrap;
+}
+
+.league_link, .league_link:link, .league_link:visited {
+	color: #f3f3f3;
 }
 
 .league_link:hover {
 	text-decoration: none;
+}
+
+.league_link span {
+	flex: 1 1 100%;
+}
+
+.league_text_small {
+	font-size: 1vmax;
 }
 
 .league_date {
@@ -245,7 +258,7 @@
 	color: #f3f3f3;
 }
 
-.league_vlink:hover {
+.league_vlink a:hover {
 	text-decoration: none;
 }
 

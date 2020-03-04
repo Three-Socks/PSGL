@@ -1,11 +1,11 @@
 ---
 layout: standings
-title: GT S
+slug: GTS
 permalink: '/gtsport/:categories/:title'
 category: gt-s1
 day: 'Friday'
 time: '8pm GMT'
-drivers: ''
+drivers: '/gtsport/gt-s1/GTS/standings.png'
 constructors: ''
 graphics:
   standings: ''

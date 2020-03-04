@@ -1,6 +1,6 @@
 ---
-title: gtsport
-display_name: GT Sport
+slug: gtsport
+title: GT Sport
 date: '2020-02-17 00:00:00 +0000'
 permalink: /gtsport/sign-up
 signup_url: /gtsport/sign-up

@@ -1,10 +1,10 @@
 ---
 layout: seasons
-slug: s25
-title: Season 25
+slug: special-events
+title: Special Events
 permalink: '/:categories/:title'
 category: f12019
-menu_title: Standings
+menu_title: F1 Special Events
 menu_icon: /assets/site-img/f1-2019-w.png
-menu_hide: false
+menu_hide: true
 ---

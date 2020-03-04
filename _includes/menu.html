@@ -10,12 +10,12 @@
 				{% endif %}
 
 				{% for calendar in site.calendars %}
-					{% if calendar.category == comp.title and calendar.menu_hide != true %}
+					{% if calendar.category == comp.slug and calendar.menu_hide != true %}
 						::{{calendar.menu_title}}|{{calendar.url}}|{{calendar.menu_icon}}
 					{% endif %}
 				{% endfor %}
 				
-				{% assign current_season = site.seasons | where: "category", comp.title %}
+				{% assign current_season = site.seasons | where: "category", comp.slug %}
 				{% for season in current_season %}
 					{% if season and season.menu_hide != true %}
 						::{{season.menu_title}}|{{season.url}}|{{season.menu_icon}}

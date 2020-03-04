@@ -64,15 +64,16 @@ collections:
       - { label: 'Menu Title', name: 'menu_title', widget: 'string', required: false }
       - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
       - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
+      - { label: 'Hall of Fame', name: 'halloffame', widget: 'image' }
 
-  - name: 's24-leagues'
-    label: 'F1 Season 24 Leagues'
+  - name: 's25-leagues'
+    label: 'F1 Season 25 Leagues'
     label_singular: 'League'
     folder: '_leagues/'
     path: '/f12019/{{category}}/{{slug}}'
     media_folder: '/f12019/{{category}}/{{slug}}'
     public_folder: '/f12019/{{category}}/{{slug}}'
-    filter: { field: 'category', value: 's24' }
+    filter: { field: 'category', value: 's25' }
     create: true
     editor:
       preview: false
@@ -217,7 +218,6 @@ collections:
           - { label: 'Twitter', name: 'twitter', widget: 'string' }
           - { label: 'YouTube User ID', name: 'youtube', widget: 'string' }
           - { label: 'Featured YouTube Video ID', name: 'featured_video', widget: 'string' }
-          - { label: 'F1 Hall of Fame', name: 'f1_halloffame', widget: 'image' }
 
       - name: 'menu'
         label: 'Menu'

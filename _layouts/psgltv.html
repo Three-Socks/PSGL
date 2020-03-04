@@ -15,8 +15,8 @@ layout: default
 	<nav id="all_leagues">
 		<ul class="league_list">
 		{% for league in current_league %}
-			<li id="{{ league.title }}" class="league_button">
-				<a href="#">
+			<li id="{{ league.slug }}" class="league_button">
+				<a href="/psgltv?league={{ league.slug }}">
 					<img src="{{ league.graphics.tv }}" alt="" />
 				</a>
 			</li>

@@ -1,11 +1,11 @@
 ---
 layout: standings
-title: FP
+slug: FP
 permalink: '/f12019/:categories/:title'
 category: s25
 day: Tuesday
 time: 8pm GMT
-drivers: /f12019/s25/fp/fp_d.png
+drivers: ''
 constructors: /f12019/s25/fp/fp_c.png
 graphics:
   standings: /f12019/s24/fp/FP-Standings.png

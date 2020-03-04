@@ -2,7 +2,7 @@
 layout: default
 ---
 <header class="category_header">
-	{{ page.title | escape }} Standings
+	{{ page.title | upcase }} Standings
 </header>
 <article class="post_wrapper blogposts">
 	<div class="psgl_content">
@@ -10,6 +10,8 @@ layout: default
 	{% if page.drivers != '' and page.drivers != null %}
 		<a href="{{ page.drivers }}"><img src="{{ page.drivers }}" alt="" style="width:100%" /></a>
 		<hr>
+	{% else %}
+		<div class="standings_header">To be determined</div>
 	{% endif %}
 	{% if page.drivers_2 != '' and page.drivers_2 != null %}
 		<a href="{{ page.drivers_2 }}"><img src="{{ page.drivers_2 }}" alt="" style="width:100%" /></a>
