@@ -232,7 +232,7 @@ collections:
             fields:
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Link', name: 'url', widget: 'string', required: false }
-              - { label: 'Icon', name: 'icon', widget: 'string' }
+              - { label: 'Icon', name: 'icon', widget: 'image' }
               - { label: 'Standings', name: 'standings', widget: 'boolean', required: false }
               - { label: 'Discord', name: 'discord', widget: 'boolean', required: false }
               - { label: 'Twitter', name: 'twitter', widget: 'boolean', required: false }
