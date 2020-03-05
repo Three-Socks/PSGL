@@ -125,7 +125,8 @@ layout: default
 			{
 				$("#videos_list").show();
 
-				$.each(league[league_id], function(index, value){
+				$.each(league[league_id], function(index, value)
+				{
 					if (value.id != 0)
 					{
 						if (index == 0)
@@ -135,11 +136,12 @@ layout: default
 					}
 				});
 
-				$(".league_vbutton").click(function(event){
+				$(".league_vbutton").click(function(event)
+				{
 					addVideo($(this));
 				});
 
-				$("#videos_list ul").append('<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><div class="league_vlink"><a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+24+%7C+' + league_id + '%22" rel="noopener" target="_blank">View More on YouTube</a></div></li>');
+				$("#videos_list ul").append('<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><div class="league_vlink"><a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+25+%7C+' + league_id + '%22" rel="noopener" target="_blank">View More on YouTube</a></div></li>');
 			}
 		}
 
@@ -154,7 +156,8 @@ layout: default
 			}
 		}
 
-		$(window).on('popstate', function(event) {
+		$(window).on('popstate', function(event)
+		{
 			if (event.state != null && event.state.league != null)
 			{
 				loadLeague(event.state.league);
@@ -169,14 +172,16 @@ layout: default
 			}
 		});
 
-		$(".league_vbutton").click(function(event){
+		$(".league_vbutton").click(function(event)
+		{
 			$("#all_leagues").hide();
 			history.pushState(null, "");
 
 			addVideo($(this));
 		});
 
-		$(".league_button").click(function(event){
+		$(".league_button").click(function(event)
+		{
 			event.preventDefault();
 
 			let l_id = $(event.target).closest( "li" ).attr('id');
