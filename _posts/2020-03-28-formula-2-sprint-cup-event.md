@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Formula 2 Sprint Cup
+title: Formula 2 Sprint Cup Event
 permalink: '/:categories/:title'
-author: CcbrainF1
-category: news
+author: '@CcbrainF1'
+category: f12019-f2
 date: 2020-03-28T19:19:09.911Z
 image: /assets/site-img/euobeflxyaitbuq.jpg
 discord: true
@@ -12,7 +12,7 @@ Welcome to the first Formula 2 Sprint Cup hosted by PSGL!
 
 With the addition of the Formula 2 cars in this years game we are able to enjoy a different form of racing compared to the equal F1 cars. 
 
-This event will be split into three race days. The event will start on Wednesday (1st April) and will continue in the next week on Wednesday (8th April) and the following (15th April). The starting time on each day will be 7:30 GMT. This will allow us to host a 12-race championship, across 6 different tracks, two different tracks each week. The tracks will be decided by the drivers.
+This event will be split into three race days. The event will start on Wednesday (1st April) and will continue in the next week on Wednesday (8th April) and the following (15th April). The starting time on each day will be 7:30 GMT. This will allow us to host a 12-race championship, across 6 different tracks, two different tracks each week. The tracks will be decided by the drivers.<!--more-->
 
 To ensure close battles and to keep the races exciting not only for the viewers but also the drivers, we decided that the feature race will be 50% long and will be followed by a 25% long sprint race. The qualifying order of the feature race will be decided by an one-shot-qualification. 
 
