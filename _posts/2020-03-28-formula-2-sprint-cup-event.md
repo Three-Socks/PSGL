@@ -65,3 +65,14 @@ Pole position will award 4 points while the fastest lap if finished in the top 1
 If there is enough interest for people racing in formula 2 cars, this format could be developing into a league in the future with a bigger race distance. 
 
 As this cup is hosted by PSGL will mean that the racing will be under the rules of PSGL (#rules) and can lead to consequences in other division if there is bigger misbehaviour.
+
+**Race Information**
+
+Qualifying: One-Shot 
+Feature Race: 50% (mandatory pitstop) 
+Sprint Race: 25% 
+Damage: Reduced
+Corner cutting: Strict 
+Weather: Dynamic 
+Setups: Fixed 
+Races held on: 1st, 8th and 15th April 7:30 PM (GMT) 
