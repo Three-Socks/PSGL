@@ -69,10 +69,17 @@ As this cup is hosted by PSGL will mean that the racing will be under the rules 
 **Race Information**
 
 Qualifying: One-Shot 
+
 Feature Race: 50% (mandatory pitstop) 
+
 Sprint Race: 25% 
-Damage: Reduced
+
+Damage: Reduced 
+
 Corner cutting: Strict 
+
 Weather: Dynamic 
+
 Setups: Fixed 
+
 Races held on: 1st, 8th and 15th April 7:30 PM (GMT) 
