@@ -1,11 +1,11 @@
 ---
 layout: standings
 title: F2 Sprint Cup Event
-permalink: '/f12019/:categories/:title'
+permalink: '/f12019-f2/:categories/:title'
 category: f2-sc-2020
 day: ''
 time: ''
-drivers: '/f12019/f2-sc-2020/event/standings.jpg'
+drivers: '/f2-sc-2020/f2-sc-event/Driver_Standings_PSGL_F2_Sprint_Cup_Round_12.png'
 constructors: ''
 graphics:
   standings: ''
