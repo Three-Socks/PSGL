@@ -20,3 +20,6 @@
   to = "/admin/"
   status = 301
   force = true
+
+[build.environment]
+  TZ = "Europe/London"
