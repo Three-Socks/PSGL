@@ -200,7 +200,18 @@ collections:
         file: 'about.md'
         fields:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
-          - { label: 'Title', name: 'title', widget: 'hidden' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
+          - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - name: 'Brutal-Democracy'
+        label: 'Brutal Democracy'
+        file: 'Brutal-Democracy.md'
+        fields:
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'page' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
+          - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
           - { label: 'Body', name: 'body', widget: 'markdown' }
 
   - name: 'settings'

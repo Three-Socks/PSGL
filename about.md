@@ -1,7 +1,11 @@
 ---
 layout: page
 title: About Us
-image: /assets/site-img/header.jpg
+menu_icon: /assets/site-img/PSGL-Logo.png
+menu_hide: true
 ---
+
+{: .center}
+![](/assets/site-img/header.jpg)
 
 About us text.

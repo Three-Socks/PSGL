@@ -22,7 +22,15 @@
 					{% endif %}
 				{% endfor %}
 			{% endfor %}
-		{% endif%}
+			{% endif%}
+			{% if forloop.index == 2 %}
+			{% for page in site.pages %}
+				{% if page.title != null and page.title != 'News' and page.title != 'PSGL TV' and page.menu_hide != true %}
+					::{{page.title}}|{{page.url}}|{{page.menu_icon}}
+				{% endif %}
+			{% endfor %}
+			{% endif%}
+		
 		{% if forloop.last == false %}::{% endif%}
 	{% endfor %}
 {% endcapture %}
@@ -39,16 +47,16 @@
 
 		{%- if discord == 'true' -%}
 			{%- assign url = 'https://discord.gg/' | append: site.data.settings.discord_id | strip -%}
-			{%- assign target = 'rel="noopener noreferrer" target="_blank"' -%}
+			{%- assign target = true -%}
 		{%- elsif twitter == 'true' -%}
 			{%- assign url = 'https://twitter.com/' | append: site.data.settings.twitter | remove:'@' | strip -%}
-			{%- assign target = 'rel="noopener noreferrer" target="_blank"' -%}
+			{%- assign target = true -%}
 		{% elsif youtube == 'true' %}
 			{%- assign url = 'https://www.youtube.com/channel/' | append: site.data.settings.youtube | append: '?sub_confirmation=1' | strip -%}
-			{%- assign target = 'rel="noopener noreferrer" target="_blank"' -%}
+			{%- assign target = true -%}
 		{% else %}
 			{%- assign url = menu_vals[1] | strip -%}
-			{%- assign target = 'target="_self"'' -%}
+			{%- assign target = false -%}
 		{% endif %}
 
 		{%- assign icon = menu_vals[2] | strip -%}
@@ -68,7 +76,7 @@
 			{% assign class = class | append: ' active' %}
 		{% endif %}
 		<li class="listlevel1">
-			<a class="{{ class }}" href="{{ url }}" {{ target }}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i> <span class="button_title">{{ title }}</span></a>
+			<a class="{{ class }}" href="{{ url }}"{%- if target -%} rel="noopener noreferrer" target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i> <span class="button_title">{{ title }}{%- if target -%}&nbsp;&#8599;{% endif %}</span></a>
 		</li>
 	{% endfor %}
 	</ul>

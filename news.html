@@ -15,7 +15,13 @@ title: News
 			<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
 		</header>
 		<div class="psgl_content_inline">
-			{%- if post.author != null and post.author != "" -%} {{ post.author }} |&nbsp;{%- endif -%}
+			{%- assign is_twitter = post.author | slice: 0 -%}
+
+			{% if is_twitter contains "@" %}
+				<a href="https://twitter.com/{{ post.author }}" rel="noopener" target="_blank">{{ post.author }}</a> |&nbsp;
+			{%- else -%}
+				{{ post.author }} |&nbsp;
+			{%- endif -%}
 			
 			{{ post.date | date_to_long_string: "ordinal" }}
 		</div>
