@@ -4,7 +4,7 @@ title: "PSGL announces partnership with Brutal Democracy "
 permalink: /:categories/:title
 author: "@BigC_019"
 category: news
-date: 2020-04-18T13:45:05.411Z
+date: 2020-04-18T13:45:50.822Z
 image: /assets/site-img/img_8048.jpg
 discord: true
 ---
