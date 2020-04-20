@@ -22,14 +22,15 @@
 					{% endif %}
 				{% endfor %}
 			{% endfor %}
-			{% endif%}
-			{% if forloop.index == 2 %}
+		{% endif%}
+
+		{% if forloop.index == 2 %}
 			{% for page in site.pages %}
 				{% if page.title != null and page.title != 'News' and page.title != 'PSGL TV' and page.menu_hide != true %}
 					::{{page.title}}|{{page.url}}|{{page.menu_icon}}
 				{% endif %}
 			{% endfor %}
-			{% endif%}
+		{% endif%}
 		
 		{% if forloop.last == false %}::{% endif%}
 	{% endfor %}
