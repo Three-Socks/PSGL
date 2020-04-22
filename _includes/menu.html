@@ -4,6 +4,14 @@
 	{% for menu in site.data.navigation.menu %}
 		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}
 		{% if forloop.index == 1 %}
+			{% for page in site.pages %}
+				{% if page.title != null and page.title != 'News' and page.title != 'PSGL TV' and page.menu_hide != true %}
+					::{{page.title}}|{{page.url}}|{{page.menu_icon}}
+				{% endif %}
+			{% endfor %}
+		{% endif%}
+
+		{% if forloop.index == 1 %}
 			{% for comp in competitions %}
 				{% if comp.menu_hide != true and comp.signup_url != '' and comp.signup_url != null %}
 					::{{comp.menu_title}}|{{comp.signup_url}}|{{comp.menu_icon}}
@@ -21,14 +29,6 @@
 						::{{season.menu_title}}|{{season.url}}|{{season.menu_icon}}
 					{% endif %}
 				{% endfor %}
-			{% endfor %}
-		{% endif%}
-
-		{% if forloop.index == 2 %}
-			{% for page in site.pages %}
-				{% if page.title != null and page.title != 'News' and page.title != 'PSGL TV' and page.menu_hide != true %}
-					::{{page.title}}|{{page.url}}|{{page.menu_icon}}
-				{% endif %}
 			{% endfor %}
 		{% endif%}
 		
