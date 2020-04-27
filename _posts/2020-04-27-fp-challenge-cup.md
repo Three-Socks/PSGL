@@ -1,0 +1,13 @@
+---
+layout: post
+title: FP Challenge Cup
+permalink: '/:categories/:title'
+author: '@KRR81F1'
+category: f12019-fpcc
+date: 2020-04-27T15:00:00.911Z
+image: ''
+discord: true
+hide: true
+---
+{: .center}
+![](/assets/site-img/fpcc.jpg)![](/assets/site-img/fpcc-cal.jpg)
