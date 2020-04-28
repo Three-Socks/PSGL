@@ -6,6 +6,6 @@ permalink: /gtsport/sign-up
 signup_url: /gtsport/sign-up
 menu_title: GT Sport
 menu_icon: /assets/site-img/gt.png
-menu_hide: false
+menu_hide: true
 ---
 
