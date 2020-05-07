@@ -38,7 +38,7 @@ Round 1 - Azerbaijan (May 18) \
 Round 2 - Austria (May 25) \
 Round 3 - Canada (June 1) \
 Round 4 - China (June 8) \
-Round 5 - USA (June 15)
+Round 5 - USA (June 15) \
 Round 6 - Brazil (June 22) 
 
 **Points System**
@@ -49,7 +49,7 @@ Same points system as the PSGL-LIVID cup with all 20 positions getting points.
 2nd - 25 points \
 3rd - 22 points \
 4th - 20 points \
-5th - 18 points
+5th - 18 points \
 6th - 16 points
 7th - 14 points
 8th - 13 points
