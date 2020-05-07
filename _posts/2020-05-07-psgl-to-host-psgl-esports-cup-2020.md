@@ -45,26 +45,26 @@ Round 6 - Brazil (June 22)
 
 Same points system as the PSGL-LIVID cup with all 20 positions getting points.
 
-1st - 30 points \
-2nd - 25 points \
-3rd - 22 points \
-4th - 20 points \
-5th - 18 points \
-6th - 16 points \
+1st - 30 points  
+2nd - 25 points  
+3rd - 22 points  
+4th - 20 points  
+5th - 18 points  
+6th - 16 points  
 7th - 14 points
-8th - 13 points
-9th - 12 points
-10th - 11 points
-11th - 10 points
-12th - 9 points
-13th - 8 points
-14th - 7 points
-15th - 6 points
-16th - 5 points
-17th - 4 points
-18th - 3 points
-19th - 2 points
-20th - 1 point
+8th - 13 points  
+9th - 12 points  
+10th - 11 points  
+11th - 10 points  
+12th - 9 points  
+13th - 8 points  
+14th - 7 points  
+15th - 6 points  
+16th - 5 points  
+17th - 4 points  
+18th - 3 points  
+19th - 2 points  
+20th - 1 point  
 FL - 1 point (real life F1 rule applied)
 
 **Commentators** 
