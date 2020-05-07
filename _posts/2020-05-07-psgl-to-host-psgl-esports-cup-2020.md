@@ -51,7 +51,7 @@ Same points system as the PSGL-LIVID cup with all 20 positions getting points.
 4th - 20 points  
 5th - 18 points  
 6th - 16 points  
-7th - 14 points
+7th - 14 points  
 8th - 13 points  
 9th - 12 points  
 10th - 11 points  
