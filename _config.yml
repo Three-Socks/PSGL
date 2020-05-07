@@ -21,6 +21,11 @@ exclude:
    - vendor/ruby/
    - README.md
 
+markdown: CommonMark
+
+commonmark:
+  extensions: ["autolink", "tagfilter"]
+
 sass:
     style: compressed
 
