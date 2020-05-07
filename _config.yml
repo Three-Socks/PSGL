@@ -24,6 +24,7 @@ exclude:
 markdown: CommonMark
 
 commonmark:
+  options: ["UNSAFE"]
   extensions: ["autolink", "tagfilter"]
 
 sass:

@@ -5,8 +5,11 @@ menu_icon: /assets/site-img/bdglogo-64.png
 menu_hide: false
 ---
 
-{: .center}
+<div class="center">
+
 ![](/assets/site-img/bdgbase.png)
+
+</div>
 
 PlayStation Gaming Leagues is pleased to announce its new partnership with Esports organisation Brutal Democracy.
 

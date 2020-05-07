@@ -9,5 +9,12 @@ image: ''
 discord: true
 hide: true
 ---
-{: .center}
-![](/assets/site-img/F12019-FE.jpg)![](/assets/site-img/F12019-FE-cal.jpg)
+
+<div class="center">
+
+![](/assets/site-img/F12019-FE.jpg)
+![](/assets/site-img/F12019-FE-cal.jpg)
+![](/assets/site-img/EXVPuMqU4AEvsYV.jpg)
+
+</div>
+

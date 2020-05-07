@@ -9,5 +9,9 @@ image: ''
 discord: true
 hide: true
 ---
-{: .center}
+
+<div class="center">
+
 ![](/assets/site-img/fpcc.jpg)![](/assets/site-img/fpcc-cal.jpg)
+
+</div>
