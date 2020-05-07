@@ -19,7 +19,7 @@ collections:
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -47,7 +47,7 @@ collections:
     folder: '_competitions/'
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Unique ID (no spaces)', name: 'slug', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
       - { label: 'Title', name: 'title', widget: 'string' }
@@ -77,7 +77,7 @@ collections:
     filter: { field: 'category', value: 's25' }
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
       - { label: 'ID', name: 'slug', widget: 'string', required: false }
@@ -114,7 +114,7 @@ collections:
     public_folder: ''
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
       - { label: 'ID', name: 'slug', widget: 'string', required: false }
@@ -149,7 +149,7 @@ collections:
     media_folder: '/assets/tracks/'
     public_folder: '/assets/tracks/'
     editor:
-      preview: false
+      preview: true
     files:
       - name: 's25'
         label: 'F1 Season 25'
@@ -170,7 +170,7 @@ collections:
     summary: "{{category}} | {{title}}"
     create: true
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'seasons' }
       - { label: 'Unique ID (no spaces)', name: 'slug', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
@@ -193,7 +193,7 @@ collections:
     label: 'Pages'
     delete: false
     editor:
-      preview: false
+      preview: true
     files:
       - name: 'about'
         label: 'About Page'
@@ -218,7 +218,7 @@ collections:
     label: 'Settings'
     delete: false
     editor:
-      preview: false
+      preview: true
     files:
       - name: 'general'
         label: 'Site Settings'
