@@ -19,15 +19,15 @@ This time we will be having 10 teams involved in the event, with each team field
 
 Each team will have a maximum of four drivers available to choose from for the full duration of the event.
 
-1. Brutal Democracy Gaming\
-2. Comrade Gaming \
-3. Vortex Racing Team\
-4. Firevoid Gaming\
-5. IGK Esports Team\
-6. Team Mentalism\
-7. S2V Esports\
-8. Visceral Racing\
-9. ECDF1 ESPORTS\
+1. Brutal Democracy Gaming
+2. Comrade Gaming 
+3. Vortex Racing Team
+4. Firevoid Gaming
+5. IGK Esports Team
+6. Team Mentalism
+7. S2V Esports
+8. Visceral Racing
+9. ECDF1 ESPORTS
 10. Williams JIM ESPORTS 
 
 **Calendar & Format**
@@ -35,7 +35,7 @@ Each team will have a maximum of four drivers available to choose from for the f
 The PSGL Esports Cup 2020 will consist of a six-race championship with each race consisting of a short qualifying session & 50% race distance on a Monday night, replacing our PSGL F1 League until F1 2020 is released.
 
 Round 1 - Azerbaijan (May 18) \
-Round 2 - Austria (May 25)
+Round 2 - Austria (May 25) \
 Round 3 - Canada (June 1)
 Round 4 - China (June 8)
 Round 5 - USA (June 15)
@@ -46,7 +46,7 @@ Round 6 - Brazil (June 22)
 Same points system as the PSGL-LIVID cup with all 20 positions getting points.
 
 1st - 30 points \
-2nd - 25 points
+2nd - 25 points \
 3rd - 22 points
 4th - 20 points
 5th - 18 points
