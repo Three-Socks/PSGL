@@ -6,5 +6,5 @@ permalink: '/:categories/:title'
 category: gtsport
 menu_title: Standings
 menu_icon: /assets/site-img/gt.png
-menu_hide: false
+menu_hide: true
 ---
