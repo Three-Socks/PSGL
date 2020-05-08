@@ -11,6 +11,10 @@ a:hover, a.new_win:hover {
 	text-decoration: underline;
 }
 
+a, a:link, a:visited, a.new_win:link, a.new_win:visited {
+	color: #659CF7;
+}
+
 body {
 	font: 87.5%/150% "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
 	color: #D6D6D6;
@@ -66,4 +70,8 @@ html {
     background: #0c0d10;
     background-image: linear-gradient(to bottom,#181a1f,#0c0d10);
 	box-shadow: 2px 2px 2px #0e1015;
+}
+
+.center {
+	text-align: center;
 }
