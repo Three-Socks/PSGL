@@ -5,6 +5,7 @@ permalink: /:categories/:title
 author: "@BigC_019"
 category: news
 date: 2020-05-07T15:28:22.875Z
+image: /assets/site-img/d1ec40b2588e67f2c7887cba6222a0d1.png
 discord: true
 ---
 PlayStation Gaming Leagues is announcing it will be hosting its own Esports event - labelled the PSGL Esports Cup 2020.
