@@ -4,3 +4,6 @@ _site
 .jekyll-metadata
 vendor
 _data/youtube.json
+
+# Local Netlify folder
+.netlify
