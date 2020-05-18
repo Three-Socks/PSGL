@@ -1,4 +1,4 @@
-{% assign competitions = (site.competitions | sort: 'date') %}
+{% assign competitions = (site.competitions | sort: 'date' | reverse) %}
 
 {% capture menu_list %}
 	{% for menu in site.data.navigation.menu %}
