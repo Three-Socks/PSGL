@@ -10,6 +10,9 @@ layout: default
 	{{ current_comp.first.title }} {{ page.title | escape }} Standings
 </header>
 <article class="post_wrapper blogposts">
+	<div class="psgl_content center">
+	{{ content }}
+	</div>
 	<nav>
 	<ul class="league_list">
 	{% for league in current_league %}

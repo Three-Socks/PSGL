@@ -1,1 +1,4 @@
 f12019/s26/** filter=lfs diff=lfs merge=lfs -text
+f12019/special-events/fe-2020** filter=lfs diff=lfs merge=lfs -text
+f12019/special-events/fpcc-2020** filter=lfs diff=lfs merge=lfs -text
+f12019/special-events/esports-2020** filter=lfs diff=lfs merge=lfs -text
