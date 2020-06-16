@@ -310,6 +310,33 @@
 	text-align: center;
 }
 
+.signup {
+    clear: right;
+	overflow: auto;
+    margin: 0 auto;
+    max-width: 40em;
+	text-align: center;
+}
+
+.signup dt {
+    float: left;
+    clear: both;
+    text-align: right;
+    font-weight: bold;
+}
+
+.signup dd {
+    float: right;
+    width: 54%;
+    text-align: left;
+}
+
+.signup dt, .signup dd {
+    margin: 0 0 5px 0;
+    padding: 1px;
+    width: 44%;
+}
+
 @media screen and (max-width: 50em) {
 	.psgl_column_left {
 		width: 100% !important;
