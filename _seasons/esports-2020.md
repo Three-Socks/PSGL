@@ -9,4 +9,4 @@ menu_icon: /assets/site-img/PSGL-esports-32.png
 menu_hide: false
 ---
 
-![](/f12019/special-events/esports-2020/standings.jpg)
+![](/f12019/special-events/esports-2020/standings.png)
