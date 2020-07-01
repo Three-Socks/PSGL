@@ -12,20 +12,17 @@ The time is here for PSGL to announce its plans, details and information for Sea
 
 Full dates and more detailed information can be found on our Discord server.
 
+<!--more-->
+
 **Days & Times**
 
 Top tiers - Monday 7/8pm UK time
 
-
 Middle tiers - Sunday 7/8pm UK time
-
 
 Lower tiers - Thursday 7/8pm UK time
 
-
 Performance tier - Tuesday 8pm UK time
-
-
 
 All of our tiers will be subject to start at either 7pm or 8pm UK time. If there are multiple tiers on the same day, then there will be a split in start times unlike on F1 2020.
 
@@ -33,19 +30,11 @@ All of our tiers will be subject to start at either 7pm or 8pm UK time. If there
 
 For the first time in PSGL history, all assists will be banned in the top tier.
 
-
-
 Top tiers - No assists for F1. Line only for F2/F3 (if F3 is on Monday)
-
-
 
 Mid/Lower/Performance tiers - TC, ABS, Line, Gears allowed. All other assists banned. 
 
-
-
 **Prize pool for Season 26**
-
-
 
 In partnership with Brutal Democracy Gaming, there is a prize pool structure for the coming season which affects out top three tiers.
 
@@ -55,22 +44,17 @@ The prize structure will be as followed:
 
 **PSGL F1**
 
-
 1st - £120
 
-
 2nd - £50
-
 
 3rd - £30
 
 **PSGL F2**
 
-
 1st - £30
 
 **PSGL F3**
-
 
 1st - £20 
 
