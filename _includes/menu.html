@@ -36,6 +36,7 @@
 	{% endfor %}
 {% endcapture %}
 {% assign menu_array = menu_list | split: '::'%}
+{%- assign set_active = false -%}
 <nav id="menu_nav">
 	<ul id="main_menu" role="menubar">
 	{% for item in menu_array %}
@@ -73,8 +74,9 @@
 			{% if page.url == "/" %}
 				{% assign class = class | append: ' active' %}
 			{% endif %}
-		{% elsif url != '' and url != null and page.url contains url %}
+		{% elsif set_active != true and url != '' and url != null and page.url contains url %}
 			{% assign class = class | append: ' active' %}
+			{% assign set_active = true %}
 		{% endif %}
 		<li class="listlevel1">
 			<a class="{{ class }}" href="{{ url }}"{%- if target -%} rel="noopener noreferrer" target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i> <span class="button_title">{{ title }}{%- if target -%}&nbsp;&#8599;{% endif %}</span></a>
