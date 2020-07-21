@@ -43,76 +43,17 @@ layout: default
 		</ul>
 	</nav>
 
-	{% comment %}
-	{%- capture F1 -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "F1" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-	
-	{%- capture F2 -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "F2" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-
-	{%- capture F3 -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "F3" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-
-	{%- capture F4 -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "F4" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-
-	{%- capture F5 -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "F5" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-
-	{%- capture F6 -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "F6" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-
-	{%- capture FP -%}
-		{%- for vid in site.data.youtube.items -%}
-			{%- if vid.snippet.title contains "FP" -%}
-				{thumbnail: "{{ vid.snippet.thumbnails.medium.url }}", title: "{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}", id: "{{- vid.snippet.resourceId.videoId -}}"},
-			{%- endif -%}
-		{%- endfor -%}
-	{%- endcapture -%}
-	{% endcomment %}
-
 </article>
 
-{% comment %}
 <script>
 	var league = [];
-	league["f1"] = [{{- F1 -}}];
-	league["f2"] = [{{- F2 -}}];
-	league["f3"] = [{{- F3 -}}];
-	league["f4"] = [{{- F4 -}}];
-	league["f5"] = [{{- F5 -}}];
-	league["f6"] = [{{- F6 -}}];
-	league["fp"] = [{{- FP -}}];
+	league["f1"] = [];
+	league["f2"] = [];
+	league["f3"] = [];
+	league["f4"] = [];
+	league["f5"] = [];
+	league["f6"] = [];
+	league["fp"] = [];
 
 	$(document).ready(function(){
 		let params = (new URL(document.location)).searchParams;
@@ -196,4 +137,3 @@ layout: default
 		});
 	});
 </script>
-{% endcomment %}
