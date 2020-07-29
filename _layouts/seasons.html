@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign current_comp = site.competitions | where: "slug", page.category %}
-{% assign current_league = site.leagues | where: "category", page.slug %}
+{% assign current_league = site.leagues | where: "category", page.slug | sort: "slug" %}
 {% assign current_season = site.seasons | where: "category", page.category %}
 
 <header class="category_header">
