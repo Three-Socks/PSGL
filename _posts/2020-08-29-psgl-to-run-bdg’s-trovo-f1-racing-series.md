@@ -3,12 +3,14 @@ layout: post
 title: PSGL to run BDG’s Trovo F1 Racing Series
 permalink: /:categories/:title
 author: "@BigC_019"
-category: f1
+category: news
 date: 2020-08-29T12:10:37.816Z
 image: /assets/site-img/bdg-event-trovo-f1-racing-series-announcement-4.png
 discord: true
 ---
 PSGL is pleased to announce it will be hosting Brutal Democracy Gaming’s inaugural Trovo F1 Racing Series which is set to get underway on September 30.
+
+<!--more-->
 
 Following the success of the PSGL Esports Cup, PSGL, BDG and Trovo have come together to put on a bigger and better event.
 
@@ -17,7 +19,6 @@ Full details can be found on our Discord.
 **Key details**
 
 * BigC / Connor & CRG_Demon / Ben are the admins for the event
-
 * £500 prize pool - distributed among the top five finishing esports organisations.
 * 10-race calendar starting on September 30 - ending on January 20.
   Wednesdays at 8pm BST / UK time
@@ -27,14 +28,8 @@ Full details can be found on our Discord.
 **Participating organisations** 
 
 1. Brutal Democracy Gaming (BDG) 
-
-
 2. Visceral Esports (VSR) 
-
-
 3. S2V Esports (S2V)
-
-
 4. Comrade Gaming (CRG)
 
 The remaining six spots will be filled by the fastest six teams / organisations through the qualification process.
@@ -53,17 +48,13 @@ Two short qualifying sessions where teams field two drivers each and the four ti
 
 ![](/assets/site-img/trsf1-calendar-option-1.png)
 
-
 **How do I sign my team / organisation up?**
 
 Go to the PSGL discord - https://discord.gg/BhQ6Una
 
-
 Head over to our ‘sign-up here’ 
 
-
 Follow the instructions…
-
 
 Once signed up successfully you will be given access to the main TRSF1 section.
 
