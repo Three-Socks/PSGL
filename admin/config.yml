@@ -45,6 +45,7 @@ collections:
     label: 'Competitions'
     label_singular: 'Competition'
     folder: '_competitions/'
+    summary: "{{slug}} | {{menu_title}}"
     create: true
     editor:
       preview: false
@@ -178,7 +179,7 @@ collections:
     fields:
       - { label: 'Layout', name: 'layout', widget: 'string', default: 'post' }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Permalink', name: 'permalink', widget: 'string', default: '/:title' }
+      - { label: 'Permalink', name: 'permalink', widget: 'string', default: '/:title', required: false }
       - { label: 'Menu Title', name: 'menu_title', widget: 'string' }
       - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }
       - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
