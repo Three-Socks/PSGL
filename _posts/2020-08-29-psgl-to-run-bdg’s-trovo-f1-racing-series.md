@@ -4,7 +4,7 @@ title: PSGL to run BDG’s Trovo F1 Racing Series
 permalink: /:categories/:title
 author: "@BigC_019"
 category: news
-date: 2020-08-31T12:10:00.000Z
+date: 2020-08-31T12:37:34.054Z
 image: /assets/site-img/bdg-event-trovo-f1-racing-series-announcement-4.png
 discord: true
 ---
