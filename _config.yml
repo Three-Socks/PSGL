@@ -33,7 +33,7 @@ sass:
 permalink: /:categories/:title
 
 collections:
-  calendars:
+  custom_pages:
     output: true
   seasons:
     output: true

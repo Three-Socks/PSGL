@@ -1,12 +1,13 @@
+{% assign custom_pages = (site.custom_pages | sort: 'menu_order') %}
 {% assign competitions = (site.competitions | sort: 'date' | reverse) %}
 
 {% capture menu_list %}
 	{% for menu in site.data.navigation.menu %}
 		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}
 		{% if forloop.index == 1 %}
-			{% for page in site.pages %}
-				{% if page.title != null and page.title != 'News' and page.title != 'PSGL TV' and page.menu_hide != true %}
-					::{{page.title}}|{{page.url}}|{{page.menu_icon}}
+			{% for page in custom_pages %}
+				{% if page.title != null and page.title != 'PSGL TV' and page.menu_hide != true %}
+					::{{page.menu_title}}|{{page.url}}|{{page.menu_icon}}
 				{% endif %}
 			{% endfor %}
 		{% endif%}
