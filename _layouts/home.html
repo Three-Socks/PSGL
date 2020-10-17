@@ -2,18 +2,25 @@
 layout: default
 ---
 
-{% comment %}
 <header class="category_header">
-	PSGL Esports Cup
+	24 Hour Stream in Support of Cancer Research
 </header>
-{% endcomment %}
 <article class="post_wrapper blogposts" style="margin-bottom: 20px;padding: 0;">
-	
-	{% comment %}
+
 	<div class="embed-container">
-		<iframe src="https://www.youtube-nocookie.com/embed/saAEwq6Jv_E?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<!-- Add a placeholder for the Twitch embed -->
+		<div id="twitch-embed"></div>
+
+		<!-- Load the Twitch embed script -->
+		<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+		<!-- Create a Twitch.Player object. This will render within the placeholder div -->
+		<script type="text/javascript">
+		new Twitch.Player("twitch-embed", {
+		channel: "cticedemon20"
+		});
+		</script>
 	</div>
-	{% endcomment %}
 
 	<div class="psgl_content" style="padding: 50px;">
 		<img src="{{ site.data.settings.home }}" alt="" />
@@ -39,12 +46,12 @@ layout: default
 			{%- else -%}
 				{{ post.author }} |&nbsp;
 			{%- endif -%}
-			
+
 			{{ post.date | date_to_long_string: "ordinal" }}
 		</div>
 		<div class="psgl_content">
 		{{ post.excerpt }}
-		
+
 		{% if post.content contains site.excerpt_separator %}
 		  <p><a href="{{ post.url | relative_url }}">Read More</a></p>
 		{% endif %}
