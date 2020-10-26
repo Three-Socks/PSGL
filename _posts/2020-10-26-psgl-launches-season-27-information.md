@@ -19,8 +19,14 @@ Full dates and more detailed information can be found on our Discord server.
 Sign up depending, the league structure will mostly stay the same as Season 26:
 
 Top tiers (assists restrictions) - Monday
+
+
 Middle tiers - Sunday
+
+
 Lowest tiers - Thursday
+
+
 Performance tier - Tuesday
 
 **Maximum number of tiers**
@@ -47,13 +53,9 @@ PSGL F1
 
 1st - £180
 
-
 2nd - £80
 
-
 3rd - £40 
-
-
 
 **PSGL F2**
 
