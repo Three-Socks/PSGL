@@ -20,12 +20,9 @@ Sign up depending, the league structure will mostly stay the same as Season 26:
 
 Top tiers (assists restrictions) - Monday
 
-
 Middle tiers - Sunday
 
-
 Lowest tiers - Thursday
-
 
 Performance tier - Tuesday
 
@@ -51,12 +48,44 @@ The prize structure will be as followed:
 
 PSGL F1
 
-1st - £180
+1st - £160
 
 2nd - £80
 
-3rd - £40 
+3rd - £60
 
 **PSGL F2**
 
 1st - £50
+
+**Other platforms?**
+
+There has been a lot of requests and interest in PSGL potentially doing an XB1 or PC tier.
+
+In the immediate future, we are looking at potentially doing an XB1 tier - however there is nothing confirmed or certain at this stage.
+
+**How do I sign up?**
+
+How do I sign up?
+
+**When can I sign up? The PSGL DISCORD**
+
+There will be several windows to when you can sign up:
+
+If you raced in S26 F1, F2, F3 and F4 then you can sign up from October 26
+
+If you raced in S26 F5, F6, F7 and F8 then you can sign up from October 28
+
+If you raced in S26 F9, F10, F11 then you can sign up from October 30
+
+If you're new or returning to PSGL then you can sign up from November 1
+
+**Do I need to complete an evaluation race?**
+
+If you participated in two or more races in PSGL S26 then you will not need to do an evaluation race.
+
+If you're new or returning to PSGL then you will have to complete an evaluation race.
+
+*There will be no TT event.* 
+
+*Evaluation race information will be released at a later date*
