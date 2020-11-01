@@ -5,7 +5,7 @@ permalink: /:categories/:title
 author: "@BigC_019"
 category: news
 date: 2020-10-26T20:16:30.793Z
-image: /assets/site-img/a505728d605b7b1844322be901bc7a0d.png
+image: /assets/site-img/psgl-s27-calendar.jpg
 discord: true
 ---
 The time is here for PSGL to announce its plans, details and information for Season 27, which begins with FP on December 1
