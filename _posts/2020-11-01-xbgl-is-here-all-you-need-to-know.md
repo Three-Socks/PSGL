@@ -10,6 +10,8 @@ discord: true
 ---
 The time is here for PSGL to announce its plans, details and information for its new XB1 league - XBGL.
 
+<!--more-->
+
 **League structure**
 
 Our XB1 league will take place on Thursdays at 8pm GMT
