@@ -23,7 +23,9 @@ Brutal Democracy Gaming is a professional Esports organisation specialising in c
 
 Main Website: [https://www.brutaldemocracy.com/](https://www.brutaldemocracy.com/ "https\://www.brutaldemocracy.com/")
 
-Twitter: [https://twitter.com/BDG_Esports](https://twitter.com/BDG_Esports "https\://twitter.com/BDG_Esports")
+Twitter: [https://twitter.com/BDGesports](https://twitter.com/BDGesports "https\://twitter.com/BDGesports")
+
+Trovo: [https://trovo.live/BrutalDemocracy](https://trovo.live/BrutalDemocracy "https\://trovo.live/BrutalDemocracy")
 
 Twitch: [https://www.twitch.tv/onebrutalforce](https://www.twitch.tv/onebrutalforce "https\://www.twitch.tv/onebrutalforce")
 
