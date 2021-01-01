@@ -12,6 +12,8 @@ Firstly, a happy new year to everyone!\
 \
 We're pleased to announce the new year brings about changes for PSGL.
 
+<!--more-->
+
 **Name change**
 
 From January 1 2021, PSGL will now be known as Premier Sim Gaming Leagues.
