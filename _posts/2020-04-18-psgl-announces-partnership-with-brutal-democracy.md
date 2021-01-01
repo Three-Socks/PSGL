@@ -8,7 +8,13 @@ date: 2020-04-18T13:45:50.822Z
 image: /assets/site-img/img_8048.jpg
 discord: true
 ---
+**Update**
+Statement: PSGL ends BDG Esports partnership with immediate effect
+
+Read: https://www.twitlonger.com/show/n_1srguc3
+
 PlayStation Gaming Leagues is pleased to announce its new partnership with Esports organisation Brutal Democracy.
+<hr>
 
 <!--more-->
 
