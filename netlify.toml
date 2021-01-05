@@ -21,5 +21,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://playstationgl.com/*"
+  to = "https://www.premiersimgl.com/:splat"
+  status = 301
+  force = true
+
 [build.environment]
   TZ = "Europe/London"
