@@ -13,4 +13,19 @@ layout: default
 	<div class="psgl_content">
 	{{ content }}
 	</div>
+
+	{%- if page.discord -%}
+	<script src="/assets/js/discordInvite.js"></script>
+	<script>
+		$(document).ready(function(){
+			discordInvite.init({
+			inviteCode: 's9TzzCb',
+			title: 'The PSGL Discord',
+			hideIntro: true,
+			});
+			discordInvite.render();
+		});
+	</script>
+	<div id="discordInviteBox"></div>
+{%- endif -%}
 </article>
