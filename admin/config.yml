@@ -69,14 +69,14 @@ collections:
       - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
       - { label: 'Hall of Fame', name: 'halloffame', widget: 'image', required: false }
 
-  - name: 's26-leagues'
-    label: 'F1 Season 26 Leagues'
+  - name: 's29-leagues'
+    label: 'F1 Season 29 Leagues'
     label_singular: 'League'
     folder: '_leagues/'
-    path: '/f12020/{{category}}/{{slug}}'
-    media_folder: '/f12020/{{category}}/{{slug}}'
-    public_folder: '/f12020/{{category}}/{{slug}}'
-    filter: { field: 'category', value: 's26' }
+    path: '/f12021/{{category}}/{{slug}}'
+    media_folder: '/f12021/{{category}}/{{slug}}'
+    public_folder: '/f12021/{{category}}/{{slug}}'
+    filter: { field: 'category', value: 's29' }
     create: true
     editor:
       preview: true
@@ -84,7 +84,7 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
       - { label: 'ID', name: 'slug', widget: 'string', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12020/:categories/:title'}
+      - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12021/:categories/:title'}
       - {
           label: 'Season',
           name: 'category',

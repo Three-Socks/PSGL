@@ -40,5 +40,4 @@ collections:
   leagues:
     output: true
   competitions:
-  tracks:
   settings:
