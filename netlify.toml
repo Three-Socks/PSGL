@@ -16,12 +16,6 @@
   status = 301
 
 [[redirects]]
-  from = "/admin"
-  to = "/admin/"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "https://playstationgl.com/*"
   to = "https://www.premiersimgl.com/:splat"
   status = 301
