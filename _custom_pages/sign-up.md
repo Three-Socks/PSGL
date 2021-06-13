@@ -1,11 +1,11 @@
 ---
 layout: page
-title: F1 2020 Season 28 Sign-up
+title: F1 2020 Season 29 Sign-up
 permalink: '/f12020/sign-up/'
-image: /assets/site-img/psgl-s28-calendar.jpg
-menu_title: F1 2020 Sign-up
-menu_icon: /assets/site-img/f1-2020.png
-menu_hide: false
+image: /assets/site-img/news-standardedition-featuredimage-1280.png
+menu_title: F1 2021 Sign-up
+menu_icon: /assets/site-img/f1-48x48.png
+menu_hide: true
 menu_order: 4
 discord: true
 ---
