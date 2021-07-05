@@ -9,9 +9,9 @@ menu_order: 1
 
 {%- if site.posts.size > 0 -%}
 <header class="category_header">
-	Latest News
+	All News
 </header>
-{%- for post in site.posts limit:8 -%}
+{%- for post in site.posts limit:32 -%}
 {%- unless post.hide -%}
 <article class="post_wrapper blogposts">
 	<div class="psgl_content_left">
@@ -26,12 +26,12 @@ menu_order: 1
 			{%- else -%}
 				{{ post.author }} |&nbsp;
 			{%- endif -%}
-			
+
 			{{ post.date | date_to_long_string: "ordinal" }}
 		</div>
 		<div class="psgl_content">
 		{{ post.excerpt }}
-		
+
 		{% if post.content contains site.excerpt_separator %}
 		  <p><a href="{{ post.url | relative_url }}">Read More</a></p>
 		{% endif %}
