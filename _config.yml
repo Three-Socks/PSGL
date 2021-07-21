@@ -1,5 +1,5 @@
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://premiersimgl.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://premiersimgl.com" # the base hostname & protocol for your site, e.g. http://example.com
 excerpt_separator: <!--more-->
 timezone: Europe/London
 
