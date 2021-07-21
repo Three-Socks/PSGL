@@ -25,10 +25,10 @@ Full details can be found on our Discord.
 * 10 teams x 2 drivers with each team having a five-man roster.
   Qualification event to determine six of the 10 organisations.
 
-**Participating organisations** 
+**Participating organisations**
 
-1. Brutal Democracy Gaming (BDG) 
-2. Visceral Esports (VSR) 
+1. Brutal Democracy Gaming (BDG)
+2. Visceral Esports (VSR)
 3. S2V Esports (S2V)
 4. Comrade Gaming (CRG)
 
@@ -50,14 +50,14 @@ Two short qualifying sessions where teams field two drivers each and the four ti
 
 **How do I sign my team / organisation up?**
 
-Go to the PSGL discord - https://discord.gg/BhQ6Una
+Go to the PSGL discord - {{ site.url }}/discord
 
-Head over to our ‘sign-up here’ 
+Head over to our ‘sign-up here’
 
 Follow the instructions…
 
 Once signed up successfully you will be given access to the main TRSF1 section.
 
-**Full information dossier** 
+**Full information dossier**
 
 <https://docs.google.com/document/d/1cHD02fJeKArk2gemhsI6oJNOmmwzoALMrYiaBPF6RIw/edit?usp=sharing>

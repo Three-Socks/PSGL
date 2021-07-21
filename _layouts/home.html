@@ -61,7 +61,7 @@ layout: default
 	</div>
 	<div class="psgl_content_right">
 		{%- if post.image != null and post.image != "" -%}
-		<a href="{{ post.url | relative_url }}"><img src="{{ post.image }}" alt="" /></a>
+		<a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"><img src="{{ post.image }}" alt="" /></a>
 		{%- endif -%}
 	</div>
 </article>
@@ -71,13 +71,13 @@ layout: default
 
 <section id="psgl_home_grid">
 	<div class="psgl_home">
-		<a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}?sub_confirmation=1" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-YouTube.png" alt="" /></a>
+		<a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}?sub_confirmation=1" title="Subscribe to our YouTube channel" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-YouTube.png" alt="" /></a>
 		<div class="embed-container">
-			<iframe src="https://www.youtube-nocookie.com/embed/{{ site.data.settings.featured_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe title="Featured Video" src="https://www.youtube-nocookie.com/embed/{{ site.data.settings.featured_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</div>
 	<div class="psgl_home">
-		<a href="https://discord.gg/{{ site.data.settings.discord_id }}" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord.png" alt="" /></a>
-		<a href="https://discord.gg/{{ site.data.settings.discord_id }}" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord-Block.png" alt="" /></a>
+		<a href="{{ site.url }}/discord" title="Join our Discord" rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord.png" alt="" /></a>
+		<a href="{{ site.url }}/discord" title="Join our Discord"  rel="noopener" target="_blank"><img src="/assets/site-img/PSGL-Home-Discord-Block.png" alt="" /></a>
 	</div>
 </section>

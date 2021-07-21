@@ -1,6 +1,5 @@
 menu:
-  - icon: >-
-      data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHN0cm9rZT0nJTIzMjIyMjIyJyBzdHJva2Utd2lkdGg9Jy4wN2VtJyBmaWxsPSd3aGl0ZScgdmlld0JveD0nMCAwIDMyIDMyJz48cGF0aCBkPSdNMzIgMTguNDVMMTYgNi4wMyAwIDE4LjQ1di01LjA2M0wxNiAuOTY3bDE2IDEyLjQyek0yOCAxOHYxMmgtOHYtOGgtOHY4SDRWMThsMTItOXonLz48L3N2Zz4=
+  - icon: /assets/site-img/PSGL-Logo.png
     title: Home
     url: /
   - icon: /assets/site-img/f1-48x48.png

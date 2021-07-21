@@ -23,7 +23,7 @@
 						::{{calendar.menu_title}}|{{calendar.url}}|{{calendar.menu_icon}}
 					{% endif %}
 				{% endfor %}
-				
+
 				{% assign current_season = site.seasons | where: "category", comp.slug %}
 				{% for season in current_season %}
 					{% if season and season.menu_hide != true %}
@@ -32,7 +32,7 @@
 				{% endfor %}
 			{% endfor %}
 		{% endif%}
-		
+
 		{% if forloop.last == false %}::{% endif%}
 	{% endfor %}
 {% endcapture %}
@@ -49,7 +49,7 @@
 		{%- assign youtube = menu_vals[6] | strip -%}
 
 		{%- if discord == 'true' -%}
-			{%- assign url = 'https://discord.gg/' | append: site.data.settings.discord_id | strip -%}
+			{%- assign url = site.url | append: '/discord' | strip -%}
 			{%- assign target = true -%}
 		{%- elsif twitter == 'true' -%}
 			{%- assign url = 'https://twitter.com/' | append: site.data.settings.twitter | remove:'@' | strip -%}
