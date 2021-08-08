@@ -15,7 +15,7 @@ discord: true
 
 </div>
 
-**How do I sign up?**
+**Sign-up for PlayStation and PC**
 
 The PSGL Discord - Full dates and more detailed information can be found on our Discord.
 

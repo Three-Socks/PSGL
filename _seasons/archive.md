@@ -1,10 +1,10 @@
 ---
-layout: seasons
-slug: s29
-title: Season 29
+layout: season_archive
+slug: standings
+title: Standings Archive
 permalink: '/:categories/:title'
 category: f1
 menu_title: Standings
 menu_icon: /assets/site-img/f1-48x48.png
-menu_hide: true
+menu_hide: false
 ---

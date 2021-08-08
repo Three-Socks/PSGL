@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% assign current_comp = site.competitions | where: "slug", page.category %}
+{% assign current_league = site.leagues | where: "category", page.slug | sort: "slug" %}
+{% assign current_season = site.seasons | where: "category", page.category %}
+
+<header class="category_header">
+	{{ current_comp.first.title }} {{ page.title | escape }}
+</header>
+<article class="post_wrapper blogposts">
+	{%- if current_season.size > 1 -%}
+	<div class="psgl_content_left">
+		<div class="psgl_content">
+			<hr/>
+			<div class="standings_header">Archives</div>
+			{% for season in current_season %}
+				{% if season.title != page.title %}
+					<div class="standings_link"><a href="{{ season.url }}">{{ season.title }}</a></div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{%- if current_comp.first.halloffame != null and current_comp.first.halloffame != "" -%}
+	<div class="psgl_content_right">
+		<div class="psgl_content">
+			<hr/>
+			<a href="{{ current_comp.first.halloffame }}"><img src="{{ current_comp.first.halloffame }}" alt="" /></a><br />
+			<a href="{{ current_comp.first.halloffame }}"><span>Full Size</span></a>
+		</div>
+	</div>
+	{% endif %}
+</article>
