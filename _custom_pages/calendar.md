@@ -1,7 +1,7 @@
 ---
 layout: page
 title: F1 2021 Season 29 Calendar
-permalink: '/f12020/calendar/'
+permalink: '/f12021/calendar/'
 menu_title: Calendar
 menu_icon: /assets/site-img/f1-48x48.png
 menu_hide: false
