@@ -13,7 +13,6 @@ layout: default
 	{%- if current_season.size > 1 -%}
 	<div class="psgl_content_left">
 		<div class="psgl_content">
-			<hr/>
 			<div class="standings_header">Archives</div>
 			{% for season in current_season %}
 				{% if season.title != page.title %}
@@ -26,7 +25,6 @@ layout: default
 	{%- if current_comp.first.halloffame != null and current_comp.first.halloffame != "" -%}
 	<div class="psgl_content_right">
 		<div class="psgl_content">
-			<hr/>
 			<a href="{{ current_comp.first.halloffame }}"><img src="{{ current_comp.first.halloffame }}" alt="" /></a><br />
 			<a href="{{ current_comp.first.halloffame }}"><span>Full Size</span></a>
 		</div>
