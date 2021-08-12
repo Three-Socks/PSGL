@@ -1,6 +1,6 @@
 ---
 layout: page
-title: F1 2020 Season 29 Calendar
+title: F1 2021 Season 29 Calendar
 permalink: '/f12020/calendar/'
 menu_title: Calendar
 menu_icon: /assets/site-img/f1-48x48.png
