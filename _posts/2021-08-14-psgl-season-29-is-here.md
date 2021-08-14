@@ -2,7 +2,7 @@
 layout: post
 title: PSGL Season 29 is here!
 permalink: /:categories/:title
-author: BigC_019
+author: "@BigC_019"
 category: news
 date: 2021-08-14T16:58:48.558Z
 image: /assets/site-img/line-up-all.png
