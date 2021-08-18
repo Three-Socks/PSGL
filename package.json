@@ -1,0 +1,15 @@
+{
+	"private": true,
+	"name": "psgl-functions",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Three-Socks",
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^7.32.0",
+		"pg": "^8.7.1"
+	},
+	"volta": {
+		"node": "14.17.5"
+	}
+}

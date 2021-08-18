@@ -7,3 +7,6 @@ _data/youtube.json
 
 # Local Netlify folder
 .netlify
+
+node_modules/
+.env
