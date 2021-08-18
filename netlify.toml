@@ -11,6 +11,12 @@
     Referrer-Policy= "no-referrer-when-downgrade"
 
 [[redirects]]
+  from = "https://mx.premiersimgl.com/*"
+  to = "https://api.mixpanel.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/assets/js/mx-2-latest.min.js"
   to = "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
   status = 200
