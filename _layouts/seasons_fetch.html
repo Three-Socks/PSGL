@@ -72,7 +72,6 @@ layout: default
 		function getDiscordDate(url)
 		{
 			const URLObj = new URL(url);
-				console.log(URLObj);
 
 				if (URLObj)
 				{
@@ -107,12 +106,12 @@ layout: default
 
 				let standings_view_html = '';
 
-				if (league.data?.drivers && league.data?.drivers !== '')
+				if (league.data && league.data.drivers && league.data.drivers !== '')
 					standings_view_html += `<a href="${league.data.drivers}"><img src="${league.data.drivers}" alt="" style="width:100%" /></a>
 					<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.drivers)}</div>
 					<hr>`;
 
-				if (league.data?.constructors && league.data?.constructors !== '')
+				if (league.data && league.data.constructors && league.data.constructors !== '')
 					standings_view_html += `<a href="${league.data.constructors}"><img src="${league.data.constructors}" alt="" style="width:100%" /></a>
 					<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.constructors)}</div>
 					<hr>`;
