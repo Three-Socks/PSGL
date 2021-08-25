@@ -11,7 +11,8 @@ exports.handler = async () => {
 	try
 	{
 		const standings_result = await pool.query({
-			text: 'SELECT * FROM standings ORDER BY NULLIF(regexp_replace(name, \'\\D\', \'\', \'g\'), \'\')::int'
+			text: `SELECT * FROM standings ORDER BY substring(name, '\\D+'),
+			substring(name, '\\d+')::int NULLS FIRST`
 		});
 
 		if (!standings_result.rowCount)
