@@ -55,7 +55,7 @@ layout: default
 			<div class="standings_header">Archives</div>
 			{% for season in current_season %}
 				{% if season.title != page.title %}
-					<div class="standings_link"><a href="{{ season.url }}">{{ season.title }}</a></div>
+					<div class="standings_link"><a href="{{ season.url }}">{{ season.title | replace: " Standings" }}</a></div>
 				{% endif %}
 			{% endfor %}
 		</div>
