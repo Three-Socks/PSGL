@@ -67,26 +67,26 @@ layout: default
 				return '';
 		}
 
-		const DISCORD_EPOCH = 1420070400000
+		const DISCORD_EPOCH = 1420070400000;
 		function convertSnowflakeToDate(snowflake, epoch = DISCORD_EPOCH)
 		{
-			return new Date(snowflake / 4194304 + epoch)
+			return new Date(snowflake / 4194304 + epoch);
 		}
 
 		function getDiscordDate(url)
 		{
 			const URLObj = new URL(url);
 
-				if (URLObj)
-				{
-					const path_split = URLObj.pathname.split('/');
+			if (URLObj)
+			{
+				const path_split = URLObj.pathname.split('/');
 
-					if (path_split)
-					{
-						const date = convertSnowflakeToDate(path_split[path_split.length - 2]);
-						return date.toDateString();
-					}
+				if (path_split)
+				{
+					const date = convertSnowflakeToDate(path_split[path_split.length - 2]);
+					return date.toDateString();
 				}
+			}
 
 			return '';
 		}
