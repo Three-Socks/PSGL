@@ -3,7 +3,7 @@ layout: post
 title: PSGL Season 30 - Details
 permalink: /:categories/:title
 author: "@BigC_019"
-category: f1
+category: news
 date: 2021-12-14T17:47:39.000Z
 discord: true
 ---
