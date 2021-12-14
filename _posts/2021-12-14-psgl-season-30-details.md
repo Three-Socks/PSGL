@@ -9,20 +9,22 @@ discord: true
 ---
 With Season 29 only ending yesterday, our attention is quickly turning to Season 30. Due to Christmas and New Year on the horizon, work has started earlier than ever to bring you our milestone campaign. 
 
+<!--more-->
+
 S29 was a record-breaking campaign with Jarno Opmeer securing his third PSGL drivers’ championship, while Mercedes stormed to another constructors’ championship. 
 
 We’re excited to be heading into a second and final season on this game with PC being at the forefront of our attention while continuing to cater for our PS side, the upcoming stars and more casual players. 
 
-## **Key details for Season 30** 
+## **Key details for Season 30**
 
 * The season will be 15 races long, with it expected to start on January 12-17
-*  The calendar will include: Monaco, Singapore, Portugal, Imola and Saudi Arabia
-*  The full calendar and dates will be confirmed in due course but it will consist of a couple of break weeks as usual
-*  The calendar will not include: Australia and Abu Dhabi due to fundamental differences between real life and the game. 
-*  PC leagues will take place on Wednesday (F2 and below); Thursday (F1* TBC due to Challengers)
-*  PS leagues will take place on Mondays, Thursdays and Sundays
-*  We aim to have a maximum of 5 tiers on PC; 13 on PS
-*  Increased video content through YouTube & Twitter through ItsAlimonda
+* The calendar will include: Monaco, Singapore, Portugal, Imola and Saudi Arabia
+* The full calendar and dates will be confirmed in due course but it will consist of a couple of break weeks as usual
+* The calendar will not include: Australia and Abu Dhabi due to fundamental differences between real life and the game. 
+* PC leagues will take place on Wednesday (F2 and below); Thursday (F1* TBC due to Challengers)
+* PS leagues will take place on Mondays, Thursdays and Sundays
+* We aim to have a maximum of 5 tiers on PC; 13 on PS
+* Increased video content through YouTube & Twitter through ItsAlimonda
 * Potential announcements to come in the New Year
 
 ## **Other changes for S30**
@@ -33,9 +35,7 @@ After sending out a survey earlier this week, we will be making the following ch
 * Adjusting how reserves are allocated at each race
 * Closer liaising with admins to improve leadership in some tiers
 
-
-
-## **PC F1** 
+## **PC F1**
 
 Despite a clash with PC Challengers on Thursdays, we plan for it to continue on Thursdays as it will only impact five or six drivers. However, this will be 100% confirmed in due course.
 
