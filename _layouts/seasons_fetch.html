@@ -135,7 +135,7 @@ layout: default
 			const tier_name_display = getLeagueName(tier.name);
 			league_list.append(`
 				<li class="league_button">
-					<a class="league_link" href="/standings/?league=${tier.name}">
+					<a class="league_link" href="{{ page.url }}/?league=${tier.name}">
 						<span id="${tier.name}">${tier_name_display}</span>
 					</a>
 				</li>`);

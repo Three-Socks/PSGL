@@ -1,6 +1,6 @@
 ---
 layout: page
-title: F1 2021 Season 29 Sign-up
+title: F1 2021 Season 30 Sign-up
 permalink: '/f12021/sign-up/'
 menu_title: F1 2021 Sign-up
 menu_icon: /assets/site-img/f1-48x48.png
