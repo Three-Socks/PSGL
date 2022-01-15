@@ -120,6 +120,9 @@ layout: default
 					<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.constructors)}</div>
 					<hr>`;
 
+				if (!standings_view_html)
+					standings_view_html = '<div class="standings_header">To be determined</div>';
+
 				standings_view.html(standings_view_html);
 			}
 		}

@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign current_comp = site.competitions | where: "slug", page.category %}
-{% assign current_league = site.leagues | where: "category", page.slug | sort: "slug" %}
+{% assign current_league = site.leagues | where: "category", page.slug | sort: "slug" | sort: "order" %}
 {% assign current_season = site.seasons | where: "category", page.category %}
 
 <header class="category_header">
@@ -25,7 +25,7 @@ layout: default
 	{% else %}
 		{% assign league_size = league.title | size %}
 
-		{% if league_size > 5 %}
+		{% if league_size > 6 %}
 		<li class="league_button league_text_small">
 		{% else %}
 		<li class="league_button">

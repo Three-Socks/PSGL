@@ -12,5 +12,6 @@ constructors: '/f12021/s29/F1-pc/F1-pc-constructor-standings.png'
 graphics:
   standings: ''
   tv: ''
+order: 1
 ---
 
