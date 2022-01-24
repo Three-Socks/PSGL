@@ -69,14 +69,14 @@ collections:
       - { label: 'Hide in Menu', name: 'menu_hide', widget: 'boolean', default: false, required: false }
       - { label: 'Hall of Fame', name: 'halloffame', widget: 'image', required: false }
 
-  - name: 's29-leagues'
-    label: 'F1 Season 29 Leagues'
+  - name: 's30-leagues'
+    label: 'F1 Season 30 Leagues'
     label_singular: 'League'
     folder: '_leagues/'
     path: '/f12021/{{category}}/{{slug}}'
     media_folder: '/f12021/{{category}}/{{slug}}'
     public_folder: '/f12021/{{category}}/{{slug}}'
-    filter: { field: 'category', value: 's29' }
+    filter: { field: 'category', value: 's30' }
     create: true
     editor:
       preview: true
@@ -100,13 +100,6 @@ collections:
       - { label: 'Drivers Extra', name: 'drivers_2', widget: 'image', required: false }
       - { label: 'Constructors', name: 'constructors', widget: 'image', required: false }
 
-      - label: 'Site Graphics'
-        name: 'graphics'
-        widget: "object"
-        fields:
-          - { label: 'Standings', name: 'standings', widget: 'image', required: false }
-          - { label: 'TV', name: 'tv', widget: 'image', required: false }
-
   - name: 'leagues'
     label: 'All Leagues'
     label_singular: 'League'
@@ -121,7 +114,7 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'standings' }
       - { label: 'ID', name: 'slug', widget: 'string', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12019/:categories/:title'}
+      - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/f12021/:categories/:title'}
       - {
           label: 'Season',
           name: 'category',
@@ -137,13 +130,6 @@ collections:
       - { label: 'Drivers Extra', name: 'drivers_2', widget: 'image', required: false }
       - { label: 'Constructors', name: 'constructors', widget: 'image', required: false }
 
-      - label: 'Site Graphics'
-        name: 'graphics'
-        widget: "object"
-        fields:
-          - { label: 'Standings', name: 'standings', widget: 'image', required: false }
-          - { label: 'TV', name: 'tv', widget: 'image', required: false }
-
   - name: 'seasons'
     label: 'Seasons'
     label_singular: 'Season'
@@ -153,7 +139,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'seasons' }
+      - { label: 'Layout', name: 'layout', widget: 'select', options: ['seasons', 'seasons_fetch'] }
       - { label: 'Unique ID (no spaces)', name: 'slug', widget: 'string', pattern: ['(\w+)', "No Spaces"] }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'string', default: '/:categories/:title' }
