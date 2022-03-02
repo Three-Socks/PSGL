@@ -24,6 +24,8 @@ exports.handler = async (event) => {
 	{
 		const title_query = event.queryStringParameters?.league;
 		console.log('title_query', title_query);
+		const constructors_query = event.queryStringParameters?.c;
+		console.log('constructors_query', constructors_query);
 
 		if (!title_query)
 			throw 'title_query false';
@@ -42,7 +44,7 @@ exports.handler = async (event) => {
 		if (!standings_result.rowCount)
 			throw 'standings_result rowCount false';
 
-		const standings_url = standings_result.rows[0]?.data?.drivers;
+		const standings_url = (constructors_query ? standings_result.rows[0]?.data?.constructors : standings_result.rows[0]?.data?.drivers);
 		console.log('standings_url', standings_url);
 
 		if (!standings_url)
