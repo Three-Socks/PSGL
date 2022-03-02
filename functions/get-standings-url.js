@@ -44,7 +44,7 @@ exports.handler = async (event) => {
 		if (!standings_result.rowCount)
 			throw 'standings_result rowCount false';
 
-		const standings_url = (constructors_query ? standings_result.rows[0]?.data?.constructors : standings_result.rows[0]?.data?.drivers);
+		const standings_url = (constructors_query ? 'Constructor Standings - ' + standings_result.rows[0]?.data?.constructors : 'Driver Standings - ' + standings_result.rows[0]?.data?.drivers);
 		console.log('standings_url', standings_url);
 
 		if (!standings_url)
