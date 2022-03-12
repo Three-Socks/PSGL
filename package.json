@@ -9,11 +9,12 @@
 	"devDependencies": {
 		"eslint": "^7.32.0"
 	},
+	"volta": {
+		"node": "16.14.0"
+	},
 	"dependencies": {
 		"node-fetch": "^3.2.3",
-		"pg": "^8.7.3"
-	},
-	"volta": {
-		"node": "14.19.0"
+		"pg": "^8.7.3",
+		"pg-native": "^3.0.0"
 	}
 }
