@@ -1,4 +1,4 @@
-const { Pool } = require('pg').native;
+const { Pool } = require('pg');
 const pool = new Pool
 ({
 	connectionString: process.env.DATABASE_URL,
@@ -19,7 +19,7 @@ const getTierMatchName = (title) =>
 	return '';
 };
 
-export async function handler(event) {
+exports.handler = async (event) => {
 	try
 	{
 		const title_query = event.queryStringParameters?.league;
@@ -60,4 +60,4 @@ export async function handler(event) {
 		console.log(error);
 		return { statusCode: 500, body: '' };
 	}
-}
+};

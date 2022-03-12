@@ -1,4 +1,4 @@
-const { Pool } = require('pg').native;
+const { Pool } = require('pg');
 const pool = new Pool
 ({
 	connectionString: process.env.DATABASE_URL,
@@ -7,7 +7,7 @@ const pool = new Pool
 
 pool.on('error', console.error);
 
-export async function handler() {
+exports.handler = async () => {
 	try
 	{
 		const standings_result = await pool.query({
@@ -28,4 +28,4 @@ export async function handler() {
 		console.log(error);
 		return { statusCode: 500, body: '' };
 	}
-}
+};

@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-export async function handler() {
+exports.handler = async () => {
 	try
 	{
 		let youtube_fetch = await fetch('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=' + process.env.YT_PLAYLIST + '&key=' + process.env.YT_API);
@@ -28,4 +28,4 @@ export async function handler() {
 		console.log(error);
 		return { statusCode: 500, body: '' };
 	}
-}
+};
