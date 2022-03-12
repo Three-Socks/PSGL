@@ -44,3 +44,4 @@
 
 [functions]
   directory = "functions"
+  external_node_modules = ["pg-native"]

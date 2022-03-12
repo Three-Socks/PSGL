@@ -19,7 +19,7 @@ const getTierMatchName = (title) =>
 	return '';
 };
 
-exports.handler = async (event) => {
+export async function handler(event) {
 	try
 	{
 		const title_query = event.queryStringParameters?.league;
@@ -60,4 +60,4 @@ exports.handler = async (event) => {
 		console.log(error);
 		return { statusCode: 500, body: '' };
 	}
-};
+}

@@ -7,7 +7,7 @@ const pool = new Pool
 
 pool.on('error', console.error);
 
-exports.handler = async () => {
+export async function handler() {
 	try
 	{
 		const standings_result = await pool.query({
@@ -28,4 +28,4 @@ exports.handler = async () => {
 		console.log(error);
 		return { statusCode: 500, body: '' };
 	}
-};
+}
