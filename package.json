@@ -9,7 +9,7 @@
 		"eslint": "^7.32.0"
 	},
 	"volta": {
-		"node": "16.14.0"
+		"node": "14.19.0"
 	},
 	"dependencies": {
 		"node-fetch": "^2.6.7",
