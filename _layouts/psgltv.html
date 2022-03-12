@@ -7,39 +7,16 @@ layout: default
 	{{ page.title | escape }}
 </header>
 <article class="post_wrapper blogposts">
-	<div id="league_video"></div>
+	<div id="league_video" class="center"></div>
 	<nav id="videos_list" style="display:none;">
 		<ul>
 		</ul>
 	</nav>
-	{% comment %}
-	<nav id="all_leagues">
-		<ul class="league_list">
-		{% for league in current_league %}
-			<li id="{{ league.slug }}" class="league_button">
-				<a href="/psgltv?league={{ league.slug }}">
-					<img src="{{ league.graphics.tv }}" alt="" />
-				</a>
-			</li>
-		{% endfor %}
-		</ul>
-	</nav>
-	{% endcomment %}
-
 	<nav id="latest_videos_list">
 		<div class="psgl_content">
-			{% comment %}<hr/>{% endcomment %}
 			<div class="standings_header">Latest</div>
 		</div>
 		<ul class="league_list">
-		{% for vid in site.data.youtube.items limit:10 %}
-			<li data-youtube="{{- vid.snippet.resourceId.videoId -}}" class="league_vbutton">
-				<img src="{{ vid.snippet.thumbnails.medium.url }}" alt="" />
-				<div class="league_vlink">
-					<a href="#">{{ vid.snippet.title | replace: "PSGL l" | replace: "PSGL |" }}</a>
-				</div>
-			</li>
-		{% endfor %}
 		</ul>
 	</nav>
 
@@ -55,7 +32,42 @@ layout: default
 	league["f6"] = [];
 	league["fp"] = [];
 
-	$(document).ready(function(){
+	$(document).ready(async function()
+	{
+		const league_video = $("#league_video");
+		league_video.html('Loading...');
+
+		try
+		{
+			const league_list = $('.league_list');
+
+			let youtube_fetch = await fetch('/.netlify/functions/get-youtube');
+			let youtube_json = JSON.parse(await youtube_fetch.text());
+
+			console.log(youtube_json);
+
+			if (!youtube_json)
+				throw 'youtube_json false';
+
+			league_video.html('');
+
+			for (const video of youtube_json)
+			{
+				league_list.append(`
+			<li data-youtube="${video.videoId}" class="league_vbutton">
+				<img src="${video.thumbnail}" alt="" />
+				<div class="league_vlink">
+					<a href="#">${video.title}</a>
+				</div>
+			</li>`);
+			}
+		}
+		catch (e)
+		{
+			console.error(e);
+			league_video.html('Error loading videos.');
+		}
+
 		let params = (new URL(document.location)).searchParams;
 		let l_id = params.get('league');
 
@@ -76,7 +88,7 @@ layout: default
 					if (value.id != 0)
 					{
 						if (index == 0)
-							$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + value.id + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+						league_video.html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + value.id + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
 
 						$("#videos_list ul").append('<li data-youtube="' + value.id + '" class="league_vbutton"><img src="' + value.thumbnail + '" alt="" /><div class="league_vlink"><a href="#">' + value.title + '</a></div></li>');
 					}
@@ -97,8 +109,8 @@ layout: default
 
 			if (el.data("youtube") != '')
 			{
-				$("#league_video").html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + el.data("youtube") + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
-				$("#league_video").get(0).scrollIntoView();
+				league_video.html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + el.data("youtube") + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+				league_video.get(0).scrollIntoView();
 			}
 		}
 
@@ -113,7 +125,7 @@ layout: default
 				$("#videos_list").hide();
 				$("#all_leagues").show();
 				$("#latest_videos_list").show();
-				$("#league_video").empty();
+				league_video.empty();
 				$("#videos_list ul").empty();
 			}
 		});

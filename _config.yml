@@ -40,4 +40,5 @@ collections:
   leagues:
     output: true
   competitions:
+  signups:
   settings:

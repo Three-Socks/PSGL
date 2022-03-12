@@ -45,116 +45,126 @@ layout: default
 		const standings_view = $('#standings_view');
 		standings_view.html('Loading...');
 
-		let standings_fetch = await fetch('/.netlify/functions/get-standings');
-		let standings_json = JSON.parse(await standings_fetch.text());
-
-		if (!standings_json)
-			return console.error('standings_json false');
-
-		standings_view.html('');
-
-		const league_list = $('.league_list');
-
-		function getLeagueName (l_id)
+		try
 		{
-			const tier_split = l_id.split('-');
+			let standings_fetch = await fetch('/.netlify/functions/get-standings');
+			let standings_json = JSON.parse(await standings_fetch.text());
 
-			if (tier_split.length && tier_split[0] && tier_split[1])
+			if (!standings_json)
+				throw 'standings_json false';
+
+			standings_view.html('');
+
+			const league_list = $('.league_list');
+
+			function getLeagueName (l_id)
 			{
-				return 'F' + tier_split[0] + ' ' + tier_split[1].toUpperCase();
-			}
-			else
-				return '';
-		}
+				const tier_split = l_id.split('-');
 
-		const DISCORD_EPOCH = 1420070400000;
-		function convertSnowflakeToDate(snowflake, epoch = DISCORD_EPOCH)
-		{
-			return new Date(snowflake / 4194304 + epoch);
-		}
-
-		function getDiscordDate(url)
-		{
-			const URLObj = new URL(url);
-
-			if (URLObj)
-			{
-				const path_split = URLObj.pathname.split('/');
-
-				if (path_split)
+				if (tier_split.length && tier_split[0] && tier_split[1])
 				{
-					const date = convertSnowflakeToDate(path_split[path_split.length - 2]);
-					return date.toDateString();
+					return 'F' + tier_split[0] + ' ' + tier_split[1].toUpperCase();
+				}
+				else
+					return '';
+			}
+
+			const DISCORD_EPOCH = 1420070400000;
+			function convertSnowflakeToDate(snowflake, epoch = DISCORD_EPOCH)
+			{
+				return new Date(snowflake / 4194304 + epoch);
+			}
+
+			function getDiscordDate(url)
+			{
+				const URLObj = new URL(url);
+
+				if (URLObj)
+				{
+					const path_split = URLObj.pathname.split('/');
+
+					if (path_split)
+					{
+						const date = convertSnowflakeToDate(path_split[path_split.length - 2]);
+						return date.toDateString();
+					}
+				}
+
+				return '';
+			}
+
+			function loadLeague(l_id)
+			{
+				console.log('lid', l_id);
+				const league = standings_json.find(({ name }) => name === l_id);
+
+				if (league)
+				{
+					history.pushState({league: l_id}, '', '?league=' + l_id);
+
+					const title = getLeagueName(l_id) + ' Standings';
+					$('.category_header').text(title);
+					document.title = title;
+
+
+					standings_view.show();
+					standings_view[0].scrollIntoView();
+					league_list.hide();
+
+					let standings_view_html = '';
+
+					if (league.data && league.data.drivers && league.data.drivers !== '')
+						standings_view_html += `<a href="${league.data.drivers}"><img src="${league.data.drivers}" alt="" style="width:100%" /></a>
+						<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.drivers)}</div>
+						<hr>`;
+
+					if (league.data && league.data.constructors && league.data.constructors !== '')
+						standings_view_html += `<a href="${league.data.constructors}"><img src="${league.data.constructors}" alt="" style="width:100%" /></a>
+						<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.constructors)}</div>
+						<hr>`;
+
+					if (!standings_view_html)
+						standings_view_html = '<div class="standings_header">To be determined</div>';
+
+					standings_view.html(standings_view_html);
 				}
 			}
 
-			return '';
-		}
+			let params = (new URL(document.location)).searchParams;
+			let l_id = params.get('league');
 
-		function loadLeague(l_id)
-		{
-			const league = standings_json.find(({ name }) => name === l_id);
+			if (l_id && l_id != '')
+				loadLeague(l_id);
 
-			if (league)
+			for (const tier of standings_json)
 			{
-				history.pushState({league: l_id}, '', '?league=' + l_id);
-
-				const title = getLeagueName(l_id) + ' Standings';
-				$('.category_header').text(title);
-				document.title = title;
-
-
-				standings_view.show();
-				standings_view[0].scrollIntoView();
-				league_list.hide();
-
-				let standings_view_html = '';
-
-				if (league.data && league.data.drivers && league.data.drivers !== '')
-					standings_view_html += `<a href="${league.data.drivers}"><img src="${league.data.drivers}" alt="" style="width:100%" /></a>
-					<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.drivers)}</div>
-					<hr>`;
-
-				if (league.data && league.data.constructors && league.data.constructors !== '')
-					standings_view_html += `<a href="${league.data.constructors}"><img src="${league.data.constructors}" alt="" style="width:100%" /></a>
-					<div class="smalltext right">Last Updated: ${getDiscordDate(league.data.constructors)}</div>
-					<hr>`;
-
-				if (!standings_view_html)
-					standings_view_html = '<div class="standings_header">To be determined</div>';
-
-				standings_view.html(standings_view_html);
+				const tier_name_display = getLeagueName(tier.name);
+				league_list.append(`
+					<li id="${tier.name}" class="league_button">
+						<a class="league_link" href="{{ page.url }}/?league=${tier.name}">
+							<span>${tier_name_display}</span>
+						</a>
+					</li>`);
 			}
+
+			$(document).on('click', '.league_link', function (event)
+			{
+				console.log(event);
+				event.preventDefault();
+				loadLeague(event.currentTarget.parentElement.id);
+			});
+
+			$(window).on('popstate', function(event)
+			{
+				$('.category_header').text('{{ current_comp.first.title }} {{ page.title | escape }}');
+				standings_view.hide();
+				league_list.show();
+			});
 		}
-
-		let params = (new URL(document.location)).searchParams;
-		let l_id = params.get('league');
-
-		if (l_id && l_id != '')
-			loadLeague(l_id);
-
-		for (const tier of standings_json)
+		catch (e)
 		{
-			const tier_name_display = getLeagueName(tier.name);
-			league_list.append(`
-				<li class="league_button">
-					<a class="league_link" href="{{ page.url }}/?league=${tier.name}">
-						<span id="${tier.name}">${tier_name_display}</span>
-					</a>
-				</li>`);
+			console.error(e);
+			standings_view.html('Error loading standings.');
 		}
-
-		$('.league_button').click(function(event)
-		{
-			event.preventDefault();
-			loadLeague(event.target.id);
-		});
-
-		$(window).on('popstate', function(event)
-		{
-			$('.category_header').text('{{ current_comp.first.title }} {{ page.title | escape }}');
-			standings_view.hide();
-			league_list.show();
-		});
 	});
 </script>

@@ -40,7 +40,7 @@ menu_order: 1
 	</div>
 	<div class="psgl_content_right">
 		{%- if post.image != null and post.image != "" -%}
-		<a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"><img src="{{ post.image }}" alt="" /></a>
+		<a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"><img src="{{ post.image }}" loading="lazy" alt="" /></a>
 		{%- endif -%}
 	</div>
 </article>

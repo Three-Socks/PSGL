@@ -42,6 +42,19 @@ collections:
       - { label: 'Hide', name: 'hide', widget: 'boolean', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
+  - name: 'signups'
+    label: 'Sign-ups'
+    label_singular: 'Sign-up'
+    folder: '_signups/'
+    summary: "{{title}}"
+    create: true
+    slug: '{{title}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Menu Icon', name: 'image', widget: 'image', required: true }
+
   - name: 'competitions'
     label: 'Competitions'
     label_singular: 'Competition'
