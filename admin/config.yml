@@ -30,9 +30,9 @@ collections:
           name: 'category',
           widget: 'relation',
           collection: 'competitions',
-          displayFields: ['slug', 'title'],
-          searchFields: ['slug', 'title'],
-          valueField: 'slug',
+          display_fields: ['slug', 'title'],
+          search_fields: ['slug', 'title'],
+          value_field: 'slug',
           default: 'news',
         }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
@@ -73,9 +73,9 @@ collections:
           name: 'signup_url',
           widget: 'relation',
           collection: 'posts',
-          displayFields: ['title'],
-          searchFields: ['title'],
-          valueField: 'permalink',
+          display_fields: ['title'],
+          search_fields: ['title'],
+          value_field: 'permalink',
           required: false,
         }
       - { label: 'Menu Title', name: 'menu_title', widget: 'string', required: false }
@@ -104,9 +104,9 @@ collections:
           name: 'category',
           widget: 'relation',
           collection: 'seasons',
-          displayFields: ['slug', 'title'],
-          searchFields: ['slug', 'title'],
-          valueField: 'slug',
+          display_fields: ['slug', 'title'],
+          search_fields: ['slug', 'title'],
+          value_field: 'slug',
         }
       - { label: 'Day', name: 'day', widget: 'string', required: false }
       - { label: 'Time', name: 'time', widget: 'string', required: false }
@@ -134,9 +134,9 @@ collections:
           name: 'category',
           widget: 'relation',
           collection: 'seasons',
-          displayFields: ['slug', 'title'],
-          searchFields: ['slug', 'title'],
-          valueField: 'slug',
+          display_fields: ['slug', 'title'],
+          search_fields: ['slug', 'title'],
+          value_field: 'slug',
         }
       - { label: 'Day', name: 'day', widget: 'string', required: false }
       - { label: 'Time', name: 'time', widget: 'string', required: false }
@@ -162,9 +162,9 @@ collections:
           name: 'category',
           widget: 'relation',
           collection: 'competitions',
-          displayFields: ['slug', 'title'],
-          searchFields: ['slug', 'title'],
-          valueField: 'slug',
+          display_fields: ['slug', 'title'],
+          search_fields: ['slug', 'title'],
+          value_field: 'slug',
         }
       - { label: 'Menu Title', name: 'menu_title', widget: 'string', required: false }
       - { label: 'Menu Icon', name: 'menu_icon', widget: 'image', required: false }

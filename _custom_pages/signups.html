@@ -35,17 +35,6 @@ menu_order: 2
 
 <article class="post_wrapper blogposts">
 	<div class="psgl_content center">
-		<script src="/assets/js/discordInvite.js"></script>
-		<script>
-			$(document).ready(function(){
-				discordInvite.init({
-				inviteCode: 's9TzzCb',
-				title: 'The PSGL Discord',
-				hideIntro: true,
-				});
-				discordInvite.render();
-			});
-		</script>
-		<div id="discordInviteBox"></div>
+		{%- include discord-widget.html -%}
 	</div>
 </article>

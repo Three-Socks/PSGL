@@ -1,12 +1,35 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://premiersimgl.com" # the base hostname & protocol for your site, e.g. http://example.com
+title: PremierSimGL
+description: The biggest Formula 1 game racing league on PlayStation & PC
+twitter:
+  username: PremierSimGL
+  card: summary
+logo: /assets/site-img/PSGL-Logo-192.png
+social:
+  name: PremierSimGL
+  links:
+    - https://twitter.com/PremierSimGL
+    - https://www.youtube.com/c/PremierSimGamingLeagues
+    - https://discord.com/invite/s9TzzCb
+webmaster_verifications:
+  google: WT0ppqOYjPEyDeIiNjOhyvlOCBzs8BRCxBQBwgkBjmQ
 excerpt_separator: <!--more-->
 timezone: Europe/London
+
+defaults:
+  -
+    scope:
+      path:            "admin/"
+    values:
+      sitemap:         false
 
 # Build settings
 plugins:
   - jekyll-seo-tag
   - jekyll-target-blank
+  - jekyll-content-security-policy-generator
+  - jekyll-sitemap
 
 exclude:
    - .sass-cache/

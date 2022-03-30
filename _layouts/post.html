@@ -6,17 +6,17 @@ layout: default
 </header>
 <article class="post_wrapper blogposts">
 	<div class="psgl_content_inline">
-		{%- if page.author != null and page.author != "" -%} 
-		
+		{%- if page.author != null and page.author != "" -%}
+
 			{% assign is_twitter = page.author | slice: 0 %}
 
 			{% if is_twitter contains "@" %}
 				<a href="https://twitter.com/{{ page.author }}" rel="noopener" target="_blank">{{ page.author }}</a> |&nbsp;
 			{%- else -%}
 				{{ page.author }} |&nbsp;
-			{%- endif -%}		
+			{%- endif -%}
 		{%- endif -%}
-		
+
 		{{ page.date | date_to_long_string: "ordinal" }}
 	</div>
 	{%- if page.image != null and page.image != "" -%}
@@ -34,17 +34,6 @@ layout: default
 	</div>
 
 	{%- if page.discord -%}
-		<script src="/assets/js/discordInvite.js"></script>
-		<script>
-			$(document).ready(function(){
-				discordInvite.init({
-				inviteCode: 's9TzzCb',
-				title: 'The PSGL Discord',
-				hideIntro: true,
-				});
-				discordInvite.render();
-			});
-		</script>
-		<div id="discordInviteBox"></div>
+		{%- include discord-widget.html -%}
 	{%- endif -%}
 </article>

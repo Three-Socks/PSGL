@@ -44,8 +44,6 @@ layout: default
 			let youtube_fetch = await fetch('/.netlify/functions/get-youtube');
 			let youtube_json = JSON.parse(await youtube_fetch.text());
 
-			console.log(youtube_json);
-
 			if (!youtube_json)
 				throw 'youtube_json false';
 

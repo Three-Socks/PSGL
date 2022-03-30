@@ -95,7 +95,6 @@ layout: default
 
 			function loadLeague(l_id)
 			{
-				console.log('lid', l_id);
 				const league = standings_json.find(({ name }) => name === l_id);
 
 				if (league)
@@ -149,7 +148,6 @@ layout: default
 
 			$(document).on('click', '.league_link', function (event)
 			{
-				console.log(event);
 				event.preventDefault();
 				loadLeague(event.currentTarget.parentElement.id);
 			});

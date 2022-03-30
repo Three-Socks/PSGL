@@ -6,9 +6,15 @@
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
+    X-XSS-Protection =  "0"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy= "no-referrer-when-downgrade"
+    Strict-Transport-Security = "max-age=63072000;includeSubDomains;preload"
+
+[[headers]]
+  for = "/admin"
+  [headers.values]
+    X-Robots-Tag= "noindex"
 
 [[redirects]]
   from = "https://mx.premiersimgl.com/*"
@@ -42,6 +48,7 @@
 [build.environment]
   TZ = "Europe/London"
   JEKYLL_ENV="production"
+  JEKYLL_LOG_LEVEL="warn"
 
 [functions]
   directory = "functions"

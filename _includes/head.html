@@ -3,25 +3,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" sizes="192x192" href="/assets/site-img/PSGL-Logo-192.png" />
-	<title>{{ page.display_name | default: page.title | default: site.data.settings.title }}</title>
-
-	{%- seo title=false -%}
-
-	{% if page.image != null and page.image != "" -%}
-	<meta name="twitter:card" content="{{ page.twitter.card | default: site.twitter.card | default: "summary_large_image" }}" />
-	<meta property="twitter:image" content="{{ page.image | absolute_url }}" />
-	{% else %}
-	<meta name="twitter:card" content="summary" />
-	<meta property="twitter:image" content="{{ '/assets/site-img/PSGL-Logo-192.png' | absolute_url }}" />
-	{% endif -%}
-	<meta property="twitter:title" content="{{ page.display_name | default: page.title | default: site.data.settings.title }}" />
-	{% if site.data.settings.twitter -%}
-		<meta name="twitter:site" content="@{{ site.data.settings.twitter | remove:'@' }}" />
-		{% if page.author != null and page.author != "" -%}
-			<meta name="twitter:creator" content="@{{ page.author | remove:'@' }}" />
-		{% endif -%}
-	{% endif %}
-	<meta name="google-site-verification" content="WT0ppqOYjPEyDeIiNjOhyvlOCBzs8BRCxBQBwgkBjmQ" />
+	{%- seo -%}
 	<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 	<link rel="preload" as="image" href="/assets/site-img/PremierSimGL-Header.png" imagesrcset="/assets/site-img/PremierSimGL-Header-700.png 700w, /assets/site-img/PremierSimGL-Header.png 1701w" imagesizes="(max-width: 50em) 100vw, 100w">
 
@@ -39,4 +21,5 @@
 		mixpanel.track("{{ page.display_name | default: page.title | default: site.data.settings.title }}");
 	</script>
 	{%- endif -%}
+	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://cdn.syndication.twimg.com; child-src https://platform.twitter.com; connect-src 'self' https://discordapp.com/api/v6/invite/s9TzzCb; img-src 'self' data: https://cdn.discordapp.com https://platform.twitter.com https://*.twimg.com https://*.ytimg.com; style-src 'self' 'unsafe-hashes' 'sha256-t6oewASd7J1vBg5mQtX4hl8bg8FeegYFM3scKLIhYUc=' 'sha256-jILZY2UBo/ux6K6qGHntQonoJYNQZfxdLrszRmDpc/o=' 'sha256-vz33z4dhyLTqHIj2n6eKJPbBcjq3gRuGe08dq3GVOCo=' https://platform.twitter.com https://*.twimg.com; base-uri 'self'; form-action 'self' https://syndication.twitter.com https://platform.twitter.com; frame-src 'self' https://www.youtube-nocookie.com https://syndication.twitter.com https://platform.twitter.com; font-src 'self';">
 </head>
