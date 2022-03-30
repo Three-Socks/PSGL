@@ -1,5 +1,5 @@
 [build]
-  command = "production jekyll build"
+  command = "jekyll build"
   publish = "_site"
 
 [[headers]]
@@ -41,6 +41,7 @@
 
 [build.environment]
   TZ = "Europe/London"
+  JEKYLL_ENV="production"
 
 [functions]
   directory = "functions"
