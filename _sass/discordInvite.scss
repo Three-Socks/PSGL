@@ -110,9 +110,12 @@
     flex:1 1 auto;
     flex-flow:column nowrap
 }
-#callToAction,#statusIndicators{
-    align-items:center;
-    display:flex
+#callToActionLink{
+    align-items: center;
+    display: flex;
+}
+#serverName a:link, #serverName a:visited {
+    color:#f6f6f7;
 }
 #serverNameBox{
     color:#f6f6f7;
