@@ -86,6 +86,9 @@
     font:normal normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
     margin:0 0 8px
 }
+#serverImgLink{
+    flex:0 0 auto;
+}
 #serverImg{
     background-position:50% 50%;
     bottom:0;
@@ -97,7 +100,6 @@
     top:0;
     width:50px;
     border-radius:15px;
-    flex:0 0 auto;
     margin:0 10px 0 0
 }
 #discordInviteError{
