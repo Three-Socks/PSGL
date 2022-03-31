@@ -48,7 +48,6 @@
 [build.environment]
   TZ = "Europe/London"
   JEKYLL_ENV="production"
-  JEKYLL_LOG_LEVEL="warn"
 
 [functions]
   directory = "functions"

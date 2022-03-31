@@ -6,7 +6,6 @@ group :jekyll_plugins do
   gem 'jekyll-commonmark'
   gem "jekyll-seo-tag", "~> 2.6"
   gem 'jekyll-target-blank'
-  gem 'jekyll-content-security-policy-generator'
   gem 'jekyll-sitemap'
 end
 

@@ -1,7 +1,7 @@
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://premiersimgl.com" # the base hostname & protocol for your site, e.g. http://example.com
 title: PremierSimGL
-description: The biggest Formula 1 game racing league on PlayStation & PC
+description: The biggest Formula 1 racing gaming league on PlayStation & PC
 twitter:
   username: PremierSimGL
   card: summary
@@ -28,7 +28,6 @@ defaults:
 plugins:
   - jekyll-seo-tag
   - jekyll-target-blank
-  - jekyll-content-security-policy-generator
   - jekyll-sitemap
 
 exclude:
