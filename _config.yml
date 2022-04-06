@@ -43,11 +43,8 @@ exclude:
    - vendor/ruby/
    - README.md
 
-markdown: CommonMark
-
-commonmark:
-  options: ["UNSAFE"]
-  extensions: ["autolink", "tagfilter"]
+kramdown:
+  parse_block_html: true
 
 sass:
     style: compressed

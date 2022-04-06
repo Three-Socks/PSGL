@@ -11,6 +11,10 @@ menu_order: 4
 <div class="center">
 
 ## PS & PC S30 Schedule
-![](/assets/site-img/PSGL_Schedule_BST.png)
+[![schedule]](/assets/site-img/PSGL_Schedule_BST.png)
+
+
+[schedule]: /assets/site-img/PSGL_Schedule_BST.png
+{:width="622" height="454"}
 
 </div>
