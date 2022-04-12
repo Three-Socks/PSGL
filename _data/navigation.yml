@@ -2,9 +2,6 @@ menu:
   - icon: /assets/site-img/PSGL-Logo.png
     title: Home
     url: /
-  - icon: /assets/site-img/f1-48x48.png
-    title: PSGL TV
-    url: /psgltv
   - icon: /assets/site-img/Discord-Logo-White.png
     standings: false
     title: Discord
