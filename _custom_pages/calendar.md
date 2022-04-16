@@ -24,13 +24,3 @@ menu_order: 3
 {:width="992" height="558"}
 
 </div>
-<div class="center">
-
-## PS & PC S30 Calendar
-[![calendar]](/assets/site-img/psgl-s30-calendar.jpg)
-
-
-[calendar]: /assets/site-img/psgl-s30-calendar.jpg
-{:width="992" height="558"}
-
-<
