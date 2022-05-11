@@ -50,7 +50,7 @@ collections:
     create: true
     slug: '{{title}}'
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Image', name: 'image', widget: 'image', required: true }
