@@ -1,26 +1,20 @@
 ---
 layout: page
-title: F1 2021 Season 30 Calendar
-permalink: /f12021/calendar
+title: Gran Turismo 7 Season 1 Calendar
+permalink: /gt7/calendar
 menu_title: Calendar
-menu_icon: /assets/site-img/f1-48x48.png
+menu_icon: /assets/site-img/gt.png
 menu_hide: false
 menu_order: 3
 ---
 
 <div class="center">
 
-[![calendar_u]](/assets/site-img/psgl-s30-calendar-pc-updated.jpg)
+## Gran Turismo 7 Season 1 Calendar
+[![calendar_u]](/assets/site-img/PSGL_GT7_Calendar_S1.png)
 
 
-[calendar_u]: /assets/site-img/psgl-s30-calendar-pc-updated.jpg
+[calendar_u]: /assets/site-img/PSGL_GT7_Calendar_S1.png
 {:width="1200" height=675"}
-
-## PS & PC S30 Calendar
-[![calendar]](/assets/site-img/psgl-s30-calendar.jpg)
-
-
-[calendar]: /assets/site-img/psgl-s30-calendar.jpg
-{:width="992" height="558"}
 
 </div>
