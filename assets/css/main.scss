@@ -62,7 +62,9 @@
 }
 
 .psgl_content_right img {
+    max-width: 100%;
 	width: 100%;
+	height: auto;
 	position: relative;
 	right: 20px;
 	top: 20px;

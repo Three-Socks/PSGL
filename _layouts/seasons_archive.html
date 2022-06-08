@@ -48,8 +48,15 @@ layout: default
 
 		try
 		{
-			let standings_fetch = await fetch('/.netlify/functions/get-standings');
-			let standings_json = JSON.parse(await standings_fetch.text());
+			let standings_json = JSON.parse('{{ page.tiers | jsonify }}');
+
+			for (let standing of standings_json)
+			{
+				standing.data = {};
+				standing.data.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name + '-driver-standings.png';
+				standing.data.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name + '-constructor-standings.png';
+				standing.data.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
+			}
 
 			if (!standings_json)
 				throw 'standings_json false';
