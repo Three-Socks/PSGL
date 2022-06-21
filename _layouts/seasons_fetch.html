@@ -2,11 +2,8 @@
 layout: default
 ---
 
-{% assign current_comp = site.competitions | where: "slug", page.category %}
-{% assign current_season = site.seasons | where: "category", page.category %}
-
 <header class="category_header">
-	{{ current_comp.first.title }} {{ page.title | escape }}
+	{{ page.title | escape }}
 </header>
 <article class="post_wrapper blogposts">
 	<div id="standings_view" class="psgl_content center">
@@ -16,28 +13,7 @@ layout: default
 	<ul class="league_list">
 	</ul>
 	</nav>
-	{%- if current_comp.first.halloffame != null and current_comp.first.halloffame != "" -%}
-	<div class="psgl_content_left">
-		<div class="psgl_content">
-			<hr/>
-			<a href="{{ current_comp.first.halloffame }}"><img src="{{ current_comp.first.halloffame }}" alt="" /></a><br />
-			<a href="{{ current_comp.first.halloffame }}"><span>Full Size</span></a>
-		</div>
-	</div>
-	{% endif %}
-	{%- if current_season.size > 1 -%}
-	<div class="psgl_content_right">
-		<div class="psgl_content">
-			<hr/>
-			<div class="standings_header">Archives</div>
-			{% for season in current_season %}
-				{% if season.title != page.title %}
-					<div class="standings_link"><a href="{{ season.url }}">{{ season.title | replace: " Standings" }}</a></div>
-				{% endif %}
-			{% endfor %}
-		</div>
-	</div>
-	{% endif %}
+	{% include archive-list.html %}
 </article>
 <script src="/assets/js/season-fetch.js"></script>
 <script>
@@ -54,7 +30,7 @@ layout: default
 			if (!standings_json)
 				throw 'standings_json false';
 
-			season_fetch(standings_view, standings_json, '{{ page.url }}', '{{ current_comp.first.title }} {{ page.title | escape }}');
+			season_fetch(standings_view, standings_json, '{{ page.url }}', '{{ page.title | escape }}');
 		}
 		catch (e)
 		{

@@ -51,7 +51,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 		{
 			history.pushState({league: l_id}, '', '?league=' + l_id);
 
-			const title = getLeagueName(l_id) + ' Standings';
+			const title = getLeagueName(l_id) + ' | ' + page_title;
 			$('.category_header').text(title);
 			document.title = title;
 
