@@ -3,10 +3,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" sizes="192x192" href="/assets/site-img/PSGL-Logo-192.png" />
+	<script
+		type="text/javascript"
+		src="https://app.termly.io/embed.min.js"
+		data-auto-block="on"
+		data-website-uuid="b08d0cf7-4c32-4645-9f1a-c3be07ac768e"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function ()
+		{
+			const preferenceModalDiv = document.getElementById('preferenceModal');
+			preferenceModalDiv.addEventListener('click', function()
+			{
+				displayPreferenceModal();
+			});
+		}, false);
+	</script>
 	{%- seo -%}
 	<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 	<link rel="preload" as="image" href="/assets/site-img/PremierSimGL-Header.png" imagesrcset="/assets/site-img/PremierSimGL-Header-700.png 700w, /assets/site-img/PremierSimGL-Header.png 1701w" imagesizes="(max-width: 50em) 100vw, 100w">
-
 	{%- if jekyll.environment == 'production' and site.google_analytics -%}
 		{%- include google-analytics.html -%}
 	{%- endif -%}
@@ -21,5 +35,5 @@
 		mixpanel.track("{{ page.display_name | default: page.title | default: site.data.settings.title }}");
 	</script>
 	{%- endif -%}
-	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; frame-src https://www.youtube-nocookie.com/ https://syndication.twitter.com https://platform.twitter.com; script-src 'self' https://cdn.syndication.twimg.com 'sha256-QQVwS0Y8nspWmXJmKB2uyq1nVQ/eNbgQlgbVnD3sL0U='; child-src https://platform.twitter.com; connect-src 'self' https://mx.premiersimgl.com; img-src 'self' data: https://cdn.discordapp.com https://platform.twitter.com https://syndication.twitter.com https://*.twimg.com https://*.ytimg.com; style-src 'unsafe-inline' https://*.twimg.com platform.twitter.com; base-uri 'self'; form-action 'self' https://syndication.twitter.com https://platform.twitter.com; font-src 'self';">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; frame-src https://www.youtube-nocookie.com/ https://syndication.twitter.com https://platform.twitter.com; script-src 'self' https://cdn.syndication.twimg.com https://app.termly.io 'sha256-QQVwS0Y8nspWmXJmKB2uyq1nVQ/eNbgQlgbVnD3sL0U='; child-src https://platform.twitter.com; connect-src 'self' https://mx.premiersimgl.com https://app.termly.io; img-src 'self' data: https://cdn.discordapp.com https://platform.twitter.com https://syndication.twitter.com https://*.twimg.com https://*.ytimg.com; style-src 'unsafe-inline' https://*.twimg.com platform.twitter.com; base-uri 'self'; form-action 'self' https://syndication.twitter.com https://platform.twitter.com; font-src 'self';">
 </head>

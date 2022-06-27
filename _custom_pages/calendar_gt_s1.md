@@ -2,10 +2,10 @@
 layout: page
 title: Gran Turismo 7 Season 1 Calendar
 permalink: /gt7/calendar
-menu_title: Calendar
+menu_title: GT Calendar
 menu_icon: /assets/site-img/gt.png
 menu_hide: false
-menu_order: 3
+menu_order: 4
 ---
 
 <div class="center">

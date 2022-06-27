@@ -220,7 +220,7 @@ textarea, .editor {
 }
 
 /* Declarations for inputs, selects and buttons */
-input, .input_text, button, select {
+/* input, .input_text, button, select {
 	padding: 0 6px;
 	min-height: 2em;
 	max-height: 2em;
@@ -247,7 +247,7 @@ input, .input_text, select, button {
 
 select option {
 	padding: 0 4px;
-}
+} */
 
 /* Special form elements need to be addressed */
 select[size],
@@ -1128,7 +1128,12 @@ a.bbc_link {
 }
 
 #footer_section p, #footer_section a {
-	font-size: 0.857em;
+	font-size: 1em;
+}
+
+#footer_section a {
+	color: #ffffff;
+	font-weight: bold;
 }
 
 #footer_section li {
@@ -2434,7 +2439,7 @@ a > i {
 		display: flex;
 		flex-flow: row wrap;
 	}
-	
+
 	.listlevel1
 	{
 		flex: 1 1 25%;
