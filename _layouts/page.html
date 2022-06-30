@@ -4,10 +4,10 @@ layout: default
 <header class="category_header">
 	{{ page.title | escape }}
 </header>
-<article class="post_wrapper blogposts">
+<article class="post_wrapper singleposts">
 	{%- if page.image != null and page.image != "" -%}
 	<div class="psgl_content_image">
-		<img src="{{ page.image }}" alt="" />
+		<img {% if page.image_width != "" %} width="{{ page.image_width }}" {% endif %}{% if page.image_height != "" %} height="{{ page.image_height }}" {% endif %} src="{{ page.image }}" alt="" />
 	</div>
 	{%- endif -%}
 	<div class="psgl_content">

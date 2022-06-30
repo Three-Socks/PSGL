@@ -72,11 +72,12 @@
 
 .psgl_content_image {
 	text-align: center;
-    padding: 20px 0;
 }
 
 .psgl_content_image img {
-	max-width: 75%;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
 }
 
 .psgl_content_header {
@@ -119,7 +120,7 @@
 }
 
 .psgl_content_inline {
-    padding: 0 20px;
+	padding: 10px 20px;
     font-size: .857em;
 	font-weight: normal;
     border-bottom: 1px solid #1c1f29;
@@ -154,6 +155,17 @@
 	border-color: #1c1f29;
     background: #0c0d10;
     background-image: linear-gradient(to bottom,#111317,#0c0d10);
+}
+
+.singleposts {
+	width: unset;
+	overflow: auto;
+    margin-top: 2px;
+    border: 1px solid;
+	border-color: #1c1f29;
+    background: #0c0d10;
+    background-image: linear-gradient(to bottom,#111317,#0c0d10);
+	padding-top: 0;
 }
 
 .league_list {
