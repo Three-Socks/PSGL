@@ -18,12 +18,13 @@
 				</main>
 			</div>
 			<div class="psgl_row_right">
-				{%- if page.url != "/" -%}
 				<div class="psgl_join">
+					<a href="{{ site.url }}/gt-omega" title="PSGL x GT Omega"><img width="567" height="148" src="/assets/site-img/psgl-x-gt-omega-home.png" loading="lazy" alt="" /></a>
+					{%- if page.url != "/" -%}
 					<a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}?sub_confirmation=1" title="Featured Video" rel="noopener" target="_blank"><img width="563" height="147" src="/assets/site-img/PSGL-Home-YouTube.png" loading="lazy" alt="" /></a>
 					<a href="{{ site.url }}/discord" title="Join our Discord" rel="noopener" target="_blank"><img width="567" height="148" src="/assets/site-img/PSGL-Home-Discord.png" loading="lazy" alt="" /></a>
+					{%- endif -%}
 				</div>
-				{%- endif -%}
 				<a class="twitter-timeline" data-chrome="transparent" data-height="1400" data-dnt="true" data-theme="dark" href="https://twitter.com/{{ site.data.settings.twitter | remove:'@' }}?ref_src=twsrc%5Etfw">Tweets by {{ site.data.settings.twitter | remove:'@' }}</a>
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
