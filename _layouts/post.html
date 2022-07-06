@@ -2,7 +2,7 @@
 layout: default
 ---
 <header class="category_header">
-	{{ page.title | escape }}
+	{{ page.title | escape }} - {{ page.date | date_to_long_string: "ordinal" }}
 </header>
 <article class="post_wrapper singleposts">
 	{%- if page.image != null and page.image != "" -%}
