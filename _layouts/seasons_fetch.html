@@ -24,7 +24,7 @@ layout: default
 
 		try
 		{
-			let standings_fetch = await fetch('/.netlify/functions/get-standings');
+			let standings_fetch = await fetch('/.netlify/functions/get-standings?game={{ page.category }}');
 			let standings_json = JSON.parse(await standings_fetch.text());
 
 			if (!standings_json)

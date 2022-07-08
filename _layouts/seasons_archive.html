@@ -28,10 +28,9 @@ layout: default
 
 			for (let standing of standings_json)
 			{
-				standing.data = {};
-				standing.data.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name + '-driver-standings.png';
-				standing.data.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name + '-constructor-standings.png';
-				standing.data.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
+				standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-driver-standings.png';
+				standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-constructor-standings.png';
+				standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
 			}
 
 			if (!standings_json)

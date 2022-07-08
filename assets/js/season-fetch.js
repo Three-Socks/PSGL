@@ -45,7 +45,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 	function loadLeague(l_id)
 	{
-		const league = standings_json.find(({ name }) => name === l_id);
+		const league = standings_json.find(({ name }) => name === l_id.replace('-', ' '));
 
 		if (league)
 		{
@@ -55,29 +55,26 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 			$('.category_header').text(title);
 			document.title = title;
 
-
 			standings_view.show();
 			standings_view[0].scrollIntoView();
 			league_list.hide();
 
 			let standings_view_html = '';
 
-			if (league.data)
+			if (league.drivers)
 			{
-				const league_drivers = league.data.drivers;
-				const last_updated_drivers = league.data.last_updated ? league.data.last_updated : getDiscordDate(league_drivers);
-				const league_constructors = league.data.constructors;
-				const last_updated_constructors = league.data.last_updated ? league.data.last_updated : getDiscordDate(league_constructors);
+				const last_updated_date = league.last_updated ? league.last_updated : getDiscordDate(league.drivers);
+				standings_view_html += `<a href="${league.drivers}"><img src="${league.drivers}" alt="" style="width:100%" /></a>
+				<div class="smalltext right">Last Updated: ${last_updated_date}</div>
+				<hr>`;
+			}
 
-				if (league_drivers)
-					standings_view_html += `<a href="${league_drivers}"><img src="${league_drivers}" alt="" style="width:100%" /></a>
-					<div class="smalltext right">Last Updated: ${last_updated_drivers}</div>
-					<hr>`;
-
-				if (league_constructors)
-					standings_view_html += `<a href="${league_constructors}"><img src="${league_constructors}" alt="" style="width:100%" /></a>
-					<div class="smalltext right">Last Updated: ${last_updated_constructors}</div>
-					<hr>`;
+			if (league.constructors)
+			{
+				const last_updated_date = league.last_updated ? league.last_updated : getDiscordDate(league.constructors);
+				standings_view_html += `<a href="${league.constructors}"><img src="${league.constructors}" alt="" style="width:100%" /></a>
+				<div class="smalltext right">Last Updated: ${last_updated_date}</div>
+				<hr>`;
 			}
 
 			if (!standings_view_html)
@@ -95,11 +92,11 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 	for (const tier of standings_json)
 	{
-		const tier_name_display = getLeagueName(tier.name);
+		const tier_name_id = tier.name.replace(' ', '-');
 		league_list.append(`
-			<li id="${tier.name}" class="league_button">
-				<a class="league_link" href="${page_url}/?league=${tier.name}">
-					<span>${tier_name_display}</span>
+			<li id="${tier_name_id}" class="league_button">
+				<a class="league_link" href="${page_url}/?league=${tier_name_id}">
+					<span>${tier.name}</span>
 				</a>
 			</li>`);
 	}

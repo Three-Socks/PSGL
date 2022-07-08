@@ -1,5 +1,5 @@
 {% assign custom_pages = (site.custom_pages | sort: 'menu_order') %}
-{% assign competitions = (site.competitions | sort: 'date' | reverse) %}
+{% assign competitions = (site.competitions | sort: 'date') %}
 
 {% capture menu_list %}
 	{% for menu in site.data.navigation.menu %}
@@ -17,12 +17,6 @@
 				{% if comp.menu_hide != true and comp.signup_url != '' and comp.signup_url != null %}
 					::{{comp.menu_title}}|{{comp.signup_url}}|{{comp.menu_icon}}
 				{% endif %}
-
-				{% for calendar in site.calendars %}
-					{% if calendar.category == comp.slug and calendar.menu_hide != true %}
-						::{{calendar.menu_title}}|{{calendar.url}}|{{calendar.menu_icon}}
-					{% endif %}
-				{% endfor %}
 
 				{% assign current_season = site.seasons | where: "category", comp.slug %}
 				{% for season in current_season %}

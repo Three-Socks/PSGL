@@ -7,12 +7,17 @@ const pool = new Pool
 
 pool.on('error', console.error);
 
-exports.handler = async () => {
+exports.handler = async (event) => {
 	try
 	{
+		const game_query = event.queryStringParameters?.game?.replace(/[^\w\-\s+]/g, '');
+
+		if (!game_query)
+			throw 'game empty';
+
 		const standings_result = await pool.query({
-			text: `SELECT * FROM standings ORDER BY substring(name, '\\D+'),
-			substring(name, '\\d+')::int NULLS FIRST`
+			text: 'SELECT id as name, drivers, constructors FROM standings WHERE game = $1 ORDER BY sort',
+			values: [game_query]
 		});
 
 		if (!standings_result.rowCount)
