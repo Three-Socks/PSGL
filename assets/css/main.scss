@@ -359,6 +359,24 @@
     width: 44%;
 }
 
+.iubenda-cs-preferences-link {
+	font-weight: 600;
+	cursor: pointer;
+	outline: none;
+	margin-left: 10px;
+	padding: 0 6px;
+	min-height: 2em;
+	max-height: 2em;
+	height: 2em;
+	vertical-align: middle;
+	background: #1b1d23;
+	color: #efefef;
+	font-size: .857em;
+	border: 1px solid #1c1f29;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
+
 @media screen and (max-width: 64em) {
 	.psgl_grid {
 		display: block;
