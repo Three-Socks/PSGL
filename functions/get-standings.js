@@ -16,7 +16,7 @@ exports.handler = async (event) => {
 			throw 'game empty';
 
 		const standings_result = await pool.query({
-			text: 'SELECT id as name, drivers, constructors FROM standings WHERE game = $1 ORDER BY sort',
+			text: 'SELECT standings.id as name, standings.drivers, standings.constructors FROM standings LEFT JOIN games ON standings.game = games.id WHERE LOWER(games.name) = LOWER($1) ORDER BY sort',
 			values: [game_query]
 		});
 
