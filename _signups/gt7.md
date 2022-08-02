@@ -3,11 +3,10 @@ title: GT7
 image: /assets/site-img/gt7-header.png
 ---
 
-* [Gr.3 Grand Tour Calendar](/gt7/calendar).
-* Round 1 begins 07 JUN.2022 for 6 rounds over 7 weeks.
-* Any vehicle classed as Gr. 3 by Gran Turismo 7 is available to be used.
-* Limit 4 driver entries per vehicle make/ model/year.
-* Limit 2 drivers per team.
-* Team members must drive the exact same vehicle.
-* Tier 1: Anti-Lock Braking System (ABS) only
-* Sign up information and more details on our Discord.
+* [Season 2: Gr.4 World Tour Calendar](/gt7/calendar).
+* Round 1 begins 16.AUG.2022 for 9 rounds over 11 weeks.
+* Gr. 4 classed vehicles with 2 wheel drive.
+* Anti-Lock Braking System (ABS) only.
+* Warm-Up Session Opens at 19:00 UK time.
+* Qualifying Begins at 19:50 UK time
+* Sign up information and more details on our Discord #gt-info.
