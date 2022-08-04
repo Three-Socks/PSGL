@@ -6,6 +6,8 @@ author: Connor
 categories: f12019
 date: 2020-02-02T15:30:59.147Z
 image: /assets/site-img/S25-signup.png
+image_width: 1124
+image_height: 259
 discord: true
 ---
 Welcome to the 25th season of PSGL’s Formula One leagues.

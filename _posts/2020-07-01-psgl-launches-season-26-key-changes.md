@@ -6,6 +6,8 @@ author: "@BigC_019"
 category: news
 date: 2020-07-01T18:06:14.591Z
 image: /assets/site-img/ckxyboqs.jpg
+image_width: 1920
+image_height: 1080
 discord: true
 ---
 The time is here for PSGL to announce its plans, details and information for Season 26, which will take place on F1 2020 which is released on July 10.
@@ -32,7 +34,7 @@ For the first time in PSGL history, all assists will be banned in the top tier.
 
 Top tiers - No assists for F1. Line only for F2/F3 (if F3 is on Monday)
 
-Mid/Lower/Performance tiers - TC, ABS, Line, Gears allowed. All other assists banned. 
+Mid/Lower/Performance tiers - TC, ABS, Line, Gears allowed. All other assists banned.
 
 **Prize pool for Season 26**
 
@@ -56,7 +58,7 @@ The prize structure will be as followed:
 
 **PSGL F3**
 
-1st - £20 
+1st - £20
 
 **Placement process**
 

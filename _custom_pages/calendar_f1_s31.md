@@ -15,13 +15,13 @@ menu_order: 3
 
 
 [S31 PC F1 Calendar]: /assets/site-img/PSGL-Calendar-PC-F1.png
-{:width="1280" height=720"}
+{:width="1280" height="720"}
 
 ## S31 Regular Calendar PS & PC
 [![S31 Regular Calendar]](/assets/site-img/PSGL-Calendar-Regular.png)
 
 
 [S31 Regular Calendar]: /assets/site-img/PSGL-Calendar-Regular.png
-{:width="1280" height=720"}
+{:width="1280" height="720"}
 
 </div>

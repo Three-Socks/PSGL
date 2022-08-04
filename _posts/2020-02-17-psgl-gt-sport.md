@@ -6,6 +6,8 @@ author: '@PSGLGT'
 categories: gtsport
 date: 2020-02-17T13:30:59.147Z
 image: /assets/site-img/EPoFLRlWkAI_TYZ.jfif
+image_width: 1920
+image_height: 1080
 discord: true
 hide: true
 ---

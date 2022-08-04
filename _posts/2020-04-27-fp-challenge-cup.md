@@ -12,6 +12,7 @@ hide: true
 
 <div class="center">
 
-![](/assets/site-img/fpcc.jpg)![](/assets/site-img/fpcc-cal.jpg)
+![](/assets/site-img/fpcc.jpg){:width="800" height="1121"}
+![](/assets/site-img/fpcc-cal.jpg){:width="800" height="704"}
 
 </div>

@@ -15,6 +15,6 @@ menu_order: 4
 
 
 [calendar_u]: /assets/site-img/PSGL_GT7_Calendar_S2.png
-{:width="1200" height=675"}
+{:width="1200" height="675"}
 
 </div>

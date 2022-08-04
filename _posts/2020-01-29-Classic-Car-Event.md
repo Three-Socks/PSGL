@@ -6,6 +6,8 @@ author: Connor
 categories: ce
 date: '2020-01-20 00:44:29 +0000'
 image: /assets/site-img/f1-2019-game-logo-banner-w.png
+image_width: 700
+image_height: 119
 discord: true
 ---
 
@@ -13,7 +15,7 @@ During the break between seasons we are running a Classic Car event involving â€
 
 The format will be as followed:
 
-25% race distance with OSQ for both races. 
+25% race distance with OSQ for both races.
 
 ## Wednesday 8pm UK, February 19
 

@@ -6,6 +6,8 @@ author: "@BigC_019"
 category: news
 date: 2020-10-26T20:16:30.793Z
 image: /assets/site-img/psgl-s27-calendar.jpg
+image_width: 1920
+image_height: 1080
 discord: true
 ---
 The time is here for PSGL to announce its plans, details and information for Season 27, which begins with FP on December 1
@@ -86,6 +88,6 @@ If you participated in two or more races in PSGL S26 then you will not need to d
 
 If you're new or returning to PSGL then you will have to complete an evaluation race.
 
-*There will be no TT event.* 
+*There will be no TT event.*
 
 *Evaluation race information will be released at a later date*

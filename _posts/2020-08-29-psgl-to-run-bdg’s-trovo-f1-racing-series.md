@@ -6,6 +6,8 @@ author: "@BigC_019"
 category: news
 date: 2020-08-31T12:37:34.054Z
 image: /assets/site-img/bdg-event-trovo-f1-racing-series-announcement-4.png
+image_width: 1920
+image_height: 1080
 discord: true
 ---
 PSGL is pleased to announce it will be hosting Brutal Democracy Gaming’s inaugural Trovo F1 Racing Series which is set to get underway on September 30.

@@ -6,6 +6,8 @@ author: "@BigC_019"
 category: news
 date: 2020-11-01T17:50:07.723Z
 image: /assets/site-img/xbgl-s27-calendar.png
+image_width: 1920
+image_height: 1080
 discord: true
 ---
 The time is here for PSGL to announce its plans, details and information for its new XB1 league - XBGL.
