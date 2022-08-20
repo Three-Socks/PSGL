@@ -11,17 +11,17 @@ menu_order: 3
 <div class="center">
 
 ## S31 PC F1 Calendar
-[![S31 PC F1 Calendar]](/assets/site-img/PSGL-Calendar-PC-F1.png)
+[![S31 PC F1 Calendar]](/assets/site-img/PSGL-S31-Calendar-PC-F1.jpg)
 
 
-[S31 PC F1 Calendar]: /assets/site-img/PSGL-Calendar-PC-F1.png
+[S31 PC F1 Calendar]: /assets/site-img/PSGL-S31-Calendar-PC-F1.jpg
 {:width="1280" height="720"}
 
 ## S31 Regular Calendar PS & PC
-[![S31 Regular Calendar]](/assets/site-img/PSGL-Calendar-Regular.png)
+[![S31 Regular Calendar]](/assets/site-img/PSGL-S31-Calendar-Regular.jpg)
 
 
-[S31 Regular Calendar]: /assets/site-img/PSGL-Calendar-Regular.png
+[S31 Regular Calendar]: /assets/site-img/PSGL-S31-Calendar-Regular.jpg
 {:width="1280" height="720"}
 
 </div>
