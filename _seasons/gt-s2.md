@@ -1,5 +1,5 @@
 ---
-layout: seasons_fetch
+layout: seasons_archive
 slug: s2
 title: GT Season 2 Standings
 description: GT Season 2 Standings
@@ -7,5 +7,9 @@ permalink: '/:categories/:title'
 category: gt
 menu_title: GT Standings
 menu_icon: /assets/site-img/gt.png
-menu_hide: false
+menu_hide: true
+tiers:
+    - { name: 'GT T1' }
+    - { name: 'GT T2' }
+    - { name: 'GT T3' }
 ---
