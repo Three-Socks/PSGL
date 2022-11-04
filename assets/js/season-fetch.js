@@ -94,7 +94,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 	{
 		const tier_name_id = tier.name.replace(' ', '-');
 		league_list.append(`
-			<li id="${tier_name_id}" class="league_button">
+			<li id="${tier_name_id}" class="league_button${tier.name.length > 6 ? ' league_text_small' : ''}">
 				<a class="league_link" href="${page_url}/?league=${tier_name_id}">
 					<span>${tier.name}</span>
 				</a>
