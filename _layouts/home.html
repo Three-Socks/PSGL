@@ -2,72 +2,35 @@
 layout: default
 ---
 
-{% comment %}
 <header class="category_header">
-	24 Hour Stream in Support of Cancer Research
+	{{ page.title }}
 </header>
-<article class="post_wrapper blogposts" style="margin-bottom: 20px;padding: 0;">
-
-	<div class="embed-container">
-		<!-- Add a placeholder for the Twitch embed -->
-		<div id="twitch-embed"></div>
-
-		<!-- Load the Twitch embed script -->
-		<script src="https://player.twitch.tv/js/embed/v1.js"></script>
-
-		<!-- Create a Twitch.Player object. This will render within the placeholder div -->
-		<script type="text/javascript">
-		new Twitch.Player("twitch-embed", {
-		channel: "cticedemon20"
-		});
-		</script>
-	</div>
-
-	<div class="psgl_content" style="padding: 50px;">
-		<img src="{{ site.data.settings.home }}" alt="" />
-	</div>
-</article>
-{% endcomment %}
-
-{%- if site.posts.size > 0 -%}
-<header class="category_header">
-	Latest News
-</header>
-{%- for post in site.posts limit:8 -%}
-{%- unless post.hide -%}
+{%- for signup in site.signups -%}
+{%- unless signup.hide -%}
 <article class="post_wrapper blogposts">
 	<div class="psgl_content_left">
-		<header class="psgl_content_header">
-			<a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-		</header>
-		<div class="psgl_content_inline">
-			{%- assign is_twitter = post.author | slice: 0 -%}
-
-			{% if is_twitter contains "@" %}
-				<a href="https://twitter.com/{{ post.author }}" rel="noopener" target="_blank">{{ post.author }}</a> |&nbsp;
-			{%- else -%}
-				{{ post.author }} |&nbsp;
-			{%- endif -%}
-
-			{{ post.date | date_to_long_string: "ordinal" }}
-		</div>
 		<div class="psgl_content">
-		{{ post.excerpt }}
-
-		{% if post.content contains site.excerpt_separator %}
-		  <p><a href="{{ post.url | relative_url }}">Read article</a></p>
-		{% endif %}
+			<h1>{{ signup.title }}</h1>
+			{{ signup.content | markdownify }}
 		</div>
 	</div>
 	<div class="psgl_content_right">
-		{%- if post.image != null and post.image != "" -%}
-		<a href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"><img src="{{ post.image }}" loading="lazy" alt="" /></a>
+		{%- if signup.image != null and signup.image != "" -%}
+		<a href="{{ site.url }}/discord" title="Join our Discord"><img width="1280" height="720" src="{{ signup.image }}" loading="lazy" alt="" /></a>
 		{%- endif -%}
 	</div>
 </article>
 {%- endunless -%}
 {%- endfor -%}
-{%- endif -%}
+
+<article class="post_wrapper blogposts">
+	<div class="psgl_content center">
+		<strong><a href="{{ site.url }}/discord" title="Sign-up on Discord" rel="noopener" target="_blank">Sign-up on The PSGL Discord&nbsp;&#8599;</a></strong>
+	</div>
+	<div class="psgl_content center">
+		{%- include discord-widget.html -%}
+	</div>
+</article>
 
 <section id="psgl_home_grid">
 	<div class="psgl_home">

@@ -4,7 +4,7 @@ title: Gran Turismo 7 Fezza Fest '22 Calendar
 permalink: /gt7/ff/calendar
 menu_title: GT FF Calendar
 menu_icon: /assets/site-img/gt.png
-menu_hide: false
+menu_hide: true
 menu_order: 4
 ---
 

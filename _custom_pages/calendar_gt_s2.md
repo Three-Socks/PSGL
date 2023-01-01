@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Gran Turismo 7 Season 2 Calendar
-permalink: /gt7/calendar
+permalink: /gt7/s2/calendar
 menu_title: GT S2 Calendar
 menu_icon: /assets/site-img/gt.png
 menu_hide: true
