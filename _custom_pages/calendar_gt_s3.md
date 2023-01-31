@@ -5,7 +5,7 @@ permalink: /gt7/s3/calendar
 menu_title: GT S3 Calendar
 menu_icon: /assets/site-img/gt.png
 menu_hide: false
-menu_order: 4
+menu_order: 5
 ---
 
 <div class="center">

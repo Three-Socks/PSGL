@@ -5,7 +5,7 @@ permalink: /f1/s32/calendar
 menu_title: F1 S32 Calendar
 menu_icon: /assets/site-img/f1-48x48.png
 menu_hide: false
-menu_order: 3
+menu_order: 4
 ---
 
 <div class="center">
