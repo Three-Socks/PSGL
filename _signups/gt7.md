@@ -1,5 +1,5 @@
 ---
-title: GT7
+title: GT7 Constructors Challenge
 image: /assets/site-img/gt7-header.png
 ---
 

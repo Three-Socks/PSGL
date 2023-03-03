@@ -1,7 +1,7 @@
 ---
 layout: page
 title: F1 2022 Season 33 Calendar
-permalink: /f1/s33/calendar
+permalink: /f1/calendar
 menu_title: F1 S33 Calendar
 menu_icon: /assets/site-img/f1-48x48.png
 menu_hide: false

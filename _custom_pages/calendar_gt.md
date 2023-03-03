@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Gran Turismo 7 Season 3 Calendar
-permalink: /gt7/s3/calendar
+permalink: /gt7/calendar
 menu_title: GT S3 Calendar
 menu_icon: /assets/site-img/gt.png
 menu_hide: false
