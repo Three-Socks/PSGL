@@ -10,13 +10,6 @@ menu_order: 4
 
 <div class="center">
 
-## S33 PC F1 Calendar
-[![S33 PC F1 Calendar]](/assets/site-img/PSGL-S32-Calendar-PC-F1.jpg)
-
-
-[S33 PC F1 Calendar]: /assets/site-img/PSGL-S32-Calendar-PC-F1.jpg
-{:width="1920" height="1080"}
-
 ## S33 Regular Calendar PS & PC
 [![S33 Regular Calendar]](/assets/site-img/PSGL-S33-Calendar-Regular.jpg)
 
