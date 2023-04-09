@@ -1,13 +1,10 @@
 ---
-title: GT7 Constructors Challenge
+title: GT7 Formula Radical '23
 image: /assets/site-img/gt7-header.png
 ---
 
-* [GT S3 Calendar](/gt7/s3/calendar).
-* Constructors Challenge.
-* Round 1 begins 17.JAN.2022 for 8 rounds over 11 weeks.
-* Drivers will select a Gr.3 and a Gr.4 vehicle from a single construtor.
-* Limit 3 drivers per constructor.
-* Any constructor that offers a Gr.3 and Gr.4 vehicle is available for competition.
+* [GT S4 Formula Radical '23 Calendar](/gt7/calendar).
+* Round 1 begins 02.MAY.2023 for 4 rounds over 4 weeks.
+* Radical SR3 SL '13.
 * Qualifying sessions begin at 19:50 GMT.
 * Sign up information and more details on our Discord.
