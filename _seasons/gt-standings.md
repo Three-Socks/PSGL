@@ -1,8 +1,8 @@
 ---
 layout: seasons_fetch
-slug: s3
-title: GT Season 3 Standings
-description: GT Season 3 Standings
+slug: s4
+title: GT Season 4 Standings
+description: GT Season 4 Standings
 permalink: '/:categories/standings'
 category: gt
 menu_title: GT Standings
