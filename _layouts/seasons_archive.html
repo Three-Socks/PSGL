@@ -30,7 +30,7 @@ layout: default
 			{
 				standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-driver-standings.png';
 				standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-constructor-standings.png';
-				standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
+				//standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
 			}
 
 			if (!standings_json)

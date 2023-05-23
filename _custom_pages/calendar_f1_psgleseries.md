@@ -4,7 +4,7 @@ title: F1 2022 PSGL ESeries Calendar
 permalink: /f1/psgl-e-series/calendar
 menu_title: E-Series Calendar
 menu_icon: /assets/site-img/PSGL-Logo.png
-menu_hide: false
+menu_hide: true
 menu_order: 3
 ---
 

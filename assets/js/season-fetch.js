@@ -15,7 +15,8 @@ function getLeagueName (l_id)
 const DISCORD_EPOCH = 1420070400000;
 function convertSnowflakeToDate(snowflake, epoch = DISCORD_EPOCH)
 {
-	return new Date(snowflake / 4194304 + epoch);
+	const date = new Date(snowflake / 4194304 + epoch);
+	return isNaN(date) ? null : date;
 }
 
 function getDiscordDate(url)
@@ -25,15 +26,14 @@ function getDiscordDate(url)
 	if (URLObj)
 	{
 		const path_split = URLObj.pathname.split('/');
-
 		if (path_split)
 		{
 			const date = convertSnowflakeToDate(path_split[path_split.length - 2]);
-			return date.toDateString();
+			return date ? date.toDateString() : null;
 		}
 	}
 
-	return '';
+	return null;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -61,20 +61,20 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 			let standings_view_html = '';
 
-			if (league.drivers)
+			for (let i = 0; i < 2; i++)
 			{
-				const last_updated_date = league.last_updated ? league.last_updated : getDiscordDate(league.drivers);
-				standings_view_html += `<a href="${league.drivers}"><img src="${league.drivers}" alt="" style="width:100%" /></a>
-				<div class="smalltext right">Last Updated: ${last_updated_date}</div>
-				<hr>`;
-			}
+				const standings_image = i == 0 ? league.drivers : league.constructors;
 
-			if (league.constructors)
-			{
-				const last_updated_date = league.last_updated ? league.last_updated : getDiscordDate(league.constructors);
-				standings_view_html += `<a href="${league.constructors}"><img src="${league.constructors}" alt="" style="width:100%" /></a>
-				<div class="smalltext right">Last Updated: ${last_updated_date}</div>
-				<hr>`;
+				if (standings_image)
+				{
+					standings_view_html += `<a href="${standings_image}"><img src="${standings_image}" alt="" style="width:100%" /></a>`;
+
+					const last_updated_date = getDiscordDate(standings_image);
+					if (last_updated_date)
+						standings_view_html += `<div class="smalltext right">Last Updated: ${last_updated_date}</div>`;
+
+					standings_view_html += '<hr>';
+				}
 			}
 
 			if (!standings_view_html)
