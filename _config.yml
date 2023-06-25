@@ -47,7 +47,10 @@ kramdown:
   parse_block_html: true
 
 sass:
-    style: compressed
+  style: compressed
+
+target-blank:
+  noreferrer: false
 
 permalink: /:categories/:title
 

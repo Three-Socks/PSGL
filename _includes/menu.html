@@ -74,7 +74,7 @@
 			{% assign set_active = true %}
 		{% endif %}
 		<li class="listlevel1">
-			<a class="{{ class }}" href="{{ url }}"{%- if target -%} rel="noopener noreferrer" target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i> <span class="button_title">{{ title }}{%- if target -%}&nbsp;&#8599;{% endif %}</span></a>
+			<a class="{{ class }}" href="{{ url }}"{%- if target -%} rel="noopener" target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i> <span class="button_title">{{ title }}{%- if target -%}&nbsp;&#8599;{% endif %}</span></a>
 		</li>
 	{% endfor %}
 	</ul>
