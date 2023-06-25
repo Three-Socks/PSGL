@@ -25,7 +25,7 @@ GT Omega is a leading manufacturer of gaming peripherals. From gaming chairs to 
 
 Check out [GT Omega](https://www.gtomega.co.uk/?rfsn=6685710.a59c6dc&utm_source=refersion&utm_medium=PSGL)
 
-Use **PSGL** at checkout for 5% off on GT Omega products.
+Use discount code **PSGL** at checkout for 5% off on GT Omega products.
 
 You can also find GT Omega on:
 
