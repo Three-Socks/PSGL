@@ -49,7 +49,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 		if (league)
 		{
-			history.pushState({league: l_id}, '', '?league=' + l_id);
+			history.pushState({ league: l_id }, '', '?league=' + l_id);
 
 			const title = getLeagueName(l_id) + ' | ' + page_title;
 			$('.category_header').text(title);
@@ -61,10 +61,8 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 			let standings_view_html = '';
 
-			for (let i = 0; i < 2; i++)
+			for (const standings_image of [league.drivers, league.constructors, league.results])
 			{
-				const standings_image = i == 0 ? league.drivers : league.constructors;
-
 				if (standings_image)
 				{
 					standings_view_html += `<a href="${standings_image}"><img src="${standings_image}" alt="" style="width:100%" /></a>`;
