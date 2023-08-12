@@ -7,9 +7,9 @@ menu:
     title: Discord
     discord: true
     url: ''
-  - icon: /assets/site-img/Twitter_Logo_Blue.png
+  - icon: /assets/site-img/x-logo-white.png
     standings: false
-    title: Twitter
+    title:
     twitter: true
     url: ''
   - icon: /assets/site-img/youtube_social_icon_white32.png

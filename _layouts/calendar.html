@@ -7,9 +7,11 @@ layout: default
 	</header>
 	<article class="post_wrapper blogposts" style="padding: 0;margin-bottom: 25px;">
 		<div class="psgl_calendars">
-			<a href="{{ calendar.image }}">
-				<img width="{{ calendar.width }}" height="{{ calendar.height }}" src="{{ calendar.image }}" alt="{{ calendar.name }}">
+			{% for image_src in calendar.images %}
+			<a href="{{ image_src }}">
+				<img width="{{ calendar.width }}" height="{{ calendar.height }}" src="{{ image_src }}" alt="{{ calendar.name }}">
 			</a>
+			{% endfor %}
 		</div>
 	</article>
 {% endfor %}
