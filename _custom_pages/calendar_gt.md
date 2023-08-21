@@ -1,20 +1,11 @@
 ---
-layout: page
-title: Gran Turismo 7 Season 6 SUPER GT500 Calendar
+layout: calendar
+title: Gran Turismo 7 Season 7 CONSTRUCTORS CHALLENGE II Calendar
 permalink: /gt7/calendar
-menu_title: GT S6 Calendar
+menu_title: GT S7 Calendar
 menu_icon: /assets/site-img/gt.png
 menu_hide: false
 menu_order: 5
+calendars:
+    - { name: 'Season 7 CONSTRUCTORS CHALLENGE II Calendar', images: ['/assets/site-img/PSGL_CC2_Calendar.png'], width: 1366, height: 768 }
 ---
-
-<div class="center">
-
-## Gran Turismo 7 Season 6 SUPER GT500 Calendar
-[![calendar_u]](/assets/site-img/PSGL_Calendar_SGT500.png)
-
-
-[calendar_u]: /assets/site-img/PSGL_Calendar_SGT500.png
-{:width="1200" height="675"}
-
-</div>
