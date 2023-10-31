@@ -9,7 +9,7 @@
 		"eslint": "^7.32.0"
 	},
 	"dependencies": {
-		"pg": "^8.7.3"
+		"@directus/sdk": "^13.0.1"
 	},
 	"volta": {
 		"node": "18.14.0"

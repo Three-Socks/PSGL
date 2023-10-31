@@ -1,6 +1,6 @@
 'use strict';
 
-function getLeagueName (l_id)
+function getLeagueName(l_id)
 {
 	const tier_split = l_id.split('-');
 
@@ -67,7 +67,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 				{
 					standings_view_html += `<a href="${standings_image}"><img src="${standings_image}" alt="" style="width:100%" /></a>`;
 
-					const last_updated_date = getDiscordDate(standings_image);
+					const last_updated_date = league.lastUpdated && new Date(league.lastUpdated).toLocaleString() || null;
 					if (last_updated_date)
 						standings_view_html += `<div class="smalltext right">Last Updated: ${last_updated_date}</div>`;
 
@@ -99,7 +99,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 			</li>`);
 	}
 
-	$(document).on('click', '.league_link', function (event)
+	$(document).on('click', '.league_link', function(event)
 	{
 		event.preventDefault();
 		loadLeague(event.currentTarget.parentElement.id);

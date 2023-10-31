@@ -24,11 +24,15 @@ layout: default
 
 		try
 		{
-			let standings_fetch = await fetch('/.netlify/functions/get-standings?game={{ page.category }}');
-			let standings_json = JSON.parse(await standings_fetch.text());
+			let standings_fetch = await fetch('/.netlify/functions/get-standings?game={{ page.category | upcase }}');
+			if (!standings_fetch.ok) {
+				throw new Error('Fetch failed with status ' + standings_fetch.status);
+			}
 
-			if (!standings_json)
-				throw 'standings_json false';
+			let standings_json = await standings_fetch.json();
+			if (!standings_json) {
+				throw new Error('JSON parsing failed');
+			}
 
 			season_fetch(standings_view, standings_json, '{{ page.url }}', '{{ page.title | escape }}');
 		}
