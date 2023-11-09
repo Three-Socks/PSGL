@@ -6,7 +6,12 @@ export default async ({ url }) =>
 	{
 		const client = createDirectus(process.env.DIRECTUS_URL).with(staticToken(process.env.DIRECTUS_STATIC_TOKEN)).with(rest());
 		const standingsResult = await client.request(readItems('standings', {
-			fields: ['id', 'last_updated', 'drivers.id', 'drivers.filename_download', 'constructors.id', 'constructors.filename_download', 'results.id', 'results.filename_download'],
+			fields: [
+				'id', 'last_updated',
+				'drivers.id', 'drivers.filename_download',
+				'constructors.id', 'constructors.filename_download',
+				'results.id', 'results.filename_download'
+			],
 			filter: {
 				game: {
 					name: {

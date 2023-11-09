@@ -8,6 +8,9 @@
 		"ecmaVersion": 2020,
 		"sourceType": "module"
 	},
+	"globals": {
+		"Response": "readonly"
+	},
 	"rules": {
 		"brace-style": ["error", "allman", { "allowSingleLine": true }],
 		"comma-dangle": ["error", "only-multiline"],
