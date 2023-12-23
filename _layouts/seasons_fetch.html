@@ -17,13 +17,12 @@ layout: default
 </article>
 <script src="/assets/js/season-fetch.js"></script>
 <script>
-	$(document).ready(async () =>
+	document.addEventListener('DOMContentLoaded', async () =>
 	{
-		const standings_view = $('#standings_view');
-		standings_view.html('Loading...');
+		const standings_view = document.getElementById('standings_view');
+		standings_view.innerHTML = 'Loading...';
 
-		try
-		{
+		try {
 			let standings_fetch = await fetch('/.netlify/functions/get-standings?game={{ page.category | upcase }}');
 			if (!standings_fetch.ok) {
 				throw new Error('Fetch failed with status ' + standings_fetch.status);
@@ -35,11 +34,9 @@ layout: default
 			}
 
 			season_fetch(standings_view, standings_json, '{{ page.url }}', '{{ page.title | escape }}');
-		}
-		catch (e)
-		{
+		} catch (e) {
 			console.error(e);
-			standings_view.html('Error loading standings.');
+			standings_view.innerHTML = 'Error loading standings.';
 		}
 	});
 </script>

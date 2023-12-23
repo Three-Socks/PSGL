@@ -12,36 +12,12 @@ function getLeagueName(l_id)
 		return '';
 }
 
-const DISCORD_EPOCH = 1420070400000;
-function convertSnowflakeToDate(snowflake, epoch = DISCORD_EPOCH)
-{
-	const date = new Date(snowflake / 4194304 + epoch);
-	return isNaN(date) ? null : date;
-}
-
-function getDiscordDate(url)
-{
-	const URLObj = new URL(url);
-
-	if (URLObj)
-	{
-		const path_split = URLObj.pathname.split('/');
-		if (path_split)
-		{
-			const date = convertSnowflakeToDate(path_split[path_split.length - 2]);
-			return date ? date.toDateString() : null;
-		}
-	}
-
-	return null;
-}
-
 // eslint-disable-next-line no-unused-vars
 function season_fetch(standings_view, standings_json, page_url, page_title)
 {
-	standings_view.html('');
+	standings_view.innerHTML = '';
 
-	const league_list = $('.league_list');
+	const league_list = document.querySelector('.league_list');
 
 	function loadLeague(l_id)
 	{
@@ -52,12 +28,12 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 			history.pushState({ league: l_id }, '', '?league=' + l_id);
 
 			const title = getLeagueName(l_id) + ' | ' + page_title;
-			$('.category_header').text(title);
+			document.querySelector('.category_header').textContent = title;
 			document.title = title;
 
-			standings_view.show();
-			standings_view[0].scrollIntoView();
-			league_list.hide();
+			standings_view.style.display = 'block';
+			standings_view.scrollIntoView();
+			league_list.style.display = 'none';
 
 			let standings_view_html = '';
 
@@ -78,7 +54,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 			if (!standings_view_html)
 				standings_view_html = '<div class="standings_header">To be determined</div>';
 
-			standings_view.html(standings_view_html);
+			standings_view.innerHTML = standings_view_html;
 		}
 	}
 
@@ -91,7 +67,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 	for (const tier of standings_json)
 	{
 		const tier_name_id = tier.name.replace(' ', '-');
-		league_list.append(`
+		league_list.insertAdjacentHTML('beforeend', `
 			<li id="${tier_name_id}" class="league_button${tier.name.length > 6 ? ' league_text_small' : ''}">
 				<a class="league_link" href="${page_url}/?league=${tier_name_id}">
 					<span>${tier.name}</span>
@@ -99,16 +75,18 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 			</li>`);
 	}
 
-	$(document).on('click', '.league_link', function(event)
+	document.addEventListener('click', function(event)
 	{
-		event.preventDefault();
-		loadLeague(event.currentTarget.parentElement.id);
+		if (event.target.matches('.league_link')) {
+			event.preventDefault();
+			loadLeague(event.target.parentElement.id);
+		}
 	});
 
-	$(window).on('popstate', function()
+	window.addEventListener('popstate', function()
 	{
-		$('.category_header').text(page_title);
-		standings_view.hide();
-		league_list.show();
+		document.querySelector('.category_header').textContent = page_title;
+		standings_view.style.display = 'none';
+		league_list.style.display = 'flex';
 	});
 }

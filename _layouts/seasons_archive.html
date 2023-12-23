@@ -17,10 +17,10 @@ layout: default
 </article>
 <script src="/assets/js/season-fetch.js"></script>
 <script>
-	$(document).ready(async () =>
+	document.addEventListener('DOMContentLoaded', async () =>
 	{
-		const standings_view = $('#standings_view');
-		standings_view.html('Loading...');
+		const standings_view = document.getElementById('standings_view');
+		standings_view.innerHTML = 'Loading...';
 
 		try
 		{
@@ -41,7 +41,7 @@ layout: default
 		catch (e)
 		{
 			console.error(e);
-			standings_view.html('Error loading standings.');
+			standings_view.innerHTML = 'Error loading standings.';
 		}
 	});
 </script>
