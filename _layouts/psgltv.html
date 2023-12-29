@@ -32,14 +32,14 @@ layout: default
 	league["f6"] = [];
 	league["fp"] = [];
 
-	$(document).ready(async function()
+	document.addEventListener('DOMContentLoaded', async function()
 	{
-		const league_video = $("#league_video");
-		league_video.html('Loading...');
+		const league_video = document.querySelector("#league_video");
+		league_video.innerHTML = 'Loading...';
 
 		try
 		{
-			const league_list = $('.league_list');
+			const league_list = document.querySelector('.league_list');
 
 			let youtube_fetch = await fetch('/.netlify/functions/get-youtube');
 			let youtube_json = JSON.parse(await youtube_fetch.text());
@@ -47,11 +47,11 @@ layout: default
 			if (!youtube_json)
 				throw 'youtube_json false';
 
-			league_video.html('');
+			league_video.innerHTML = '';
 
 			for (const video of youtube_json)
 			{
-				league_list.append(`
+				league_list.insertAdjacentHTML('beforeend', `
 			<li data-youtube="${video.videoId}" class="league_vbutton">
 				<img src="${video.thumbnail}" alt="" />
 				<div class="league_vlink">
@@ -63,7 +63,7 @@ layout: default
 		catch (e)
 		{
 			console.error(e);
-			league_video.html('Error loading videos.');
+			league_video.innerHTML = 'Error loading videos.';
 		}
 
 		let params = (new URL(document.location)).searchParams;
@@ -74,30 +74,30 @@ layout: default
 
 		function loadLeague(league_id)
 		{
-			$("#all_leagues").hide();
-			$("#latest_videos_list").hide();
+			document.querySelector("#all_leagues").style.display = "none";
+			document.querySelector("#latest_videos_list").style.display = "none";
 
 			if (league[league_id] != undefined)
 			{
-				$("#videos_list").show();
+				document.querySelector("#videos_list").style.display = "block";
 
-				$.each(league[league_id], function(index, value)
-				{
+				league[league_id].forEach(function(value, index) {
 					if (value.id != 0)
 					{
 						if (index == 0)
-						league_video.html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + value.id + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
+						league_video.innerHTML = `<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/${value.id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
 
-						$("#videos_list ul").append('<li data-youtube="' + value.id + '" class="league_vbutton"><img src="' + value.thumbnail + '" alt="" /><div class="league_vlink"><a href="#">' + value.title + '</a></div></li>');
+						document.querySelector("#videos_list ul").insertAdjacentHTML('beforeend', `<li data-youtube="${value.id}" class="league_vbutton"><img src="${value.thumbnail}" alt="" /><div class="league_vlink"><a href="#">${value.title}</a></div></li>`);
 					}
 				});
 
-				$(".league_vbutton").click(function(event)
-				{
-					addVideo($(this));
+				document.querySelectorAll(".league_vbutton").forEach(function(el) {
+					el.addEventListener('click', function() {
+						addVideo(el);
+					});
 				});
 
-				$("#videos_list ul").append('<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><div class="league_vlink"><a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+25+%7C+' + league_id + '%22" rel="noopener" target="_blank">View More on YouTube</a></div></li>');
+				document.querySelector("#videos_list ul").insertAdjacentHTML('beforeend', `<li class="league_vbutton league_vbutton_break"></li><li class="league_vbutton"><div class="league_vlink"><a href="https://www.youtube.com/channel/{{ site.data.settings.youtube }}/search?query=%22Season+25+%7C+${league_id}%22" rel="noopener" target="_blank">View More on YouTube</a></div></li>`);
 			}
 		}
 
@@ -105,14 +105,14 @@ layout: default
 		{
 			event.preventDefault();
 
-			if (el.data("youtube") != '')
+			if (el.getAttribute("data-youtube") != '')
 			{
-				league_video.html('<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/' + el.data("youtube") + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>');
-				league_video.get(0).scrollIntoView();
+				league_video.innerHTML = `<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/${el.getAttribute("data-youtube")}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+				league_video.scrollIntoView();
 			}
 		}
 
-		$(window).on('popstate', function(event)
+		window.onpopstate = function(event)
 		{
 			if (event.state != null && event.state.league != null)
 			{
@@ -120,30 +120,32 @@ layout: default
 			}
 			else
 			{
-				$("#videos_list").hide();
-				$("#all_leagues").show();
-				$("#latest_videos_list").show();
-				league_video.empty();
-				$("#videos_list ul").empty();
+				document.querySelector("#videos_list").style.display = "none";
+				document.querySelector("#all_leagues").style.display = "block";
+				document.querySelector("#latest_videos_list").style.display = "block";
+				league_video.innerHTML = '';
+				document.querySelector("#videos_list ul").innerHTML = '';
 			}
+		};
+
+		document.querySelectorAll(".league_vbutton").forEach(function(el) {
+			el.addEventListener('click', function(event) {
+				document.querySelector("#all_leagues").style.display = "none";
+				history.pushState(null, "");
+
+				addVideo(el);
+			});
 		});
 
-		$(".league_vbutton").click(function(event)
-		{
-			$("#all_leagues").hide();
-			history.pushState(null, "");
+		document.querySelectorAll(".league_button").forEach(function(el) {
+			el.addEventListener('click', function(event) {
+				event.preventDefault();
 
-			addVideo($(this));
-		});
+				let l_id = event.target.closest("li").getAttribute('id');
 
-		$(".league_button").click(function(event)
-		{
-			event.preventDefault();
-
-			let l_id = $(event.target).closest( "li" ).attr('id');
-
-			history.pushState({league: l_id}, "", "?league=" + l_id);
-			loadLeague(l_id);
+				history.pushState({league: l_id}, "", "?league=" + l_id);
+				loadLeague(l_id);
+			});
 		});
 	});
 </script>
