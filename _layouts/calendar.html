@@ -5,6 +5,13 @@ layout: default
 	<header class="category_header">
 		{{ calendar.name | escape }}
 	</header>
+	{%- if calendar.content -%}
+	<article class="post_wrapper blogposts" style="margin-bottom: 25px;">
+		<div class="psgl_content">
+			{{ calendar.content | markdownify }}
+		</div>
+	</article>
+	{%- else -%}
 	<article class="post_wrapper blogposts" style="padding: 0;margin-bottom: 25px;">
 		<div class="psgl_calendars">
 			{% for image_src in calendar.images %}
@@ -14,5 +21,6 @@ layout: default
 			{% endfor %}
 		</div>
 	</article>
+	{%- endif -%}
 {% endfor %}
 {{ content }}
