@@ -4,7 +4,7 @@ image: /assets/site-img/gt7-header.png
 ---
 
 * [GT SUPER FORMULA 24 Calendar](/gt7/calendar).
-* Round 1 begins 31.DEC.2023 for 4 rounds over 4 weeks.
+* Round 1 begins 09.JAN.2024 for 4 rounds over 4 weeks.
 * SF23 Super Formula Honda '23
 * SF23 Super Formula Toyota '23
 * Qualifying sessions begin at 19:50 BST.
