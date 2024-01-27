@@ -1,6 +1,7 @@
 ---
 layout: calendar
-title: F1 2022 Season 34 Calendar
+title: F1 Season 34 Calendar
+category: f1
 permalink: /f1/s34/calendar
 menu_title: F1 S34 Calendar
 menu_icon: /assets/site-img/f1-48x48.png

@@ -1,6 +1,7 @@
 ---
 layout: calendar
 title: Gran Turismo 7 Season 7 Calendar
+category: gt
 permalink: /gt7/s7/calendar
 menu_title: GT S7 Calendar
 menu_icon: /assets/site-img/gt.png

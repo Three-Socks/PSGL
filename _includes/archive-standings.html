@@ -14,7 +14,7 @@
 	<div class="psgl_content_right">
 		<div class="psgl_content">
 			<hr/>
-			<div class="standings_header">{{ current_comp.first.title }} Archives</div>
+			<div class="standings_header">{{ current_comp.first.title }} Standings Archives</div>
 			{% for season in current_season %}
 				{% if season.title != page.title %}
 					<div class="standings_link"><a href="{{ season.url }}">{{ season.title | replace: "Standings" | replace: current_comp.first.title | strip }}</a></div>

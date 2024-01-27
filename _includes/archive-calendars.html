@@ -1,0 +1,16 @@
+{% assign calendars = site.custom_pages | where: "category", page.category %}
+{% assign category_title = calendars.first.category | upcase %}
+
+{%- if calendars.size > 1 -%}
+<div class="psgl_content_right">
+	<div class="psgl_content">
+		<hr/>
+		<div class="standings_header">{{ category_title }} Calendar Archives</div>
+		{% for calendar in calendars %}
+			{% if calendar.title != page.title %}
+				<div class="standings_link"><a href="{{ calendar.url }}">{{ calendar.title | replace: "Calendar" | replace: category_title | strip }}</a></div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+{% endif %}

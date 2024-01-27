@@ -1,6 +1,7 @@
 ---
 layout: page
-title: F1 2022 Season 31 Calendar
+title: F1 Season 31 Calendar
+category: f1
 permalink: /f1/s31/calendar
 menu_title: F1 Calendar
 menu_icon: /assets/site-img/f1-48x48.png

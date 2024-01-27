@@ -1,6 +1,7 @@
 ---
 layout: calendar
 title: Gran Turismo 7 Season 9 PORSCHE FEST 24 Calendar
+category: gt
 permalink: /gt7/calendar
 menu_title: GT S9 Calendar
 menu_icon: /assets/site-img/gt.png

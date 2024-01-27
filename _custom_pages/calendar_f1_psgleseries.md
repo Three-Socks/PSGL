@@ -1,6 +1,7 @@
 ---
 layout: calendar
-title: F1 2023 PSGL E-Series S3 Calendar
+title: F1 PSGL E-Series S3 Calendar
+category: f1
 permalink: /f1/psgl-e-series/calendar
 menu_title: E-Series S3 Calendar
 menu_icon: /assets/site-img/PSGL-Logo.png

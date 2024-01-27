@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Gran Turismo 7 Season 6 Calendar
+category: gt
 permalink: /gt7/s6/calendar
 menu_title: GT S6 Calendar
 menu_icon: /assets/site-img/gt.png
