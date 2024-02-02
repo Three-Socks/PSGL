@@ -28,8 +28,13 @@ layout: default
 
 			for (let standing of standings_json)
 			{
-				standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-driver-standings.png';
-				standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-constructor-standings.png';
+				const file_format = standing.file_format || 'png'
+
+				if (!standing.no_drivers)
+					standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-driver-standings.' + file_format;
+
+				if (!standing.no_constr)
+					standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-constructor-standings.' + file_format;
 				//standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
 			}
 
