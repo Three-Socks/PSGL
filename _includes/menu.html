@@ -3,7 +3,7 @@
 
 {% capture menu_list %}
 	{% for menu in site.data.navigation.menu %}
-		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}
+		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}|{{menu.no_text}}
 		{% if forloop.index == 1 %}
 			{% for page in custom_pages %}
 				{% if page.title != null and page.menu_hide != true %}
@@ -41,6 +41,7 @@
 		{%- assign discord = menu_vals[4] | strip -%}
 		{%- assign twitter = menu_vals[5] | strip -%}
 		{%- assign youtube = menu_vals[6] | strip -%}
+		{%- assign no_text = menu_vals[7] | strip -%}
 
 		{%- if discord == 'true' -%}
 			{%- assign url = site.url | append: '/discord' | strip -%}
@@ -74,7 +75,7 @@
 			{% assign set_active = true %}
 		{% endif %}
 		<li class="listlevel1">
-			<a class="{{ class }}" href="{{ url }}"{%- if target -%} rel="noopener" target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i> <span class="button_title">{{ title }}{%- if target -%}&nbsp;&#8599;{% endif %}</span></a>
+			<a class="{{ class }}" href="{{ url }}"{%- if target -%} rel="noopener" target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i><span class="button_title">{%- if no_text != 'true' -%}{{ title }}{% endif %}{%- if target -%}{%- if no_text != 'true' -%}&nbsp;{% endif %}&#8599;{% endif %}</span></a>
 		</li>
 	{% endfor %}
 	</ul>

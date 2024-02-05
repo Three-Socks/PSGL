@@ -9,9 +9,10 @@ menu:
     url: ''
   - icon: /assets/site-img/x-logo-white.png
     standings: false
-    title:
+    title: 'X'
     twitter: true
     url: ''
+    no_text: true
   - icon: /assets/site-img/youtube_social_icon_white32.png
     standings: false
     title: YouTube
