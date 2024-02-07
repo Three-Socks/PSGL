@@ -11,11 +11,6 @@
     Referrer-Policy= "no-referrer-when-downgrade"
     Strict-Transport-Security = "max-age=63072000;includeSubDomains;preload"
 
-[[headers]]
-  for = "/admin"
-  [headers.values]
-    X-Robots-Tag= "noindex"
-
 [[redirects]]
   from = "https://mx.premiersimgl.com/*"
   to = "https://api.mixpanel.com/:splat"

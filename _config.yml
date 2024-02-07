@@ -17,13 +17,6 @@ webmaster_verifications:
 excerpt_separator: <!--more-->
 timezone: Europe/London
 
-defaults:
-  -
-    scope:
-      path:            "admin/"
-    values:
-      sitemap:         false
-
 # Build settings
 plugins:
   - jekyll-seo-tag
