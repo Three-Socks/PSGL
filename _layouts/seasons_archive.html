@@ -2,6 +2,18 @@
 layout: default
 ---
 
+{% if page.drivers_file_suffix %}
+	{% assign drivers_file_suffix = page.drivers_file_suffix %}
+{% else %}
+	{% assign drivers_file_suffix = '-driver-standings' %}
+{% endif %}
+
+{% if page.constructors_file_suffix %}
+	{% assign constructors_file_suffix = page.constructors_file_suffix %}
+{% else %}
+	{% assign constructors_file_suffix = '-constructor-standings' %}
+{% endif %}
+
 <header class="category_header">
 	{{ page.title | escape }}
 </header>
@@ -28,13 +40,13 @@ layout: default
 
 			for (let standing of standings_json)
 			{
-				const file_format = standing.file_format || 'png'
+				const file_format = standing.file_format || 'png';
 
 				if (!standing.no_drivers)
-					standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-driver-standings.' + file_format;
+					standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '{{ drivers_file_suffix }}' + '.' + file_format;
 
 				if (!standing.no_constr)
-					standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '-constructor-standings.' + file_format;
+					standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '{{ constructors_file_suffix }}' + '.' + file_format;
 				//standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
 			}
 
