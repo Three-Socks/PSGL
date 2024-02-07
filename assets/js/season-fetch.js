@@ -32,7 +32,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 			document.title = title;
 
 			standings_view.style.display = 'block';
-			standings_view.scrollIntoView();
+			//standings_view.scrollIntoView();
 			league_list.style.display = 'none';
 
 			let standings_view_html = '';
@@ -58,8 +58,8 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 		}
 	}
 
-	let params = (new URL(document.location)).searchParams;
-	let l_id = params.get('league');
+	const params = (new URL(document.location)).searchParams;
+	const l_id = params.get('league');
 
 	if (l_id && l_id != '')
 		loadLeague(l_id);
@@ -68,7 +68,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 	{
 		const tier_name_id = tier.name.replace(' ', '-');
 		league_list.insertAdjacentHTML('beforeend', `
-			<li id="${tier_name_id}" class="league_button${tier.name.length > 6 ? ' league_text_small' : ''}">
+			<li id="${tier_name_id}" class="league_button${tier.name.length > 6 ? (tier.name.length > 8 ? ' league_text_small' : ' league_text_a_bit_small') : ''}">
 				<a class="league_link" href="${page_url}/?league=${tier_name_id}">
 					<span>${tier.name}</span>
 				</a>
@@ -77,7 +77,8 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 	document.addEventListener('click', function(event)
 	{
-		if (event.target.matches('.league_link')) {
+		if (event.target.matches('.league_link'))
+		{
 			event.preventDefault();
 			loadLeague(event.target.parentElement.id);
 		}

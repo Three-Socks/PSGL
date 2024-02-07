@@ -4,8 +4,8 @@ layout: default
 <header class="category_header">
 	{{ page.title | upcase }} Standings
 </header>
-<article class="post_wrapper blogposts">
-	<div class="psgl_content">
+<article class="post_wrapper blogposts" style="padding: 0;">
+	<div class="psgl_standings center">
 	{{ content }}
 	{% if page.drivers != '' and page.drivers != null %}
 		<a href="{{ page.drivers }}"><img src="{{ page.drivers }}" alt="" style="width:100%" /></a>

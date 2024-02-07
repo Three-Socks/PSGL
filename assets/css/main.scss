@@ -95,6 +95,14 @@
 	height: auto;
 }
 
+.psgl_standings {
+	font-size: 1em;
+}
+.psgl_standings img {
+	max-width: 100%;
+	height: auto;
+}
+
 .psgl_content {
 	padding: 10px 20px;
 	font-size: 1em;
@@ -219,6 +227,10 @@
 
 .league_link span {
 	flex: 1 1 100%;
+}
+
+.league_text_a_bit_small {
+	font-size: 1.5vmax;
 }
 
 .league_text_small {
@@ -411,7 +423,15 @@
 		font-size: 2.5vmax;
 	}
 
+	.league_text_a_bit_small {
+		font-size: 1.5vmax;
+	}
+
 	.league_text_small {
 		font-size: 1vmax;
+	}
+
+	.league_vbutton {
+		font-size: 0.5vmax !important;
 	}
   }

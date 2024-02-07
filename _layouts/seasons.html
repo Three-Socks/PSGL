@@ -24,8 +24,10 @@ layout: default
 	{% else %}
 		{% assign league_size = league.title | size %}
 
-		{% if league_size > 6 %}
+		{% if league_size > 8 %}
 		<li class="league_button league_text_small">
+		{% elsif league_size > 6 %}
+		<li class="league_button league_text_a_bit_small">
 		{% else %}
 		<li class="league_button">
 		{% endif %}
