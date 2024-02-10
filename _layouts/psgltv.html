@@ -74,7 +74,7 @@ layout: default
 
 		function loadLeague(league_id)
 		{
-			document.querySelector("#all_leagues").style.display = "none";
+			document.querySelector("#latest_videos_list").style.display = "none";
 			document.querySelector("#latest_videos_list").style.display = "none";
 
 			if (league[league_id] != undefined)
@@ -108,7 +108,7 @@ layout: default
 			if (el.getAttribute("data-youtube") != '')
 			{
 				league_video.innerHTML = `<div class="embed-container"><iframe src="https://www.youtube-nocookie.com/embed/${el.getAttribute("data-youtube")}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
-				league_video.scrollIntoView();
+				//league_video.scrollIntoView();
 			}
 		}
 
@@ -121,7 +121,7 @@ layout: default
 			else
 			{
 				document.querySelector("#videos_list").style.display = "none";
-				document.querySelector("#all_leagues").style.display = "block";
+				document.querySelector("#latest_videos_list").style.display = "block";
 				document.querySelector("#latest_videos_list").style.display = "block";
 				league_video.innerHTML = '';
 				document.querySelector("#videos_list ul").innerHTML = '';
@@ -130,7 +130,7 @@ layout: default
 
 		document.querySelectorAll(".league_vbutton").forEach(function(el) {
 			el.addEventListener('click', function(event) {
-				document.querySelector("#all_leagues").style.display = "none";
+				document.querySelector("#latest_videos_list").style.display = "none";
 				history.pushState(null, "");
 
 				addVideo(el);
