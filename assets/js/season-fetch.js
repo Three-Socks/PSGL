@@ -39,7 +39,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 			for (const standings of [league.drivers, league.constructors, league.results])
 			{
-				if (standings.src)
+				if (standings && standings.src)
 				{
 					const dimensions = standings.width && standings.height ? ` width="${standings.width}" height="${standings.height}"` : '';
 					standings_view_html += `<a href="${standings.src}"><img src="${standings.src}" alt=""${dimensions} style="width:100%" /></a>`;
