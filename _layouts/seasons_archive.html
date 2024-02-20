@@ -43,10 +43,18 @@ layout: default
 				const file_format = standing.file_format || 'png';
 
 				if (!standing.no_drivers)
-					standing.drivers = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '{{ drivers_file_suffix }}' + '.' + file_format;
+					standing.drivers = {
+						src: document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '{{ drivers_file_suffix }}' + '.' + file_format,
+						width: standing.width,
+						height: standing.height,
+					}
 
 				if (!standing.no_constr)
-					standing.constructors = document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '{{ constructors_file_suffix }}' + '.' + file_format;
+					standing.constructors = {
+						src: document.location.origin + '/{{ page.category }}/{{ page.slug }}/' + standing.name.replace(' ', '-') + '{{ constructors_file_suffix }}' + '.' + file_format,
+						width: standing.width,
+						height: standing.height,
+					}
 				//standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
 			}
 

@@ -2,6 +2,9 @@
   command = "jekyll build"
   publish = "_site"
 
+[context.production]
+  environment = { JEKYLL_ENV = "production" }
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -42,7 +45,6 @@
 
 [build.environment]
   TZ = "Europe/London"
-  JEKYLL_ENV="production"
 
 [functions]
   directory = "functions"

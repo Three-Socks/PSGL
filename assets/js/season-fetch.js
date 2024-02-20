@@ -37,11 +37,12 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 
 			let standings_view_html = '';
 
-			for (const standings_image of [league.drivers, league.constructors, league.results])
+			for (const standings of [league.drivers, league.constructors, league.results])
 			{
-				if (standings_image)
+				if (standings.src)
 				{
-					standings_view_html += `<a href="${standings_image}"><img src="${standings_image}" alt="" style="width:100%" /></a>`;
+					const dimensions = standings.width && standings.height ? ` width="${standings.width}" height="${standings.height}"` : '';
+					standings_view_html += `<a href="${standings.src}"><img src="${standings.src}" alt=""${dimensions} style="width:100%" /></a>`;
 
 					const last_updated_date = league.lastUpdated && new Date(league.lastUpdated).toLocaleString() || null;
 					if (last_updated_date)

@@ -8,9 +8,9 @@ export default async ({ url }) =>
 		const standingsResult = await client.request(readItems('standings', {
 			fields: [
 				'id', 'last_updated',
-				'drivers.id', 'drivers.filename_download',
-				'constructors.id', 'constructors.filename_download',
-				'results.id', 'results.filename_download'
+				'drivers.id', 'drivers.filename_download', 'drivers.width', 'drivers.height',
+				'constructors.id', 'constructors.filename_download', 'constructors.width', 'constructors.height',
+				'results.id', 'results.filename_download', 'results.width', 'results.height'
 			],
 			filter: {
 				game: {
@@ -28,11 +28,17 @@ export default async ({ url }) =>
 		{
 			const getAssetUrl = asset => (asset ? `${assetsUrl}${asset.id}/${asset.filename_download}` : null);
 
+			const createAssetObject = asset => ({
+				src: getAssetUrl(asset),
+				width: asset && asset.width,
+				height: asset && asset.height
+			});
+
 			return {
 				name: standing.id,
-				drivers: getAssetUrl(standing.drivers),
-				constructors: getAssetUrl(standing.constructors),
-				results: getAssetUrl(standing.results),
+				drivers: createAssetObject(standing.drivers),
+				constructors: createAssetObject(standing.constructors),
+				results: createAssetObject(standing.results),
 				lastUpdated: standing.last_updated,
 			};
 		});
