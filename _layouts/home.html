@@ -5,7 +5,8 @@ layout: default
 <header class="category_header">
 	{{ page.title }}
 </header>
-{%- for signup in site.signups -%}
+{% assign signups = site.signups | sort: 'order' %}
+{%- for signup in signups -%}
 {%- unless signup.hide -%}
 <article class="post_wrapper blogposts">
 	<div class="psgl_content_left">
