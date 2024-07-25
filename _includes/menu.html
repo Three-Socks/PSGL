@@ -47,7 +47,7 @@
 			{%- assign url = site.url | append: '/discord' | strip -%}
 			{%- assign target = true -%}
 		{%- elsif twitter == 'true' -%}
-			{%- assign url = 'https://twitter.com/' | append: site.data.settings.twitter | remove:'@' | strip -%}
+			{%- assign url = 'https://x.com/' | append: site.data.settings.twitter | remove:'@' | strip -%}
 			{%- assign target = true -%}
 		{% elsif youtube == 'true' %}
 			{%- assign url = 'https://www.youtube.com/channel/' | append: site.data.settings.youtube | append: '?sub_confirmation=1' | strip -%}

@@ -16,7 +16,7 @@ layout: default
 			{% assign is_twitter = page.author | slice: 0 %}
 
 			{% if is_twitter contains "@" %}
-				<a href="https://twitter.com/{{ page.author }}" rel="noopener" target="_blank">{{ page.author }}</a> |&nbsp;
+				<a href="https://x.com/{{ page.author }}" rel="noopener" target="_blank">{{ page.author }}</a> |&nbsp;
 			{%- else -%}
 				{{ page.author }} |&nbsp;
 			{%- endif -%}

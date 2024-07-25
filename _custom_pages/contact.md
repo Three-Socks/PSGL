@@ -6,7 +6,7 @@ menu_hide: true
 image: /assets/site-img/PSGLTwitterBannerBlank.png
 ---
 ## Social Media
-X: [https://twitter.com/PremierSimGL](https://twitter.com/PremierSimGL)
+X: [https://x.com/PremierSimGL](https://x.com/PremierSimGL)
 
 Discord: [{{ site.url }}/discord]({{ site.url }}/discord)
 

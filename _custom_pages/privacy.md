@@ -154,7 +154,7 @@ It is recommended to log out from the respective services in order to make sure 
 * **Twitter Tweet button and social widgets (Twitter, Inc.)**
     * The Twitter Tweet button and social widgets are services allowing interaction with the Twitter social network provided by Twitter, Inc.
     * Personal Data processed: Trackers; Usage Data.
-    * Place of processing: United States – [Privacy Policy](https://twitter.com/en/privacy).
+    * Place of processing: United States – [Privacy Policy](https://x.com/en/privacy).
 * **Discord (Discord, Inc.)**
     * Interact with other Discord users and participate in public and private communities (or “servers”).
     * Personal Data processed: Usage Data.

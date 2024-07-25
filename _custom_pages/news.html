@@ -24,7 +24,7 @@ menu_order: 1
 			{%- assign is_twitter = post.author | slice: 0 -%}
 
 			{% if is_twitter contains "@" %}
-				<a href="https://twitter.com/{{ post.author }}" rel="noopener" target="_blank">{{ post.author }}</a> |&nbsp;
+				<a href="https://x.com/{{ post.author }}" rel="noopener" target="_blank">{{ post.author }}</a> |&nbsp;
 			{%- else -%}
 				{{ post.author }} |&nbsp;
 			{%- endif -%}

@@ -35,4 +35,4 @@ You can also find GT Omega on:
 
 [https://www.instagram.com/GTOmegaRacing](https://www.instagram.com/GTOmegaRacing)
 
-[https://www.twitter.com/GTOmegaRacing](https://www.twitter.com/GTOmegaRacing)
+[https://x.com/GTOmegaRacing](https://x.com/GTOmegaRacing)
