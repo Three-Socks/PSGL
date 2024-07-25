@@ -8,5 +8,5 @@ menu_icon: /assets/site-img/PSGL-Logo.png
 menu_hide: true
 menu_order: 3
 calendars:
-    - { name: 'PSGL E-Series S3 Calendar', images: ['/assets/site-img/PSGL-E-Series-Calendar-S3.png'], width: 2160, height: 1132 }
+    - { name: 'PSGL E-Series S3 Calendar', images: ['/assets/site-img/PSGL-E-Series-Calendar-S3.jpg'], width: 2160, height: 1132 }
 ---
