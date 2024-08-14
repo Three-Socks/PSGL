@@ -18,6 +18,25 @@
 				</main>
 			</div>
 			<div class="psgl_row_right">
+
+				<div class="psgl_join">
+					<div class="category_header">
+						<span class="smalltext">PSGL - PC F1 - LIVE</span>
+					</div>
+					<div class="twitch-video">
+						<div id="twitch-embed"></div>
+						<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+						<script type="text/javascript">
+							new Twitch.Player("twitch-embed", {
+								width: '100%',
+								height: '100%',
+								muted: true,
+								channel: 'premiersimgl'
+							});
+						</script>
+					</div>
+				</div>
+
 				<div class="psgl_join">
 					<div class="post_wrapper blogposts">
 						<div class="center" style="padding-bottom: 7px;border-bottom: 1px solid #1c1f29;">
@@ -61,8 +80,8 @@
 
 				{%- if page.url == "/" -%}
 				<div style="color-scheme: normal">
-					<a class="twitter-timeline" data-chrome="transparent" data-height="1400" data-dnt="true" data-theme="dark" href="https://x.com/{{ site.data.settings.twitter | remove:'@' }}?ref_src=twsrc%5Etfw">Tweets by {{ site.data.settings.twitter | remove:'@' }}</a>
-					<script async type="text/plain" class="_iub_cs_activate" data-iub-purposes="3" data-suppressedsrc="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<a class="twitter-timeline" data-chrome="transparent" data-height="1400" data-dnt="true" data-theme="dark" href="https://twitter.com/{{ site.data.settings.twitter | remove:'@' }}?ref_src=twsrc%5Etfw">Tweets by {{ site.data.settings.twitter | remove:'@' }}</a>
+					<script async class="_iub_cs_activate" data-iub-purposes="3" data-suppressedsrc="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>
 				{%- endif -%}
 			</div>

@@ -151,6 +151,20 @@
 	border-radius: 4px 4px 0 0 !important;
 }
 
+.twitch-video {
+	margin-top: 2px;
+	padding-top: 56.25%;
+	position: relative;
+	height: 0;
+}
+
+.twitch-video iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+
 .psgl_grid {
 	display: grid;
     grid-template-columns: 74% 25%;
