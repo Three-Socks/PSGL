@@ -19,3 +19,8 @@ menu:
     twitter: false
     url: ''
     youtube: true
+  - icon: /assets/site-img/twitch-32.png
+    standings: false
+    title: Twitch
+    url: ''
+    twitch: true

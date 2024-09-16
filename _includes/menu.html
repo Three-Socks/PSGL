@@ -3,7 +3,7 @@
 
 {% capture menu_list %}
 	{% for menu in site.data.navigation.menu %}
-		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}|{{menu.no_text}}
+		{{menu.title}}|{{menu.url}}|{{menu.icon}}|{{menu.standings}}|{{menu.discord}}|{{menu.twitter}}|{{menu.youtube}}|{{menu.no_text}}|{{menu.twitch}}
 		{% if forloop.index == 1 %}
 			{% for page in custom_pages %}
 				{% if page.title != null and page.menu_hide != true %}
@@ -42,6 +42,7 @@
 		{%- assign twitter = menu_vals[5] | strip -%}
 		{%- assign youtube = menu_vals[6] | strip -%}
 		{%- assign no_text = menu_vals[7] | strip -%}
+		{%- assign twitch = menu_vals[8] | strip -%}
 
 		{%- if discord == 'true' -%}
 			{%- assign url = site.url | append: '/discord' | strip -%}
@@ -51,6 +52,9 @@
 			{%- assign target = true -%}
 		{% elsif youtube == 'true' %}
 			{%- assign url = 'https://www.youtube.com/channel/' | append: site.data.settings.youtube | append: '?sub_confirmation=1' | strip -%}
+			{%- assign target = true -%}
+		{% elsif twitch == 'true' %}
+			{%- assign url = 'https://www.twitch.tv/' | append: site.data.settings.twitch | strip -%}
 			{%- assign target = true -%}
 		{% else %}
 			{%- assign url = menu_vals[1] | strip -%}
