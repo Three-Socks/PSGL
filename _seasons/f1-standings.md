@@ -1,8 +1,8 @@
 ---
 layout: seasons_fetch
-slug: s37
-title: F1 Season 37 Standings
-description: F1 Season 37 Standings
+slug: s38
+title: F1 Season 38 Standings
+description: F1 Season 38 Standings
 permalink: '/:categories/standings'
 category: f1
 menu_title: F1 Standings

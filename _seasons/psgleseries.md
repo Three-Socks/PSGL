@@ -12,4 +12,5 @@ tiers:
     - { name: 'Season 1', no_drivers: true, file_format: 'jpg' }
     - { name: 'Season 2', no_drivers: true }
     - { name: 'Season 3', no_drivers: true }
+    - { name: 'Season 4', no_drivers: true }
 ---
