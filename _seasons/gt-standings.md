@@ -7,5 +7,5 @@ permalink: '/:categories/standings'
 category: gt
 menu_title: GT Standings
 menu_icon: /assets/site-img/gt.png
-menu_hide: false
+menu_hide: true
 ---
