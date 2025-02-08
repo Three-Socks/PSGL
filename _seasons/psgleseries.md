@@ -13,4 +13,5 @@ tiers:
     - { name: 'Season 2', no_drivers: true }
     - { name: 'Season 3', no_drivers: true }
     - { name: 'Season 4', no_drivers: true }
+    - { name: 'Season 5', no_drivers: true }
 ---
