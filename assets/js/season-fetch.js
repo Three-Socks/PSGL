@@ -70,7 +70,7 @@ function season_fetch(standings_view, standings_json, page_url, page_title)
 		const tier_name_id = tier.name.replace(' ', '-');
 		league_list.insertAdjacentHTML('beforeend', `
 			<li id="${tier_name_id}" class="league_button${tier.name.length > 6 ? (tier.name.length > 8 ? ' league_text_small' : ' league_text_a_bit_small') : ''}">
-				<a class="league_link" href="${page_url}/?league=${tier_name_id}">
+				<a class="league_link" href="${page_url}?league=${tier_name_id}">
 					<span>${tier.name}</span>
 				</a>
 			</li>`);
