@@ -6,7 +6,7 @@ menu_hide: true
 ---
 # Privacy Policy
 
-Last updated June 18, 2022
+Last updated March 28, 2025
 
 
 ## Owner
@@ -138,6 +138,10 @@ Some services among those listed below, if any, may work through geographically 
     * Netlify is a hosting service provided by Netlify, Inc.
     * Personal Data processed: Data communicated while using the service.
     * Place of processing: United States – [Privacy Policy](https://www.netlify.com/privacy/).
+* **OpenAI (OpenAI OpCo, LLC)**
+    * OpenAI provides artificial intelligence models and services used to enable specific features within this Application (e.g., data analysis, content generation, interactive responses).
+    * Personal Data processed: Data communicated while using the service, potentially including user inputs or prompts provided to AI features.
+    * Place of processing: United States – Privacy Policy.
 
 **Interaction with external social networks and platforms**
 
@@ -151,8 +155,8 @@ It is recommended to log out from the respective services in order to make sure 
 
 
 
-* **Twitter Tweet button and social widgets (Twitter, Inc.)**
-    * The Twitter Tweet button and social widgets are services allowing interaction with the Twitter social network provided by Twitter, Inc.
+* **X Tweet button and social widgets (X, Corp.)**
+    * The X Tweet button and social widgets are services allowing interaction with the X social network provided by X, Corp.
     * Personal Data processed: Trackers; Usage Data.
     * Place of processing: United States – [Privacy Policy](https://x.com/en/privacy).
 * **Discord (Discord, Inc.)**
