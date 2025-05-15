@@ -1,4 +1,4 @@
-import { createDirectus, staticToken, rest, readItems } from '@directus/sdk';
+/* import { createDirectus, staticToken, rest, readItems } from '@directus/sdk';
 export default async ({ url }) =>
 {
 	const urlObj = new URL(url);
@@ -56,4 +56,4 @@ export default async ({ url }) =>
 		console.error(e);
 		return new Response({ status: 500 });
 	}
-};
+}; */
