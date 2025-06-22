@@ -1,6 +1,6 @@
 ---
 title: F1 PSGL E-Series S6
-image: /assets/site-img/PSGL-E-Series-Info-S6.png
+image: /assets/site-img/PSGL-E-Series-Info-S6-2.jpg
 order: 2
 ---
 
