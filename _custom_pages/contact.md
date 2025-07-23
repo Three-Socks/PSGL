@@ -12,6 +12,8 @@ Discord: [{{ site.url }}/discord]({{ site.url }}/discord)
 
 Instagram: [https://www.instagram.com/premiersimgl/](https://www.instagram.com/premiersimgl/)
 
+TikTok: [https://www.tiktok.com/@premiersimgl](https://www.tiktok.com/@premiersimgl)
+
 * * *
 
 ## Email

@@ -7,6 +7,11 @@ menu:
     title: Discord
     discord: true
     url: ''
+  - icon: /assets/site-img/TikTok_Icon_Black_Square.png
+    standings: false
+    title: 'TikTok'
+    tiktok: true
+    url: ''
   - icon: /assets/site-img/x-logo-white.png
     standings: false
     title: 'X'
