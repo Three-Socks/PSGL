@@ -68,12 +68,14 @@
 				</div>
 				{%- endcomment -%}
 
+				{%- comment -%}
 				{%- if page.url == "/" -%}
 				<div style="color-scheme: normal">
 					<a class="twitter-timeline" data-chrome="transparent" data-height="1400" data-dnt="true" data-theme="dark" href="https://twitter.com/{{ site.data.settings.twitter | remove:'@' }}?ref_src=twsrc%5Etfw">Tweets by {{ site.data.settings.twitter | remove:'@' }}</a>
 					<script async class="_iub_cs_activate" data-iub-purposes="3" data-suppressedsrc="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>
 				{%- endif -%}
+				{%- endcomment -%}
 			</div>
 		</div>
 	</div>
