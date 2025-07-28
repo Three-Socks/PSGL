@@ -1,5 +1,5 @@
 ---
-layout: seasons_fetch
+layout: seasons_offline
 slug: s40
 title: F1 Season 40 Standings
 description: F1 Season 40 Standings
