@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+{% if page.drivers_file_suffix %}
+	{% assign drivers_file_suffix = page.drivers_file_suffix %}
+{% else %}
+	{% assign drivers_file_suffix = '-driver-standings' %}
+{% endif %}
+
+{% if page.constructors_file_suffix %}
+	{% assign constructors_file_suffix = page.constructors_file_suffix %}
+{% else %}
+	{% assign constructors_file_suffix = '-constructor-standings' %}
+{% endif %}
+
+{% if page.results_file_suffix %}
+	{% assign results_file_suffix = page.results_file_suffix %}
+{% else %}
+	{% assign results_file_suffix = '-results' %}
+{% endif %}
+
+<header class="category_header">
+	{{ page.title | escape }}
+</header>
+<article class="post_wrapper blogposts" style="padding: 0;">
+	<div id="standings_view" class="psgl_standings center">
+	{{ content }}
+	</div>
+	<nav>
+	<ul class="league_list">
+	</ul>
+	</nav>
+	{% include archive-standings.html %}
+</article>
+<script src="/assets/js/season-fetch.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', async () =>
+	{
+		const standings_view = document.getElementById('standings_view');
+		standings_view.innerHTML = 'Loading...';
+
+		try
+		{
+			let standings_json = JSON.parse('{{ page.tiers | jsonify }}');
+
+			for (let standing of standings_json)
+			{
+				const file_format = standing.file_format || 'png';
+
+				if (!standing.no_drivers)
+					standing.drivers = {
+						src: '{{ site.data.settings.standings_url }}/standings/' + standing.name.replace(' ', '-') + '{{ drivers_file_suffix }}' + '.' + file_format,
+						width: standing.width,
+						height: standing.height,
+					}
+
+				if (!standing.no_constr)
+					standing.constructors = {
+						src: '{{ site.data.settings.standings_url }}/standings/' + standing.name.replace(' ', '-') + '{{ constructors_file_suffix }}' + '.' + file_format,
+						width: standing.width,
+						height: standing.height,
+					}
+
+				if (!standing.no_results)
+					standing.results = {
+							src: '{{ site.data.settings.standings_url }}/standings/' + standing.name.replace(' ', '-') + '{{ results_file_suffix }}' + '.' + file_format,
+							width: standing.width,
+							height: standing.height,
+					}
+				//standing.last_updated = `{{ page.date | date: '%a %B %d %Y' }}`;
+			}
+
+			if (!standings_json)
+				throw 'standings_json false';
+
+			season_fetch(standings_view, standings_json, '{{ page.url }}', '{{ page.title | escape }}');
+		}
+		catch (e)
+		{
+			console.error(e);
+			standings_view.innerHTML = 'Error loading standings.';
+		}
+	});
+</script>
