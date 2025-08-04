@@ -20,31 +20,6 @@
     text-overflow:ellipsis;
     overflow:hidden
 }
-@font-face{
-    font-family:Whitney;
-    font-weight:300;
-    src:url(../fonts/6c6374bad0b0b6d204d8d6dc4a18d820.woff) format("woff")
-}
-@font-face{
-    font-family:Whitney;
-    font-weight:400;
-    src:url(../fonts/e8acd7d9bf6207f99350ca9f9e23b168.woff) format("woff")
-}
-@font-face{
-    font-family:Whitney;
-    font-weight:500;
-    src:url(../fonts/3bdef1251a424500c1b3a78dea9b7e57.woff) format("woff")
-}
-@font-face{
-    font-family:Whitney;
-    font-weight:600;
-    src:url(../fonts/be0060dafb7a0e31d2a1ca17c0708636.woff) format("woff")
-}
-@font-face{
-    font-family:Whitney;
-    font-weight:700;
-    src:url(../fonts/8e12fb4f14d9c4592eb8ec9f22337b04.woff) format("woff")
-}
 .noselect{
     -webkit-touch-callout:none;
     -webkit-user-select:none;
@@ -65,7 +40,7 @@
     background:rgba(47,49,54,.6);
     border:1px solid rgba(47,49,54,.9);
     border-radius:3px;
-    font:normal normal 400 normal 16px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 400 normal 16px/16px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     margin:0;
     padding:10px 15px 10px 10px;
     display:inline-block
@@ -83,7 +58,7 @@
     letter-spacing:.5px;
     text-transform:uppercase;
     flex:1 1 0%;
-    font:normal normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 600 normal 12px/16px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     margin:0 0 8px
 }
 #serverImgLink{
@@ -123,14 +98,14 @@
     color:#f6f6f7;
     cursor:pointer;
     height:20px;
-    font:normal normal 600 normal 16px/20px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 600 normal 16px/20px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     margin:0 0 4px
 }
 #serverNameBox:hover{
     text-decoration:underline;
 }
 #status,#statusIndicators{
-    font:normal normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 600 normal 12px/16px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     color:#72767d;
     height:16px
 }
@@ -141,37 +116,37 @@
     color:#72767d;
     column-rule-color:#72767d;
     background:#43b581;
-    font:italic normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
+    font:italic normal 600 normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 #numOnline{
     color:#72767d;
     display:block;
     height:16px;
-    font:normal normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 600 normal 12px/16px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     margin:0 8px 0 0
 }
 #offlineInd{
     color:#72767d;
     background:#747f8d;
-    font:italic normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
+    font:italic normal 600 normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 #numTotal{
     color:#72767d;
     display:block;
     height:16px;
-    font:normal normal 600 normal 12px/16px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
+    font:normal normal 600 normal 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 #callToAction{
     color:#fff;
     border:0;
     justify-content:center;
-    background:#43b581;
+    background:rgb(88, 101, 242);
     border-radius:3px;
-    font:normal normal 500 normal 14px/20px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 500 normal 14px/20px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     transition:background-color .17s ease 0s
 }
 #callToAction:hover{
-    background-color:#3ca374
+    background-color:rgb(70, 84, 192);
 }
 #callToAction-clicked{
     color:#dcddde;
@@ -184,7 +159,7 @@
     background:rgba(0,0,0,0);
     border:1px solid rgba(114,118,126,.298);
     border-radius:3px;
-    font:normal normal 500 normal 14px/20px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 500 normal 14px/20px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     transition:color .17s ease 0s,background-color .17s ease 0s,border-color .17s ease 0s
 }
 #discordPoly,#gDiscord{
@@ -197,7 +172,7 @@
     overflow-wrap:break-word;
     cursor:pointer;
     text-align:center;
-    font:normal normal 500 normal 14px/20px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
+    font:normal normal 500 normal 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif
 }
 #callToAction-clicked:hover{
     border-color:hsla(218,5%,47%,.6)
@@ -226,7 +201,7 @@
     height:20px;
     overflow-wrap:break-word;
     text-align:center;
-    font:normal normal 500 normal 14px/20px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 500 normal 14px/20px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     overflow:hidden
 }
 #buttonText{
@@ -234,7 +209,7 @@
     display:flex;
     height:20px;
     text-align:center;
-    font:normal normal 500 normal 14px/20px Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font:normal normal 500 normal 14px/20px "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Droid Sans", "Helvetica Neue", "Trebuchet MS", Arial, sans-serif;
     margin:0 8.83px
 }
 .loadHidden{

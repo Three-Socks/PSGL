@@ -3,6 +3,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" sizes="192x192" href="/assets/site-img/PSGL-Logo-192.png" />
+	{%- comment -%}
 	{%- if jekyll.environment == 'production' -%}
 	<script type="text/javascript">
 		var _iub = _iub || [];
@@ -11,6 +12,7 @@
 	<script type="text/javascript" src="//cdn.iubenda.com/cs/ccpa/stub.js"></script>
 	<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 	{%- endif -%}
+	{%- endcomment -%}
 	{%- seo -%}
 	<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 	<link rel="preload" as="image" href="/assets/site-img/PremierSimGL-Header.png" imagesrcset="/assets/site-img/PremierSimGL-Header-700.png 700w, /assets/site-img/PremierSimGL-Header.png 1701w" imagesizes="(max-width: 50em) 100vw, 100w">
