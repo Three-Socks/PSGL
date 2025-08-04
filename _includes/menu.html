@@ -82,7 +82,7 @@
 			{% assign class = class | append: ' active' %}
 			{% assign set_active = true %}
 		{% endif %}
-		<li class="listlevel1">
+		<li class="listlevel1" role="menuitem">
 			<a class="{{ class }}" href="{{ url }}"{%- if target -%} target="_blank"{% endif %}><i class="icon icon-menu icon-lg" style='background: url("{{ icon }}") no-repeat;background-size:100%;' title="{{ title }}"></i><span class="button_title">{%- if no_text != 'true' -%}{{ title }}{% endif %}{%- if target -%}{%- if no_text != 'true' -%}&nbsp;{% endif %}&#8599;{% endif %}</span></a>
 		</li>
 	{% endfor %}
