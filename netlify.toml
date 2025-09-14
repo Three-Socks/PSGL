@@ -31,18 +31,6 @@
   to = "/index.html"
   status = 301
 
-[[redirects]]
-  from = "https://playstationgl.com/*"
-  to = "https://www.premiersimgl.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.playstationgl.com/*"
-  to = "https://www.premiersimgl.com/:splat"
-  status = 301
-  force = true
-
 [build.environment]
   TZ = "Europe/London"
 
