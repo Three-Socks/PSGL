@@ -41,7 +41,7 @@ layout: default
 		{
 			const league_list = document.querySelector('.league_list');
 
-			let youtube_fetch = await fetch('/.netlify/functions/get-youtube');
+			let youtube_fetch = await fetch('/api/get-youtube');
 			let youtube_json = JSON.parse(await youtube_fetch.text());
 
 			if (!youtube_json)
