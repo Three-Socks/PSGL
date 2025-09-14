@@ -10,3 +10,4 @@ _data/youtube.json
 
 node_modules/
 .env
+.vercel
