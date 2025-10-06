@@ -8,5 +8,5 @@ menu_icon: /assets/site-img/f1-48x48.png
 menu_hide: false
 menu_order: 4
 calendars:
-    - { name: 'S41 - Regular', images: ['/assets/site-img/PSGL-S41-Calendar-Regular-.jpg'], width: 1920, height: 1080 }
+    - { name: 'S41 - Regular', images: ['/assets/site-img/PSGL-S41-Calendar-Regular.png'], width: 1920, height: 1080 }
 ---
