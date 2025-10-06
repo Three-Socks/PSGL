@@ -138,10 +138,14 @@ Some services among those listed below, if any, may work through geographically 
     * Netlify is a hosting service provided by Netlify, Inc.
     * Personal Data processed: Data communicated while using the service.
     * Place of processing: United States – [Privacy Policy](https://www.netlify.com/privacy/).
+* **Vercel (Vercel Inc.)**
+    * Vercel is a hosting service provided by Vercel, Inc.
+    * Personal Data processed: Data communicated while using the service.
+    * Place of processing: United States – [Privacy Policy](https://vercel.com/legal/privacy-policy).
 * **OpenAI (OpenAI OpCo, LLC)**
     * OpenAI provides artificial intelligence models and services used to enable specific features within this Application (e.g., data analysis, content generation, interactive responses).
     * Personal Data processed: Data communicated while using the service, potentially including user inputs or prompts provided to AI features.
-    * Place of processing: United States – Privacy Policy.
+    * Place of processing: United States – [Privacy Policy](https://openai.com/policies/privacy-policy/).
 
 **Interaction with external social networks and platforms**
 
