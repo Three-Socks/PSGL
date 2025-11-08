@@ -8,5 +8,5 @@ menu_icon: /assets/site-img/gt.png
 menu_hide: false
 menu_order: 5
 calendars:
-    - { name: 'Calendar', images: ['/assets/site-img/CC6_Calendar.png'], width: 1366, height: 768 }
+    - { name: 'Calendar', images: ['/assets/site-img/PSGL_TARSPC_Calendar.png'], width: 1366, height: 768 }
 ---
