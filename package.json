@@ -6,7 +6,7 @@
 	"author": "Three-Socks",
 	"license": "MIT",
 	"devDependencies": {
-		"eslint": "^7.32.0"
+		"eslint": "^9.39.1"
 	},
 	"dependencies": {
 		"@directus/sdk": "^13.0.1"
